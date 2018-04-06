@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="moves" displayName="moves" projectFiles="true">
+        <itemPath>src/tron2/moves/CircularMovement.cpp</itemPath>
+        <itemPath>src/tron2/moves/CircularMovement.h</itemPath>
+        <itemPath>src/tron2/moves/CyclicMovement.cpp</itemPath>
+        <itemPath>src/tron2/moves/CyclicMovement.h</itemPath>
+        <itemPath>src/tron2/moves/MoveFactory.cpp</itemPath>
+        <itemPath>src/tron2/moves/MoveFactory.h</itemPath>
+        <itemPath>src/tron2/moves/WaveMovement.cpp</itemPath>
+        <itemPath>src/tron2/moves/WaveMovement.h</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>src/tron/moves</Elem>
+    <Elem>src/tron2/moves</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="2">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>8</standard>
+          <incDir>
+            <pElem>src</pElem>
+            <pElem>../../tron/tron_math/src</pElem>
+            <pElem>../../tron/tron_signals/src</pElem>
+            <pElem>../../tron/tron_util/src</pElem>
+            <pElem>../tron2_language/src</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_moves.${CND_DLIB_EXT}</output>
+          <linkerLibItems>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../../tron/tron_math"
+                            CT="2"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../../tron/tron_math"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron_math.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../../tron/tron_signals"
+                            CT="2"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../../tron/tron_signals"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron_signals.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../../tron/tron_util"
+                            CT="2"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../../tron/tron_util"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron_util.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../tron2_language"
+                            CT="2"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../tron2_language"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_language.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="src/tron2/moves/CircularMovement.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/moves/CircularMovement.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/CyclicMovement.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/CyclicMovement.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/MoveFactory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/MoveFactory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/WaveMovement.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/WaveMovement.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="2">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="src/tron2/moves/CircularMovement.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/moves/CircularMovement.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/CyclicMovement.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/CyclicMovement.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/MoveFactory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/MoveFactory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/WaveMovement.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/WaveMovement.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
