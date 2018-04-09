@@ -15,8 +15,6 @@
 // obtains user's home path
 std::string getHomePath();
 
-using namespace dady;
-
 log4cxx::LoggerPtr logger(log4cxx::Logger::getLogger("dady"));
 
 // main program of amy2
@@ -27,7 +25,7 @@ int main(int argc, char** argv)
     log4cxx::xml::DOMConfigurator::configure(configFile);    
     
     // create commander and communicator
-    DadyCommander2 oDadyCommander;
+    tron2::DadyCommander2 oDadyCommander;
     
     // expected entry: dady node topic msg
     // if command has wrong number of params, show usage
@@ -42,7 +40,7 @@ int main(int argc, char** argv)
     {
         userCommand += argv[i]; 
         if (i != argc-1)
-            userCommand += DadyCommander2::COMMAND_SEPARATOR;      
+            userCommand += tron2::DadyCommander2::COMMAND_SEPARATOR;      
     }
     
     // check command validity (if it can be interpreted)

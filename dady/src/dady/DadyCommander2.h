@@ -1,5 +1,5 @@
-#ifndef __DADY_COMMANDER2_H
-#define __DADY_COMMANDER2_H
+#ifndef __TRON2_DADY_COMMANDER2_H
+#define __TRON2_DADY_COMMANDER2_H
 
 /***************************************************************************
  *   Copyright (C) 2018 by Migtron Robotics   *
@@ -13,7 +13,7 @@
 #include "tron2/robot/topics/ArmTopics.h"
 #include "tron2/robot/topics/BodyTopics.h"
 
-namespace dady
+namespace tron2
 {
 // Class used to interpret user entered commands in talky communication language.
 // Commands format: ./dady <node> <topic> <concept>*<value>
@@ -35,9 +35,9 @@ private:
     int targetNode;                          // target node (arm, vision, ...) 
     int targetTopic;                          // target topic (for arm node: joints, axis, ...)
     std::string message;                 // message to send
-    tron2::RobotNodes oRobotNodes;
-    tron2::ArmTopics oArmTopics;
-    tron2::BodyTopics oBodyTopics;
+    RobotNodes oRobotNodes;
+    ArmTopics oArmTopics;
+    BodyTopics oBodyTopics;
     
 
 public:

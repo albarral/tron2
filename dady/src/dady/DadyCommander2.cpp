@@ -21,7 +21,7 @@
 
 using namespace log4cxx;
 
-namespace dady
+namespace tron2
 {
 LoggerPtr DadyCommander2::logger(Logger::getLogger("dady"));
 
