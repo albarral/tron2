@@ -35,13 +35,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/tron2/tivy/Draw.o \
 	${OBJECTDIR}/src/tron2/tivy/DualWindow.o \
 	${OBJECTDIR}/src/tron2/tivy/ImageSave.o \
 	${OBJECTDIR}/src/tron2/tivy/SharedDisplay.o \
-	${OBJECTDIR}/src/tron2/tivy/display/Chart.o \
-	${OBJECTDIR}/src/tron2/tivy/display/Display.o \
-	${OBJECTDIR}/src/tron2/tivy/display/DrawnDisplay.o \
 	${OBJECTDIR}/src/tron2/tivy/history/Click.o \
 	${OBJECTDIR}/src/tron2/tivy/history/History.o \
 	${OBJECTDIR}/src/tron2/tivy/history/History2D.o \
@@ -74,11 +70,6 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_tivy.${CND_DLIB_EXT}: ${OBJE
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_tivy.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -shared -fPIC
 
-${OBJECTDIR}/src/tron2/tivy/Draw.o: src/tron2/tivy/Draw.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/tivy
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/tivy/Draw.o src/tron2/tivy/Draw.cpp
-
 ${OBJECTDIR}/src/tron2/tivy/DualWindow.o: src/tron2/tivy/DualWindow.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/tivy
 	${RM} "$@.d"
@@ -93,21 +84,6 @@ ${OBJECTDIR}/src/tron2/tivy/SharedDisplay.o: src/tron2/tivy/SharedDisplay.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/tivy
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/tivy/SharedDisplay.o src/tron2/tivy/SharedDisplay.cpp
-
-${OBJECTDIR}/src/tron2/tivy/display/Chart.o: src/tron2/tivy/display/Chart.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/tivy/display
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/tivy/display/Chart.o src/tron2/tivy/display/Chart.cpp
-
-${OBJECTDIR}/src/tron2/tivy/display/Display.o: src/tron2/tivy/display/Display.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/tivy/display
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/tivy/display/Display.o src/tron2/tivy/display/Display.cpp
-
-${OBJECTDIR}/src/tron2/tivy/display/DrawnDisplay.o: src/tron2/tivy/display/DrawnDisplay.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/tivy/display
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/tivy/display/DrawnDisplay.o src/tron2/tivy/display/DrawnDisplay.cpp
 
 ${OBJECTDIR}/src/tron2/tivy/history/Click.o: src/tron2/tivy/history/Click.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/tivy/history
