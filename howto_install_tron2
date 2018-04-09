@@ -1,0 +1,43 @@
+
+*** HOW TO INSTALL TRON2 LIBS
+
+> INTRODUCTION
+
+This document explains how to install tron2 libs for robotic control.
+
+Software requirements:
+- Linux environment
+- Netbeans 8.1 for C++
+- git
+
+
+> INSTALLATION
+
+
+1. Download tron2 repo
+
+git clone https://github.com/albarral/tron2.git
+
+
+2. Build tron_test project (in Netbeans)
+
+
+3. Make tron2 libs accessible from everywhere:
+
+cd <tron2_installation_path>
+gedit tron2.conf
+change paths to meet real tron2 installation 
+
+sudo cp tron2.conf /etc/ld.so.conf.d
+sudo /sbin/ldconfig
+
+
+4. Prepare config files for tron2 logging:
+
+see instructions in file logging/README_tron2_logging
+located in <tron2_installation_path>
+
+
+
+
+

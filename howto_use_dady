@@ -1,0 +1,50 @@
+
+*** HOW TO USE DADY
+
+
+> INTRODUCTION
+
+dady is a program that allows users to control robotic nodes (amy, goon, rolybody, ...) from CLI.
+
+It uses tron & tron2 libraries:
+- libtron2_talky
+- libtron_wire
+- ...
+
+
+> INSTALLATION
+
+
+1. Install tron & tron2 libs
+
+git clone https://github.com/albarral/tron.git
+git clone https://github.com/albarral/tron2.git
+
+follow instructions in file howto_install_tron
+follow instructions in file howto_install_tron2
+
+2. Build dady project (in Netbeans)
+
+3. Create link to dady executable:
+ 
+cd <desired_folder>
+ln -s <tron2_installation_path>/dady/dist/Debug/GNU-Linux/dady dady
+
+
+> USAGE
+
+usage: dady node topic concept*quantity
+
+user guidance: 
+- use "dady" to get all available nodes
+- use "dady <node>" to get all available topics for the given node
+- use "dady <node> <topic>" to get all available concepts for the given node-topic
+
+
+> EXAMPLES 
+
+./dady arm axis pan*60.0	(moves arm horizontally to 60.0 degrees position)
+./dady arm axis vtilt*10.0	(moves arm vertically at 10 degrees/second) 
+./dady arm extra end*1		(ends arm control process)
+
+
