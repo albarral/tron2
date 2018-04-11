@@ -13,6 +13,20 @@ namespace tron2
 // Class used to compute complex cyclic movements.
 class MoveFactory
 {
+public:
+    /*! movement codes  */
+    enum eCodes
+    {
+         eMOVEMENT_CIRCLE,                       
+         eMOVEMENT_ELLIPSE,                       
+         eMOVEMENT_SQUARE,                       
+         eMOVEMENT_RECTANGLE,                    
+         eMOVEMENT_TRIANGLE,                    
+         eMOVEMENT_LINE,                    
+         eMOVEMENT_WAVE,                    
+         eMOVEMENT_DIM
+    };
+
 private:    
     int figure;       // figure id (codes defined in tron::FiguresTheme class)
     float freq;         // frequency of cyclic movement

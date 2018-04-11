@@ -55,19 +55,13 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-Wl,-rpath,../../tron/tron_math/dist/Debug/GNU-Linux -L../../tron/tron_math/dist/Debug/GNU-Linux -ltron_math -Wl,-rpath,../../tron/tron_signals/dist/Debug/GNU-Linux -L../../tron/tron_signals/dist/Debug/GNU-Linux -ltron_signals -Wl,-rpath,../../tron/tron_util/dist/Debug/GNU-Linux -L../../tron/tron_util/dist/Debug/GNU-Linux -ltron_util -Wl,-rpath,../tron2_language/dist/Debug/GNU-Linux -L../tron2_language/dist/Debug/GNU-Linux -ltron2_language
+LDLIBSOPTIONS=-Wl,-rpath,../../tron/tron_math/dist/Debug/GNU-Linux -L../../tron/tron_math/dist/Debug/GNU-Linux -ltron_math
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_moves.${CND_DLIB_EXT}
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_moves.${CND_DLIB_EXT}: ../../tron/tron_math/dist/Debug/GNU-Linux/libtron_math.so
-
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_moves.${CND_DLIB_EXT}: ../../tron/tron_signals/dist/Debug/GNU-Linux/libtron_signals.so
-
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_moves.${CND_DLIB_EXT}: ../../tron/tron_util/dist/Debug/GNU-Linux/libtron_util.so
-
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_moves.${CND_DLIB_EXT}: ../tron2_language/dist/Debug/GNU-Linux/libtron2_language.so
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_moves.${CND_DLIB_EXT}: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
@@ -76,29 +70,26 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_moves.${CND_DLIB_EXT}: ${OBJ
 ${OBJECTDIR}/src/tron2/moves/CircularMovement.o: src/tron2/moves/CircularMovement.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/moves
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../../tron/tron_math/src -I../../tron/tron_signals/src -I../../tron/tron_util/src -I../tron2_language/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/CircularMovement.o src/tron2/moves/CircularMovement.cpp
+	$(COMPILE.cc) -g -Isrc -I../../tron/tron_math/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/CircularMovement.o src/tron2/moves/CircularMovement.cpp
 
 ${OBJECTDIR}/src/tron2/moves/CyclicMovement.o: src/tron2/moves/CyclicMovement.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/moves
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../../tron/tron_math/src -I../../tron/tron_signals/src -I../../tron/tron_util/src -I../tron2_language/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/CyclicMovement.o src/tron2/moves/CyclicMovement.cpp
+	$(COMPILE.cc) -g -Isrc -I../../tron/tron_math/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/CyclicMovement.o src/tron2/moves/CyclicMovement.cpp
 
 ${OBJECTDIR}/src/tron2/moves/MoveFactory.o: src/tron2/moves/MoveFactory.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/moves
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../../tron/tron_math/src -I../../tron/tron_signals/src -I../../tron/tron_util/src -I../tron2_language/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/MoveFactory.o src/tron2/moves/MoveFactory.cpp
+	$(COMPILE.cc) -g -Isrc -I../../tron/tron_math/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/MoveFactory.o src/tron2/moves/MoveFactory.cpp
 
 ${OBJECTDIR}/src/tron2/moves/WaveMovement.o: src/tron2/moves/WaveMovement.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/moves
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../../tron/tron_math/src -I../../tron/tron_signals/src -I../../tron/tron_util/src -I../tron2_language/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/WaveMovement.o src/tron2/moves/WaveMovement.cpp
+	$(COMPILE.cc) -g -Isrc -I../../tron/tron_math/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/WaveMovement.o src/tron2/moves/WaveMovement.cpp
 
 # Subprojects
 .build-subprojects:
 	cd ../../tron/tron_math && ${MAKE}  -f Makefile CONF=Debug
-	cd ../../tron/tron_signals && ${MAKE}  -f Makefile CONF=Debug
-	cd ../../tron/tron_util && ${MAKE}  -f Makefile CONF=Debug
-	cd ../tron2_language && ${MAKE}  -f Makefile CONF=Debug
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
@@ -108,9 +99,6 @@ ${OBJECTDIR}/src/tron2/moves/WaveMovement.o: src/tron2/moves/WaveMovement.cpp
 # Subprojects
 .clean-subprojects:
 	cd ../../tron/tron_math && ${MAKE}  -f Makefile CONF=Debug clean
-	cd ../../tron/tron_signals && ${MAKE}  -f Makefile CONF=Debug clean
-	cd ../../tron/tron_util && ${MAKE}  -f Makefile CONF=Debug clean
-	cd ../tron2_language && ${MAKE}  -f Makefile CONF=Debug clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl

@@ -6,7 +6,7 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
-#include "tron/signals/CyclicComponent.h"
+#include "tron/math/CyclicComponent.h"
  
 namespace tron2
 {
