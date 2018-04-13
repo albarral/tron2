@@ -38,7 +38,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tron2/robot/RobotNodes.o \
 	${OBJECTDIR}/src/tron2/robot/topics/ArmTopics.o \
 	${OBJECTDIR}/src/tron2/robot/topics/BodyTopics.o \
-	${OBJECTDIR}/src/tron2/robot/topics/NodeTopics.o
+	${OBJECTDIR}/src/tron2/robot/topics/NodeTopics.o \
+	${OBJECTDIR}/src/tron2/robot/topics/VisionTopics.o
 
 
 # C Compiler Flags
@@ -84,6 +85,11 @@ ${OBJECTDIR}/src/tron2/robot/topics/NodeTopics.o: src/tron2/robot/topics/NodeTop
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot/topics
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/topics/NodeTopics.o src/tron2/robot/topics/NodeTopics.cpp
+
+${OBJECTDIR}/src/tron2/robot/topics/VisionTopics.o: src/tron2/robot/topics/VisionTopics.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot/topics
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/topics/VisionTopics.o src/tron2/robot/topics/VisionTopics.cpp
 
 # Subprojects
 .build-subprojects:

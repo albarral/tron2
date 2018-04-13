@@ -21,7 +21,7 @@ RobotNodes::RobotNodes()
     // build nodes map
     oNodesMap.addCode(eNODE_ARM, ARM_NODE);
 //    oNodesMap.addCode(eNODE_HAND, HAND_NODE);
-//    oNodesMap.addCode(eNODE_VISION, VISION_NODE);
+    oNodesMap.addCode(eNODE_VISION, VISION_NODE);
 //    oNodesMap.addCode(eNODE_HEAD, HEAD_NODE);
 //    oNodesMap.addCode(eNODE_WHEELS, WHEELS_NODE);
     oNodesMap.addCode(eNODE_BODYROLE, BODYROLE_NODE);
