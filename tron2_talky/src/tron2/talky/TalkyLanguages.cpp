@@ -8,6 +8,7 @@
 #include "tron2/robot/RobotNodes.h"
 #include "tron2/robot/topics/ArmTopics.h"
 #include "tron2/robot/topics/BodyTopics.h"
+#include "tron2/robot/topics/VisionTopics.h"
 // common talkers
 #include "tron2/talky/BasicTalker.h"
 // arm talkers
@@ -17,6 +18,8 @@
 // body talkers
 #include "tron2/talky/body/ExpressiveTalker.h"
 #include "tron2/talky/body/ArtisticTalker.h"
+// vision talkers
+#include "tron2/talky/vision/FocusTalker.h"
 
 using namespace log4cxx;
 
@@ -34,6 +37,10 @@ Talker* TalkyLanguages::createTalker(int node, int topic)
 
         case RobotNodes::eNODE_BODYROLE:
             return createTalker4BodyTopic(topic);
+            break;
+
+        case RobotNodes::eNODE_VISION:
+            return createTalker4VisionTopic(topic);
             break;
 
         default:
@@ -88,6 +95,25 @@ Talker* TalkyLanguages::createTalker4BodyTopic(int topic)
             
         default:
             LOG4CXX_WARN(logger, "TalkyLanguages: can't create talker, unknown body topic " << std::to_string(topic));                                      
+            return 0;
+    }    
+}
+
+Talker* TalkyLanguages::createTalker4VisionTopic(int topic)
+{
+    // create proper talker for vision node topic
+    switch (topic)
+    {
+        case VisionTopics::eVISION_FOCUS: 
+            return new FocusTalker();
+            break;            
+                        
+        case VisionTopics::eVISION_EXTRA: 
+            return new BasicTalker(RobotNodes::eNODE_VISION, VisionTopics::eVISION_EXTRA);
+            break;
+            
+        default:
+            LOG4CXX_WARN(logger, "TalkyLanguages: can't create talker, unknown vision topic " << std::to_string(topic));                                      
             return 0;
     }    
 }

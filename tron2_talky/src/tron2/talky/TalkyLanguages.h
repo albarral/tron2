@@ -27,6 +27,8 @@ private:
     static Talker* createTalker4ArmTopic(int topic);
     // create talker for specific body topic
     static Talker* createTalker4BodyTopic(int topic);
+    // create talker for specific vision topic
+    static Talker* createTalker4VisionTopic(int topic);
 };
 
 }

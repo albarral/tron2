@@ -52,7 +52,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tron2/talky/channel/ChannelCommunicator.o \
 	${OBJECTDIR}/src/tron2/talky/channel/ChannelPublisher.o \
 	${OBJECTDIR}/src/tron2/talky/channel/ChannelServer.o \
-	${OBJECTDIR}/src/tron2/talky/channel/ChannelSubscriber.o
+	${OBJECTDIR}/src/tron2/talky/channel/ChannelSubscriber.o \
+	${OBJECTDIR}/src/tron2/talky/vision/FocusTalker.o
 
 
 # C Compiler Flags
@@ -178,6 +179,11 @@ ${OBJECTDIR}/src/tron2/talky/channel/ChannelSubscriber.o: src/tron2/talky/channe
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/talky/channel
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -I../tron2_robot/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/talky/channel/ChannelSubscriber.o src/tron2/talky/channel/ChannelSubscriber.cpp
+
+${OBJECTDIR}/src/tron2/talky/vision/FocusTalker.o: src/tron2/talky/vision/FocusTalker.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/talky/vision
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -I../tron2_robot/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/talky/vision/FocusTalker.o src/tron2/talky/vision/FocusTalker.cpp
 
 # Subprojects
 .build-subprojects:

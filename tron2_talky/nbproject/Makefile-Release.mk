@@ -52,7 +52,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tron2/talky/channel/ChannelCommunicator.o \
 	${OBJECTDIR}/src/tron2/talky/channel/ChannelPublisher.o \
 	${OBJECTDIR}/src/tron2/talky/channel/ChannelServer.o \
-	${OBJECTDIR}/src/tron2/talky/channel/ChannelSubscriber.o
+	${OBJECTDIR}/src/tron2/talky/channel/ChannelSubscriber.o \
+	${OBJECTDIR}/src/tron2/talky/vision/FocusTalker.o
 
 
 # C Compiler Flags
@@ -168,6 +169,11 @@ ${OBJECTDIR}/src/tron2/talky/channel/ChannelSubscriber.o: src/tron2/talky/channe
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/talky/channel
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/talky/channel/ChannelSubscriber.o src/tron2/talky/channel/ChannelSubscriber.cpp
+
+${OBJECTDIR}/src/tron2/talky/vision/FocusTalker.o: src/tron2/talky/vision/FocusTalker.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/talky/vision
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/talky/vision/FocusTalker.o src/tron2/talky/vision/FocusTalker.cpp
 
 # Subprojects
 .build-subprojects:
