@@ -12,6 +12,7 @@
 #include "tron2/robot/RobotNodes.h"
 #include "tron2/robot/topics/ArmTopics.h"
 #include "tron2/robot/topics/BodyTopics.h"
+#include "tron2/robot/topics/VisionTopics.h"
 
 namespace tron2
 {
@@ -38,6 +39,7 @@ private:
     RobotNodes oRobotNodes;
     ArmTopics oArmTopics;
     BodyTopics oBodyTopics;
+    VisionTopics oVisionTopics;
     
 
 public:

@@ -9,15 +9,6 @@
 #include "tron/util/StringUtil.h"
 #include "tron/wire2/FileWire.h"
 #include "tron2/talky/TalkyLanguages.h"
-// common talkers
-#include "tron2/talky/BasicTalker.h"
-// arm talkers
-#include "tron2/talky/arm/JointTalker.h"
-#include "tron2/talky/arm/AxisTalker.h"
-#include "tron2/talky/arm/CyclicTalker.h"
-// body talkers
-#include "tron2/talky/body/ExpressiveTalker.h"
-#include "tron2/talky/body/ArtisticTalker.h"
 
 using namespace log4cxx;
 
@@ -131,6 +122,10 @@ int DadyCommander2::interpretTopic(int node, std::string topicName)
         case tron2::RobotNodes::eNODE_BODYROLE: 
             topic = oBodyTopics.getCode4Topic(topicName);
             break;
+
+        case tron2::RobotNodes::eNODE_VISION: 
+            topic = oVisionTopics.getCode4Topic(topicName);
+            break;
     }
     return topic;
 }
@@ -178,6 +173,10 @@ void DadyCommander2::showAvailableTopics(int node)
 
         case tron2::RobotNodes::eNODE_BODYROLE: 
             desc = oBodyTopics.getMapDescription();
+            break;
+
+        case tron2::RobotNodes::eNODE_VISION: 
+            desc = oVisionTopics.getMapDescription();
             break;
     }   
     LOG4CXX_INFO(logger, "available topics: \n" + desc);      
