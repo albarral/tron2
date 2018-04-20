@@ -19,7 +19,8 @@ public:
     {
         eARM_JOINT,                  /*! joint topic */
         eARM_AXIS,                   /*! axis topic  */
-        eARM_CYCLIC,                /*! cyclic topic  */
+        eARM_CYCLER1,             /*! cycler1 topic  */
+        eARM_CYCLER2,             /*! cycler2 topic  */
         eARM_EXTRA,                 /*! extra topic  */
         eARM_DIM
     };
@@ -27,7 +28,8 @@ public:
     /*! arm topic names */
     static const std::string ARM_JOINT;
     static const std::string ARM_AXIS;
-    static const std::string ARM_CYCLIC;
+    static const std::string ARM_CYCLER1;
+    static const std::string ARM_CYCLER2;
     static const std::string ARM_EXTRA;
 
  public:     

@@ -40,25 +40,45 @@ class TronArmClient
     // keep arm tilt
     virtual bool keepTilt() = 0;
     
-    // cyclic topic ...
-    // set amplitude of frontal cycler first component (degrees)
-    virtual bool setFrontCyclerAmp1(float value) = 0;
-    // set angle of frontal cycler first component (degrees)
-    virtual bool setFrontCyclerAngle1(float value) = 0;
-    // set frequency of frontal cycler first component (Hz)
-    virtual bool setFrontCyclerFreq1(float value) = 0;
-    // set phase of frontal cycler first component (degrees)
-    virtual bool setFrontCyclerPhase1(float value) = 0;
-    // set amplitude of frontal cycler second component (degrees)
-    virtual bool setFrontCyclerAmp2(float value) = 0;
-    // set angle of frontal cycler second component (degrees)
-    virtual bool setFrontCyclerAngle2(float value) = 0;
-    // set frequency of frontal cycler second component (Hz)
-    virtual bool setFrontCyclerFreq2(float value) = 0;
-    // set phase of frontal cycler second component (degrees)
-    virtual bool setFrontCyclerPhase2(float value) = 0;
-    // starts or stops frontal cycler movement
-    virtual bool setFrontCyclerAction(int value) = 0;
+    // cycler1 topic ...
+    // set amplitude of cycler1 main component (degrees)
+    virtual bool setCycler1MainAmp(float value) = 0;
+    // set angle of cycler1 main component (degrees)
+    virtual bool setCycler1MainAngle(float value) = 0;
+    // set frequency of cycler1 main component (Hz)
+    virtual bool setCycler1MainFreq(float value) = 0;
+    // set phase of cycler1 main component (degrees)
+    virtual bool setCycler1MainPhase(float value) = 0;
+    // set amplitude of cycler1 secondary component (degrees)
+    virtual bool setCycler1SecAmp(float value) = 0;
+    // set angle of cycler1 secondary component (degrees)
+    virtual bool setCycler1SecAngle(float value) = 0;
+    // set frequency of cycler1 secondary component (Hz)
+    virtual bool setCycler1SecFreq(float value) = 0;
+    // set phase of cycler1 secondary component (degrees)
+    virtual bool setCycler1SecPhase(float value) = 0;
+    // starts or stops cycler1 movement
+    virtual bool setCycler1Action(int value) = 0;
+
+    // cycler2 topic ...
+    // set amplitude of cycler2 main component (degrees)
+    virtual bool setCycler2MainAmp(float value) = 0;
+    // set angle of cycler2 main component (degrees)
+    virtual bool setCycler2MainAngle(float value) = 0;
+    // set frequency of cycler2 main component (Hz)
+    virtual bool setCycler2MainFreq(float value) = 0;
+    // set phase of cycler2 main component (degrees)
+    virtual bool setCycler2MainPhase(float value) = 0;
+    // set amplitude of cycler2 secondary component (degrees)
+    virtual bool setCycler2SecAmp(float value) = 0;
+    // set angle of cycler2 secondary component (degrees)
+    virtual bool setCycler2SecAngle(float value) = 0;
+    // set frequency of cycler2 secondary component (Hz)
+    virtual bool setCycler2SecFreq(float value) = 0;
+    // set phase of cycler2 secondary component (degrees)
+    virtual bool setCycler2SecPhase(float value) = 0;
+    // starts or stops cycler2 movement
+    virtual bool setCycler2Action(int value) = 0;
 };
 }
 #endif
