@@ -27,9 +27,10 @@ protected:
     tron::FileWire oWire;                 // communications wire   
         
 public:
-    ChannelCommunicator(int node, int topic);
+    ChannelCommunicator();
     ~ChannelCommunicator();
     
+    void tune4NodeAndTopic(int node, int topic);
     bool isTuned() {return btuned;};
     std::string getIdentity() {return identity;};
     

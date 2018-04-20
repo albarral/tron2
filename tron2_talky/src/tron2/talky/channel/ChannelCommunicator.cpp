@@ -12,18 +12,31 @@ namespace tron2
 {
 LoggerPtr ChannelCommunicator::logger(Logger::getLogger("tron.talky2"));
 
-ChannelCommunicator::ChannelCommunicator(int node, int topic)
+ChannelCommunicator::ChannelCommunicator()
 {    
-    this->node = node;
-    this->topic = topic;
-    // create proper talker for this node & topic
-    pTalker = TalkyLanguages::createTalker(node, topic);
-    btuned = (pTalker != 0);
+    node = -1;
+    topic = -1;
+    pTalker = 0;
+    btuned = false;
 }
 
 ChannelCommunicator::~ChannelCommunicator()
 {    
     if (pTalker != 0)
         delete(pTalker);
+}
+
+void ChannelCommunicator::tune4NodeAndTopic(int node, int topic)
+{
+    // just one tuning allowed
+    if (!btuned)    
+    {
+        this->node = node;
+        this->topic = topic;
+        setIdentity();
+        // create proper talker for this node & topic
+        pTalker = TalkyLanguages::createTalker(node, topic);
+        btuned = (pTalker != 0);
+    }
 }
 }

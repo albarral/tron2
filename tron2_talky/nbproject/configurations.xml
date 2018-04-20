@@ -16,6 +16,8 @@
         <logicalFolder name="arm" displayName="arm" projectFiles="true">
           <itemPath>src/tron2/talky/arm/ArmClient.cpp</itemPath>
           <itemPath>src/tron2/talky/arm/ArmClient.h</itemPath>
+          <itemPath>src/tron2/talky/arm/ArmLanguage.cpp</itemPath>
+          <itemPath>src/tron2/talky/arm/ArmLanguage.h</itemPath>
           <itemPath>src/tron2/talky/arm/ArmListener.cpp</itemPath>
           <itemPath>src/tron2/talky/arm/ArmListener.h</itemPath>
           <itemPath>src/tron2/talky/arm/AxisTalker.cpp</itemPath>
@@ -34,6 +36,8 @@
           <itemPath>src/tron2/talky/body/ArtisticTalker.h</itemPath>
           <itemPath>src/tron2/talky/body/BodyClient.cpp</itemPath>
           <itemPath>src/tron2/talky/body/BodyClient.h</itemPath>
+          <itemPath>src/tron2/talky/body/BodyLanguage.cpp</itemPath>
+          <itemPath>src/tron2/talky/body/BodyLanguage.h</itemPath>
           <itemPath>src/tron2/talky/body/ExpressiveTalker.cpp</itemPath>
           <itemPath>src/tron2/talky/body/ExpressiveTalker.h</itemPath>
         </logicalFolder>
@@ -52,6 +56,8 @@
         <logicalFolder name="f1" displayName="vision" projectFiles="true">
           <itemPath>src/tron2/talky/vision/FocusTalker.cpp</itemPath>
           <itemPath>src/tron2/talky/vision/FocusTalker.h</itemPath>
+          <itemPath>src/tron2/talky/vision/VisionLanguage.cpp</itemPath>
+          <itemPath>src/tron2/talky/vision/VisionLanguage.h</itemPath>
         </logicalFolder>
         <itemPath>src/tron2/talky/BasicTalker.cpp</itemPath>
         <itemPath>src/tron2/talky/BasicTalker.h</itemPath>
@@ -178,6 +184,13 @@
       </item>
       <item path="src/tron2/talky/arm/ArmClient.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/tron2/talky/arm/ArmLanguage.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/talky/arm/ArmLanguage.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/tron2/talky/arm/ArmListener.cpp"
             ex="false"
             tool="1"
@@ -239,6 +252,16 @@
             flavor2="0">
       </item>
       <item path="src/tron2/talky/body/BodyClient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/talky/body/BodyLanguage.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/talky/body/BodyLanguage.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="src/tron2/talky/body/ExpressiveTalker.cpp"
             ex="false"
@@ -306,6 +329,16 @@
             flavor2="0">
       </item>
       <item path="src/tron2/talky/vision/FocusTalker.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/talky/vision/VisionLanguage.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/talky/vision/VisionLanguage.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -347,6 +380,13 @@
       </item>
       <item path="src/tron2/talky/arm/ArmClient.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/tron2/talky/arm/ArmLanguage.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/talky/arm/ArmLanguage.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/tron2/talky/arm/ArmListener.cpp"
             ex="false"
             tool="1"
@@ -408,6 +448,16 @@
             flavor2="0">
       </item>
       <item path="src/tron2/talky/body/BodyClient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/talky/body/BodyLanguage.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/talky/body/BodyLanguage.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="src/tron2/talky/body/ExpressiveTalker.cpp"
             ex="false"
@@ -475,6 +525,16 @@
             flavor2="0">
       </item>
       <item path="src/tron2/talky/vision/FocusTalker.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/talky/vision/VisionLanguage.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/talky/vision/VisionLanguage.h"
             ex="false"
             tool="3"
             flavor2="0">

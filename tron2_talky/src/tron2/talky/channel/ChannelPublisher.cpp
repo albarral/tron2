@@ -9,9 +9,8 @@ using namespace log4cxx;
 
 namespace tron2
 {
-ChannelPublisher::ChannelPublisher(int node, int topic) : ChannelCommunicator(node, topic)
+ChannelPublisher::ChannelPublisher()
 {    
-    setIdentity();
 }
 
 ChannelPublisher::~ChannelPublisher()
@@ -111,7 +110,7 @@ bool ChannelPublisher::clearChannel()
 
 void ChannelPublisher::setIdentity()
 {
-    identity = "ChannelPublisher" + std::to_string(node) + "- " + std::to_string(topic);
+    identity = "ChannelPublisher" + std::to_string(node) + "-" + std::to_string(topic);
     
 }
 }

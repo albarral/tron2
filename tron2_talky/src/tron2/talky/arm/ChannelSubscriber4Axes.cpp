@@ -12,13 +12,10 @@ using namespace log4cxx;
 
 namespace tron2
 {
-ChannelSubscriber4Axes::ChannelSubscriber4Axes() : ChannelSubscriber(RobotNodes::eNODE_ARM, ArmTopics::eARM_AXIS)
+ChannelSubscriber4Axes::ChannelSubscriber4Axes()
 {    
+    ChannelSubscriber::tune4NodeAndTopic(RobotNodes::eNODE_ARM, ArmTopics::eARM_AXIS);
 }
-
-//JointListener::~JointListener()
-//{    
-//}
 
 void ChannelSubscriber4Axes::processData()
 {    

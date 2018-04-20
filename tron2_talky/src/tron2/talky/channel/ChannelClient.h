@@ -17,7 +17,7 @@ protected:
     std::string message;
         
 public:
-    ChannelClient(int node, int topic); 
+    ChannelClient(); 
     //~ChannelClient();
 
     // build message for given command & send it through proper channel

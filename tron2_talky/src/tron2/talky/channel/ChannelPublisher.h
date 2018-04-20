@@ -21,7 +21,7 @@ protected:
     std::vector<std::string> listMessages;  // output queue for multi message publishing
         
 public:
-    ChannelPublisher(int node, int topic); 
+    ChannelPublisher(); 
     ~ChannelPublisher();
 
     // build message for given command & send it through proper channel

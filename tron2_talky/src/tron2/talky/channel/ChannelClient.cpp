@@ -9,9 +9,8 @@ using namespace log4cxx;
 
 namespace tron2
 {
-ChannelClient::ChannelClient(int node, int topic) : ChannelCommunicator(node, topic)
+ChannelClient::ChannelClient()
 {    
-    setIdentity();
 }
 
 //ChannelClient::~ChannelClient()
@@ -49,7 +48,7 @@ bool ChannelClient::sendMessage(int code, float value)
 
 void ChannelClient::setIdentity()
 {
-    identity = "ChannelClient" + std::to_string(node) + "- " + std::to_string(topic);
+    identity = "ChannelClient" + std::to_string(node) + "-" + std::to_string(topic);
     
 }
 }

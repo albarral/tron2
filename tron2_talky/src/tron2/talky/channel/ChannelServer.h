@@ -20,7 +20,7 @@ protected:
     std::vector<std::string> listMessages;
         
 public:
-    ChannelServer(int node, int topic); 
+    ChannelServer(); 
     ~ChannelServer();
 
     // read messages from proper unicast channel

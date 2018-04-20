@@ -10,7 +10,7 @@
 namespace tron2
 {
 
-CyclicTalker::CyclicTalker() : Talker(RobotNodes::eNODE_ARM, ArmTopics::eARM_CYCLIC)
+CyclicTalker::CyclicTalker() : Talker(RobotNodes::eNODE_ARM, ArmTopics::eARM_CYCLER1)
 {
     // complete name with topic word
     completeName();
@@ -27,15 +27,14 @@ void CyclicTalker::completeName()
 
 void CyclicTalker::buildKnowledge()
 {
-    // FRONTAL CYCLER
-    addConcept(eCYCLIC_FRONT1_FREQ, CYCLIC_FRONT1_FREQ);
-    addConcept(eCYCLIC_FRONT1_AMP, CYCLIC_FRONT1_AMP);                         
-    addConcept(eCYCLIC_FRONT1_ANGLE, CYCLIC_FRONT1_ANGLE);                      
-    addConcept(eCYCLIC_FRONT1_PHASE, CYCLIC_FRONT1_PHASE);                   
-    addConcept(eCYCLIC_FRONT2_FREQ, CYCLIC_FRONT2_FREQ);
-    addConcept(eCYCLIC_FRONT2_AMP, CYCLIC_FRONT2_AMP);                         
-    addConcept(eCYCLIC_FRONT2_ANGLE, CYCLIC_FRONT2_ANGLE);                      
-    addConcept(eCYCLIC_FRONT2_PHASE, CYCLIC_FRONT2_PHASE);                   
-    addConcept(eCYCLIC_FRONT_ACTION, CYCLIC_FRONT_ACTION);                        
+    addConcept(eCYCLER_MAIN_FREQ, CYCLER_MAIN_FREQ);
+    addConcept(eCYCLER_MAIN_AMP, CYCLER_MAIN_AMP);                         
+    addConcept(eCYCLER_MAIN_ANGLE, CYCLER_MAIN_ANGLE);                      
+    addConcept(eCYCLER_MAIN_PHASE, CYCLER_MAIN_PHASE);                   
+    addConcept(eCYCLER_SEC_FREQ, CYCLER_SEC_FREQ);
+    addConcept(eCYCLER_SEC_AMP, CYCLER_SEC_AMP);                         
+    addConcept(eCYCLER_SEC_ANGLE, CYCLER_SEC_ANGLE);                      
+    addConcept(eCYCLER_SEC_PHASE, CYCLER_SEC_PHASE);                   
+    addConcept(eCYCLER_ACTION, CYCLER_ACTION);                        
 }
 }

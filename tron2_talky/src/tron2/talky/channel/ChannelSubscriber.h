@@ -20,7 +20,7 @@ protected:
     std::vector<std::string> listMessages;
         
 public:
-    ChannelSubscriber(int node, int topic); 
+    ChannelSubscriber(); 
     ~ChannelSubscriber();
 
     // read messages from proper broadcast channel

@@ -39,6 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tron2/talky/Talker.o \
 	${OBJECTDIR}/src/tron2/talky/TalkyLanguages.o \
 	${OBJECTDIR}/src/tron2/talky/arm/ArmClient.o \
+	${OBJECTDIR}/src/tron2/talky/arm/ArmLanguage.o \
 	${OBJECTDIR}/src/tron2/talky/arm/ArmListener.o \
 	${OBJECTDIR}/src/tron2/talky/arm/AxisTalker.o \
 	${OBJECTDIR}/src/tron2/talky/arm/ChannelSubscriber4Axes.o \
@@ -47,13 +48,15 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tron2/talky/arm/JointTalker.o \
 	${OBJECTDIR}/src/tron2/talky/body/ArtisticTalker.o \
 	${OBJECTDIR}/src/tron2/talky/body/BodyClient.o \
+	${OBJECTDIR}/src/tron2/talky/body/BodyLanguage.o \
 	${OBJECTDIR}/src/tron2/talky/body/ExpressiveTalker.o \
 	${OBJECTDIR}/src/tron2/talky/channel/ChannelClient.o \
 	${OBJECTDIR}/src/tron2/talky/channel/ChannelCommunicator.o \
 	${OBJECTDIR}/src/tron2/talky/channel/ChannelPublisher.o \
 	${OBJECTDIR}/src/tron2/talky/channel/ChannelServer.o \
 	${OBJECTDIR}/src/tron2/talky/channel/ChannelSubscriber.o \
-	${OBJECTDIR}/src/tron2/talky/vision/FocusTalker.o
+	${OBJECTDIR}/src/tron2/talky/vision/FocusTalker.o \
+	${OBJECTDIR}/src/tron2/talky/vision/VisionLanguage.o
 
 
 # C Compiler Flags
@@ -110,6 +113,11 @@ ${OBJECTDIR}/src/tron2/talky/arm/ArmClient.o: src/tron2/talky/arm/ArmClient.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -I../tron2_robot/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/talky/arm/ArmClient.o src/tron2/talky/arm/ArmClient.cpp
 
+${OBJECTDIR}/src/tron2/talky/arm/ArmLanguage.o: src/tron2/talky/arm/ArmLanguage.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/talky/arm
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -I../tron2_robot/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/talky/arm/ArmLanguage.o src/tron2/talky/arm/ArmLanguage.cpp
+
 ${OBJECTDIR}/src/tron2/talky/arm/ArmListener.o: src/tron2/talky/arm/ArmListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/talky/arm
 	${RM} "$@.d"
@@ -150,6 +158,11 @@ ${OBJECTDIR}/src/tron2/talky/body/BodyClient.o: src/tron2/talky/body/BodyClient.
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -I../tron2_robot/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/talky/body/BodyClient.o src/tron2/talky/body/BodyClient.cpp
 
+${OBJECTDIR}/src/tron2/talky/body/BodyLanguage.o: src/tron2/talky/body/BodyLanguage.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/talky/body
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -I../tron2_robot/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/talky/body/BodyLanguage.o src/tron2/talky/body/BodyLanguage.cpp
+
 ${OBJECTDIR}/src/tron2/talky/body/ExpressiveTalker.o: src/tron2/talky/body/ExpressiveTalker.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/talky/body
 	${RM} "$@.d"
@@ -184,6 +197,11 @@ ${OBJECTDIR}/src/tron2/talky/vision/FocusTalker.o: src/tron2/talky/vision/FocusT
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/talky/vision
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -I../tron2_robot/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/talky/vision/FocusTalker.o src/tron2/talky/vision/FocusTalker.cpp
+
+${OBJECTDIR}/src/tron2/talky/vision/VisionLanguage.o: src/tron2/talky/vision/VisionLanguage.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/talky/vision
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -I../tron2_robot/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/talky/vision/VisionLanguage.o src/tron2/talky/vision/VisionLanguage.cpp
 
 # Subprojects
 .build-subprojects:

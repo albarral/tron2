@@ -9,9 +9,8 @@ using namespace log4cxx;
 
 namespace tron2
 {
-ChannelServer::ChannelServer(int node, int topic) : ChannelCommunicator(node, topic)
+ChannelServer::ChannelServer()
 {    
-    setIdentity();
 }
 
 ChannelServer::~ChannelServer()
@@ -48,7 +47,7 @@ bool ChannelServer::clearChannel()
 
 void ChannelServer::setIdentity()
 {
-    identity = "ChannelServer" + std::to_string(node) + "- " + std::to_string(topic);
+    identity = "ChannelServer" + std::to_string(node) + "-" + std::to_string(topic);
     
 }
 }

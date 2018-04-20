@@ -18,9 +18,9 @@ class BodyClient : public TronBodyClient
 {    
 private:
     static log4cxx::LoggerPtr logger;
-    ChannelClient* pExpressiveChannelClient;
-    ChannelClient* pArtisticChannelClient;
-    ChannelClient* pExtraChannelClient;
+    ChannelClient oExpressiveChannelClient;
+    ChannelClient oArtisticChannelClient;
+    ChannelClient oExtraChannelClient;
         
 public:
     BodyClient();
