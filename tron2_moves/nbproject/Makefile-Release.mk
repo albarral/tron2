@@ -35,10 +35,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/tron2/moves/CircularMovement.o \
+	${OBJECTDIR}/src/tron2/moves/CircularGenerator.o \
 	${OBJECTDIR}/src/tron2/moves/CyclicMovement.o \
 	${OBJECTDIR}/src/tron2/moves/MoveFactory.o \
-	${OBJECTDIR}/src/tron2/moves/WaveMovement.o
+	${OBJECTDIR}/src/tron2/moves/WaveGenerator.o
 
 
 # C Compiler Flags
@@ -65,10 +65,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_moves.${CND_DLIB_EXT}: ${OBJ
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_moves.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -shared -fPIC
 
-${OBJECTDIR}/src/tron2/moves/CircularMovement.o: src/tron2/moves/CircularMovement.cpp 
+${OBJECTDIR}/src/tron2/moves/CircularGenerator.o: src/tron2/moves/CircularGenerator.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/moves
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/CircularMovement.o src/tron2/moves/CircularMovement.cpp
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/CircularGenerator.o src/tron2/moves/CircularGenerator.cpp
 
 ${OBJECTDIR}/src/tron2/moves/CyclicMovement.o: src/tron2/moves/CyclicMovement.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/moves
@@ -80,10 +80,10 @@ ${OBJECTDIR}/src/tron2/moves/MoveFactory.o: src/tron2/moves/MoveFactory.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/MoveFactory.o src/tron2/moves/MoveFactory.cpp
 
-${OBJECTDIR}/src/tron2/moves/WaveMovement.o: src/tron2/moves/WaveMovement.cpp 
+${OBJECTDIR}/src/tron2/moves/WaveGenerator.o: src/tron2/moves/WaveGenerator.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/moves
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/WaveMovement.o src/tron2/moves/WaveMovement.cpp
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/WaveGenerator.o src/tron2/moves/WaveGenerator.cpp
 
 # Subprojects
 .build-subprojects:

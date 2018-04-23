@@ -35,7 +35,6 @@ private:
     float relFactor;   // relative xy factor of cyclic movement
     float relFreq;      // relative frequency of wave movements
     bool brotation;     // rotation sign of circular movements (positive is anticlockwise)
-    CyclicMovement* pCyclicMovement;
 
 public:
     MoveFactory();
@@ -54,10 +53,8 @@ public:
     float getRelativeFreq() {return relFreq;};
     float getRotation() {return brotation;};
 
-    CyclicMovement* getCyclicMovement() {return pCyclicMovement;};
-
     // generate cyclic movement for specified figure, returns false if unsupported figure
-    bool generateMovement(int figure);        
+    bool generateMovement(CyclicMovement& oCyclicMovement, int figure);        
 };
 }
 #endif

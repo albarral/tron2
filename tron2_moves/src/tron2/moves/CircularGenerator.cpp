@@ -3,47 +3,53 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
-#include "tron2/moves/CircularMovement.h"
+#include "tron2/moves/CircularGenerator.h"
 #include "tron/math/Angle.h"
 
 namespace tron2
 {
-CircularMovement::CircularMovement()
-{
-    bdual = true;
-}
-
-//CircularMovement::~CircularMovement()
+//CircularGenerator::CircularGenerator()
 //{
 //}
 
-void CircularMovement::createCircle(float freq, float amplitude, float angle, bool brotation)
+//CircularGenerator::~CircularGenerator()
+//{
+//}
+
+void CircularGenerator::createCircle(CyclicMovement& oCyclicMovement, float freq, float amplitude, float angle, bool brotation)
 {
     // a circle is an ellipse with relative factor 1.0  ... 
-    createEllipse(freq, amplitude, 1.0, angle, brotation);
+    createEllipse(oCyclicMovement, freq, amplitude, 1.0, angle, brotation);
 }
 
-void CircularMovement::createEllipse(float freq, float amplitude, float relFactor, float angle, bool brotation)
+void CircularGenerator::createEllipse(CyclicMovement& oCyclicMovement, float freq, float amplitude, float relFactor, float angle, bool brotation)
 {
-    // same freq
+    oCyclicMovement.setDual(true);
+    tron::CyclicComponent& oCyclicComponent1 =  oCyclicMovement.getPrimaryComponent();
+    tron::CyclicComponent& oCyclicComponent2 =  oCyclicMovement.getSecondaryComponent();
+
     oCyclicComponent1.setFreq(freq);
+    oCyclicComponent1.setAmp(amplitude);
+    // keep angle inside limits [0, 360)    
+    angle = tron::Angle::inLimits(angle);
+    oCyclicComponent1.setAngle(angle);
+
+    // same freq
     oCyclicComponent2.setFreq(freq);
     // relative factor
-    oCyclicComponent1.setAmp(amplitude);
     oCyclicComponent2.setAmp(amplitude * relFactor);
-    // keep inside limits [0, 360)    
-    angle = tron::Angle::inLimits(angle);
     // orthogonal orientation
     float angle2 = tron::Angle::inLimits(angle + 90.0);
-    oCyclicComponent1.setAngle(angle);
     oCyclicComponent2.setAngle(angle2);
-    
-    computePhases(brotation, angle);
+  
+    float xphase, yphase;
+    computePhases(brotation, angle, xphase, yphase);
+    oCyclicComponent1.setPhase(xphase);
+    oCyclicComponent2.setPhase(yphase);
 }
 
-void CircularMovement::computePhases(bool brotation, float orientation)
-{
-    float xphase, yphase;
+void CircularGenerator::computePhases(bool brotation, float orientation, float& xphase, float& yphase)
+{    
     // if positive rotation (anticlockwise)
     if (brotation)
     {
@@ -60,7 +66,5 @@ void CircularMovement::computePhases(bool brotation, float orientation)
         // keep inside limits [0, 360)    
         yphase = tron::Angle::inLimits(xphase + 90.0);                
     }
-    oCyclicComponent1.setPhase(xphase);
-    oCyclicComponent2.setPhase(yphase);
 }
 }

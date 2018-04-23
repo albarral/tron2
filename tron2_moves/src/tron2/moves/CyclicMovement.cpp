@@ -74,4 +74,17 @@ void CyclicMovement::updateRelFactor(float factor)
     if (bdual)
         oCyclicComponent2.setAmp(oCyclicComponent1.getAmp() * factor);
 }
+
+void CyclicMovement::clear()
+{
+    oCyclicComponent1.setFreq(0.0);
+    oCyclicComponent1.setAmp(0.0);
+    oCyclicComponent1.setAngle(0.0);
+    oCyclicComponent1.setPhase(0.0);
+
+    oCyclicComponent2.setFreq(0.0);
+    oCyclicComponent2.setAmp(0.0);
+    oCyclicComponent2.setAngle(0.0);
+    oCyclicComponent2.setPhase(0.0);    
+}
 }

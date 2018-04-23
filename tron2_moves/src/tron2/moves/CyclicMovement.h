@@ -23,6 +23,7 @@ public:
     CyclicMovement();
     //~CyclicMovement();
 
+    void setDual(bool value) {bdual = value;};
     bool isDual() {return bdual;}
     tron::CyclicComponent& getPrimaryComponent() {return oCyclicComponent1;}
     tron::CyclicComponent& getSecondaryComponent() {return oCyclicComponent2;};
@@ -30,8 +31,9 @@ public:
     void updateFreq(float freq);
     void updateAmplitude(float amplitude);
     void updateAngle(float angle);
-    void updateRelFactor(float factor); 
+    void updateRelFactor(float factor);     
     
+    void clear();
 };
 }
 #endif
