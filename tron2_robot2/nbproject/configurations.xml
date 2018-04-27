@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="robot2" displayName="robot2" projectFiles="true">
+        <logicalFolder name="arm" displayName="arm" projectFiles="true">
+          <itemPath>src/tron2/robot2/arm/ArmNode.cpp</itemPath>
+          <itemPath>src/tron2/robot2/arm/ArmNode.h</itemPath>
+          <itemPath>src/tron2/robot2/arm/AxisTopic.cpp</itemPath>
+          <itemPath>src/tron2/robot2/arm/AxisTopic.h</itemPath>
+          <itemPath>src/tron2/robot2/arm/CyclicTopic.cpp</itemPath>
+          <itemPath>src/tron2/robot2/arm/CyclicTopic.h</itemPath>
+          <itemPath>src/tron2/robot2/arm/JointTopic.cpp</itemPath>
+          <itemPath>src/tron2/robot2/arm/JointTopic.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="body" displayName="body" projectFiles="true">
+          <itemPath>src/tron2/robot2/body/ArtisticTopic.cpp</itemPath>
+          <itemPath>src/tron2/robot2/body/ArtisticTopic.h</itemPath>
+          <itemPath>src/tron2/robot2/body/BodyNode.cpp</itemPath>
+          <itemPath>src/tron2/robot2/body/BodyNode.h</itemPath>
+          <itemPath>src/tron2/robot2/body/ExpressiveTopic.cpp</itemPath>
+          <itemPath>src/tron2/robot2/body/ExpressiveTopic.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="system" displayName="system" projectFiles="true">
+          <itemPath>src/tron2/robot2/system/TronRobot.cpp</itemPath>
+          <itemPath>src/tron2/robot2/system/TronRobot.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="vision" displayName="vision" projectFiles="true">
+          <itemPath>src/tron2/robot2/vision/FocusTopic.cpp</itemPath>
+          <itemPath>src/tron2/robot2/vision/FocusTopic.h</itemPath>
+          <itemPath>src/tron2/robot2/vision/VisionNode.cpp</itemPath>
+          <itemPath>src/tron2/robot2/vision/VisionNode.h</itemPath>
+        </logicalFolder>
+        <itemPath>src/tron2/robot2/Node.cpp</itemPath>
+        <itemPath>src/tron2/robot2/Node.h</itemPath>
+        <itemPath>src/tron2/robot2/RobotSystem.cpp</itemPath>
+        <itemPath>src/tron2/robot2/RobotSystem.h</itemPath>
+        <itemPath>src/tron2/robot2/Topic.cpp</itemPath>
+        <itemPath>src/tron2/robot2/Topic.h</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>src/tron2/robot2</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="2">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>8</standard>
+          <incDir>
+            <pElem>src</pElem>
+            <pElem>../../tron/tron_util/src</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_robot2.${CND_DLIB_EXT}</output>
+          <linkerLibItems>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../../tron/tron_util"
+                            CT="2"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../../tron/tron_util"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron_util.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="src/tron2/robot2/Node.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/Node.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/RobotSystem.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/RobotSystem.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/Topic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/Topic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/arm/ArmNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/arm/ArmNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/arm/AxisTopic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/arm/AxisTopic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/arm/CyclicTopic.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/arm/CyclicTopic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/arm/JointTopic.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/arm/JointTopic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/body/ArtisticTopic.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/body/ArtisticTopic.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/body/BodyNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/body/BodyNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/body/ExpressiveTopic.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/body/ExpressiveTopic.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/system/TronRobot.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/system/TronRobot.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/vision/FocusTopic.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/vision/FocusTopic.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/vision/VisionNode.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/vision/VisionNode.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="2">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="src/tron2/robot2/Node.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/Node.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/RobotSystem.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/RobotSystem.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/Topic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/Topic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/arm/ArmNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/arm/ArmNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/arm/AxisTopic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/arm/AxisTopic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/arm/CyclicTopic.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/arm/CyclicTopic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/arm/JointTopic.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/arm/JointTopic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/body/ArtisticTopic.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/body/ArtisticTopic.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/body/BodyNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/body/BodyNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/body/ExpressiveTopic.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/body/ExpressiveTopic.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/system/TronRobot.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/system/TronRobot.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/vision/FocusTopic.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/vision/FocusTopic.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/vision/VisionNode.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/robot2/vision/VisionNode.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

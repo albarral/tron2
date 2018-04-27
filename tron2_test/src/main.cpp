@@ -10,6 +10,7 @@
 
 #include "TestTivy.h"
 #include "TestTalky2.h"
+#include "TestRobot2.h"
 
 // obtains user's home path
 std::string getHomePath();
@@ -26,12 +27,16 @@ int main(int argc, char** argv)
     LOG4CXX_INFO(logger, "\n\nSTART tron test\n");
     
     // test tivy lib
-    TestTivy oTestTivy;
-    oTestTivy.makeTest();
+//    TestTivy oTestTivy;
+//    oTestTivy.makeTest();
     
     // test talky lib
 //    TestTalky2 oTestTalky2;
 //    oTestTalky2.makeTest();
+
+    // test robot2 lib
+    TestRobot2 oTestRobot2;
+    oTestRobot2.makeTest();
     
     LOG4CXX_INFO(logger, "tron test FINISHED\n");
     

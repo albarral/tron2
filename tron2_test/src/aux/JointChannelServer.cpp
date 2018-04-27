@@ -14,8 +14,9 @@ using namespace log4cxx;
 
 namespace tron2
 {
-JointChannelServer::JointChannelServer() : ChannelServer(RobotNodes::eNODE_ARM, ArmTopics::eARM_JOINT)
+JointChannelServer::JointChannelServer()
 {    
+    tron2::ChannelServer::tune4NodeAndTopic(RobotNodes::eNODE_ARM, ArmTopics::eARM_JOINT);
 }
 
 //JointListener::~JointListener()
