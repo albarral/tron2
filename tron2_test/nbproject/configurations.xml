@@ -14,15 +14,13 @@
                    projectFiles="true">
       <logicalFolder name="src" displayName="src" projectFiles="true">
         <logicalFolder name="aux" displayName="aux" projectFiles="true">
-          <itemPath>src/aux/JointChannelServer.cpp</itemPath>
-          <itemPath>src/aux/JointChannelServer.h</itemPath>
           <itemPath>src/aux/TestPlot.cpp</itemPath>
           <itemPath>src/aux/TestPlot.h</itemPath>
         </logicalFolder>
         <itemPath>src/TestRobot2.cpp</itemPath>
         <itemPath>src/TestRobot2.h</itemPath>
-        <itemPath>src/TestTalky2.cpp</itemPath>
-        <itemPath>src/TestTalky2.h</itemPath>
+        <itemPath>src/TestTalky.cpp</itemPath>
+        <itemPath>src/TestTalky.h</itemPath>
         <itemPath>src/TestTivy.cpp</itemPath>
         <itemPath>src/TestTivy.h</itemPath>
         <itemPath>src/main.cpp</itemPath>
@@ -175,17 +173,13 @@
       </item>
       <item path="src/TestRobot2.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/TestTalky2.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/TestTalky.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/TestTalky2.h" ex="false" tool="3" flavor2="0">
+      <item path="src/TestTalky.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TestTivy.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/TestTivy.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/aux/JointChannelServer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/aux/JointChannelServer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/aux/TestPlot.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -218,17 +212,13 @@
       </item>
       <item path="src/TestRobot2.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/TestTalky2.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/TestTalky.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/TestTalky2.h" ex="false" tool="3" flavor2="0">
+      <item path="src/TestTalky.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TestTivy.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/TestTivy.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/aux/JointChannelServer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/aux/JointChannelServer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/aux/TestPlot.cpp" ex="false" tool="1" flavor2="0">
       </item>

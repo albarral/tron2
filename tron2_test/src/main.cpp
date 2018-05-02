@@ -9,7 +9,7 @@
 #include <log4cxx/xml/domconfigurator.h>
 
 #include "TestTivy.h"
-#include "TestTalky2.h"
+#include "TestTalky.h"
 #include "TestRobot2.h"
 
 // obtains user's home path
@@ -31,12 +31,12 @@ int main(int argc, char** argv)
 //    oTestTivy.makeTest();
     
     // test talky lib
-//    TestTalky2 oTestTalky2;
-//    oTestTalky2.makeTest();
+    TestTalky oTestTalky;
+    oTestTalky.makeTest();
 
     // test robot2 lib
-    TestRobot2 oTestRobot2;
-    oTestRobot2.makeTest();
+//    TestRobot2 oTestRobot2;
+//    oTestRobot2.makeTest();
     
     LOG4CXX_INFO(logger, "tron test FINISHED\n");
     
