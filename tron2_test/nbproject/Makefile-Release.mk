@@ -35,9 +35,11 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/TestComs.o \
 	${OBJECTDIR}/src/TestRobot2.o \
 	${OBJECTDIR}/src/TestTalky.o \
 	${OBJECTDIR}/src/TestTivy.o \
+	${OBJECTDIR}/src/aux/JointChannelServer.o \
 	${OBJECTDIR}/src/aux/TestPlot.o \
 	${OBJECTDIR}/src/main.o
 
@@ -66,6 +68,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron2_test: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron2_test ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/src/TestComs.o: src/TestComs.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestComs.o src/TestComs.cpp
+
 ${OBJECTDIR}/src/TestRobot2.o: src/TestRobot2.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
@@ -80,6 +87,11 @@ ${OBJECTDIR}/src/TestTivy.o: src/TestTivy.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestTivy.o src/TestTivy.cpp
+
+${OBJECTDIR}/src/aux/JointChannelServer.o: src/aux/JointChannelServer.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/aux
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/aux/JointChannelServer.o src/aux/JointChannelServer.cpp
 
 ${OBJECTDIR}/src/aux/TestPlot.o: src/aux/TestPlot.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/aux

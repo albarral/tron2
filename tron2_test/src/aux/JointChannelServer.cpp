@@ -6,9 +6,9 @@
 #include <string>
 
 #include "aux/JointChannelServer.h"
-#include "tron2/talky/arm/JointTalker.h"
-#include "tron2/robot/RobotNodes.h"
-#include "tron2/robot/topics/ArmTopics.h"
+#include "tron2/robot2/RobotSystem.h"
+#include "tron2/robot2/arm/ArmNode.h"
+#include "tron2/robot2/arm/JointTopic.h"
 
 using namespace log4cxx;
 
@@ -16,7 +16,7 @@ namespace tron2
 {
 JointChannelServer::JointChannelServer()
 {    
-    tron2::ChannelServer::tune4NodeAndTopic(RobotNodes::eNODE_ARM, ArmTopics::eARM_JOINT);
+    tron2::ChannelServer::tune4NodeAndTopic(RobotSystem::eNODE_ARM, ArmNode::eARM_JOINT);
 }
 
 //JointListener::~JointListener()
@@ -39,23 +39,23 @@ void JointChannelServer::processCommands()
             {
                 switch (code)
                 {
-                    case JointTalker::eJOINT_HS_POS:
+                    case JointTopic::eJOINT_HS_POS:
                         LOG4CXX_INFO(logger, "JointChannelServer: command < hs " << std::to_string(value));
                         break;
 
-                    case JointTalker::eJOINT_VS_POS:
+                    case JointTopic::eJOINT_VS_POS:
                         LOG4CXX_INFO(logger, "JointChannelServer: command < vs " << std::to_string(value));
                         break;
 
-                    case JointTalker::eJOINT_ELB_POS:
+                    case JointTopic::eJOINT_ELB_POS:
                         LOG4CXX_INFO(logger, "JointChannelServer: command < elb " << std::to_string(value));
                         break;
 
-                    case JointTalker::eJOINT_HWRI_POS:
+                    case JointTopic::eJOINT_HWRI_POS:
                         LOG4CXX_INFO(logger, "JointChannelServer: command < hwri " << std::to_string(value));
                         break;
 
-                    case JointTalker::eJOINT_VWRI_POS:
+                    case JointTopic::eJOINT_VWRI_POS:
                         LOG4CXX_INFO(logger, "JointChannelServer: command < vwri " << std::to_string(value));
                         break;
                 }    
