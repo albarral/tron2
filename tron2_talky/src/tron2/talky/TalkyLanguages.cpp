@@ -5,7 +5,7 @@
 
 #include "tron2/talky/TalkyLanguages.h"
 // nodes and topics
-#include "tron2/robot/RobotNodes.h"
+#include "tron2/robot2/RobotSystem.h"
 #include "tron2/talky/arm/ArmLanguage.h"
 #include "tron2/talky/body/BodyLanguage.h"
 #include "tron2/talky/vision/VisionLanguage.h"
@@ -20,15 +20,15 @@ Talker* TalkyLanguages::createTalker(int node, int topic)
 {
     switch (node)
     {
-        case RobotNodes::eNODE_ARM:
+        case RobotSystem::eNODE_ARM:
             return ArmLanguage::createTalker4Topic(topic);
             break;
 
-        case RobotNodes::eNODE_BODYROLE:
+        case RobotSystem::eNODE_BODYROLE:
             return BodyLanguage::createTalker4Topic(topic);
             break;
 
-        case RobotNodes::eNODE_VISION:
+        case RobotSystem::eNODE_VISION:
             return VisionLanguage::createTalker4Topic(topic);
             break;
 

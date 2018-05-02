@@ -4,10 +4,9 @@
  ***************************************************************************/
 
 #include "tron2/talky/vision/VisionLanguage.h"
-#include "tron2/talky/vision/FocusTalker.h"
-#include "tron2/talky/BasicTalker.h"
-#include "tron2/robot/RobotNodes.h"
-#include "tron2/robot/topics/VisionTopics.h"
+#include "tron2/robot2/vision/VisionNode.h"
+#include "tron2/robot2/vision/FocusTopic.h"
+#include "tron2/robot2/common/ExtraTopic.h"
 
 using namespace log4cxx;
 
@@ -18,15 +17,24 @@ LoggerPtr VisionLanguage::logger(Logger::getLogger("tron.talky2"));
 Talker* VisionLanguage::createTalker4Topic(int topic)
 {
     // create proper talker for vision node topic
+    Talker* pTalker = new Talker();
     switch (topic)
     {
-        case VisionTopics::eVISION_FOCUS: 
-            return new FocusTalker();
-            break;            
-                        
-        case VisionTopics::eVISION_EXTRA: 
-            return new BasicTalker(RobotNodes::eNODE_VISION, VisionTopics::eVISION_EXTRA);
+        case VisionNode::eVISION_FOCUS: 
+        {
+            FocusTopic oFocusTopic;
+            pTalker->tune4Topic(oFocusTopic);
+            return pTalker;
             break;
+        }
+                        
+        case Node::eEXTRA_TOPIC: 
+        {
+            ExtraTopic oExtraTopic;
+            pTalker->tune4Topic(oExtraTopic);
+            return pTalker;
+            break;
+        }
             
         default:
             LOG4CXX_WARN(logger, "TalkyLanguages: can't create talker, unknown vision topic " << std::to_string(topic));                                      

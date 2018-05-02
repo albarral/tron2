@@ -4,11 +4,10 @@
  ***************************************************************************/
 
 #include "tron2/talky/body/BodyLanguage.h"
-#include "tron2/talky/body/ExpressiveTalker.h"
-#include "tron2/talky/body/ArtisticTalker.h"
-#include "tron2/talky/BasicTalker.h"
-#include "tron2/robot/RobotNodes.h"
-#include "tron2/robot/topics/BodyTopics.h"
+#include "tron2/robot2/body/BodyNode.h"
+#include "tron2/robot2/body/ExpressiveTopic.h"
+#include "tron2/robot2/body/ArtisticTopic.h"
+#include "tron2/robot2/common/ExtraTopic.h"
 
 using namespace log4cxx;
 
@@ -19,19 +18,32 @@ LoggerPtr BodyLanguage::logger(Logger::getLogger("tron.talky2"));
 Talker* BodyLanguage::createTalker4Topic(int topic)
 {
     // create proper talker for body node topic
+    Talker* pTalker = new Talker();
     switch (topic)
     {
-        case BodyTopics::eBODY_EXPRESSIVE: 
-            return new ExpressiveTalker();
+        case BodyNode::eBODY_EXPRESSIVE: 
+        {
+            ExpressiveTopic oExpressiveTopic;
+            pTalker->tune4Topic(oExpressiveTopic);
+            return pTalker;
             break;
+        }
             
-        case BodyTopics::eBODY_ARTISTIC: 
-            return new ArtisticTalker();
+        case BodyNode::eBODY_ARTISTIC: 
+        {
+            ArtisticTopic oArtisticTopic;
+            pTalker->tune4Topic(oArtisticTopic);
+            return pTalker;
             break;
+        }
                         
-        case BodyTopics::eBODY_EXTRA: 
-            return new BasicTalker(RobotNodes::eNODE_BODYROLE, BodyTopics::eBODY_EXTRA);
+        case Node::eEXTRA_TOPIC: 
+        {
+            ExtraTopic oExtraTopic;
+            pTalker->tune4Topic(oExtraTopic);
+            return pTalker;
             break;
+        }
             
         default:
             LOG4CXX_WARN(logger, "TalkyLanguages: can't create talker, unknown body topic " << std::to_string(topic));                                      

@@ -11,11 +11,12 @@
 #include <string>
 
 #include "tron/util/CodeMap.h"
+#include "tron2/robot2/Topic.h"
 
 namespace tron2
 {
 /** 
- * Base class used to build & interpret messages of a given node topic.
+ * Base class used to build & interpret messages of a given topic.
  */
 class Talker
 {
@@ -25,19 +26,21 @@ public:
     
 protected:
     static log4cxx::LoggerPtr logger;
-    int node;                                              /*! associated node */    
+    bool btuned;                                        /*! talker is tuned to a topic */    
     int topic;                                              /*! associated topic */    
     std::string name;                                  /*! talker name */     
     tron::CodeMap oCodeMap;                      /*! code map for known concepts */    
     
 public:
     Talker();              	
-    Talker(int node, int topic);              	
-    //~Talker();
+    ~Talker();
 
-    int getNode() {return node;};    
+    bool isTuned() {return btuned;};
     int getTopic() {return topic;};        
     std::string getName() {return name;};
+    
+    // tune talker for given topic
+    void tune4Topic(Topic& Topic);
     
     // build message with given code and value
     // returns true if message could be built
@@ -48,15 +51,7 @@ public:
     bool interpretMessage(std::string message, int& code, float& value);
     
     // get description of all concepts known by the talker
-    std::string getMapDescription();
-    
-protected:
-    // fill maps with knowledge (mandatory for any talker)
-    virtual void buildKnowledge() = 0;              	
-    // add concept to talker knowledge
-    void addConcept(int code, std::string name);        
-    // complete talker name with topic word
-    virtual void completeName() = 0;
+    std::string getKnownConcepts();    
 };
 }
 #endif
