@@ -8,10 +8,8 @@
 
 namespace tron2
 {    
-const std::string BodyNode::BODY_COMFORTABLE = "comfort";
 const std::string BodyNode::BODY_EXPRESSIVE = "express";
 const std::string BodyNode::BODY_ARTISTIC = "art";
-const std::string BodyNode::BODY_EXTRA = "extra";    
 
 BodyNode::BodyNode() : Node(RobotSystem::eNODE_BODYROLE, RobotSystem::BODYROLE_NODE)
 {
@@ -21,10 +19,9 @@ BodyNode::BodyNode() : Node(RobotSystem::eNODE_BODYROLE, RobotSystem::BODYROLE_N
 void BodyNode::fillTopics()
 {
     // build topics map
-    //addCode(eBODY_COMFORTABLE, BODY_COMFORTABLE);  // uncontrollable behaviour
     addCode(eBODY_EXPRESSIVE, BODY_EXPRESSIVE);
     addCode(eBODY_ARTISTIC, BODY_ARTISTIC);
-    addCode(eBODY_EXTRA, BODY_EXTRA);
+    addCode(Node::eEXTRA_TOPIC, Node::EXTRA_TOPIC);
 }
 
 }

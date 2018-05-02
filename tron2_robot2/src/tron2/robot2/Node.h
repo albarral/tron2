@@ -15,6 +15,10 @@ namespace tron2
 // A Node is a code map of topics.
  class Node : public tron::CodeMap
 {    
+ public:
+    static const int eEXTRA_TOPIC = 100;   /*! ID of extra topic */  
+    static const std::string EXTRA_TOPIC;   /*! name of extra topic */
+     
  protected:
      int ID;
      std::string name;

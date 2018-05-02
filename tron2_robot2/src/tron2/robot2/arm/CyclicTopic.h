@@ -14,31 +14,31 @@ namespace tron2
  class CyclicTopic : public Topic
 {
  public:
-    /*! cycler concepts  */
-    enum eCyclicCat
+    /*! cyclic concepts  */
+    enum eConcepts
     {
-         eCYCLER_MAIN_FREQ,            /*! frequency of cycler main component (Hz) */
-         eCYCLER_MAIN_AMP,             /*! amplitude of cycler main component  (degrees) */
-         eCYCLER_MAIN_ANGLE,          /*! orientation of cycler main component (degrees) */
-         eCYCLER_MAIN_PHASE,          /*! phase of cycler main component (degrees) */
-         eCYCLER_SEC_FREQ,            /*! frequency of cycler secondary component (Hz) */
-         eCYCLER_SEC_AMP,             /*! amplitude of cycler secondary component (degrees) */
-         eCYCLER_SEC_ANGLE,          /*! orientation of cycler secondary component (degrees) */
-         eCYCLER_SEC_PHASE,          /*! phase of cycler secondary component (degrees) */
-         eCYCLER_ACTION,                  /*! start/stop cycler movement */
+         eCYCLIC_MAIN_FREQ,            /*! frequency of main cyclic component (Hz) */
+         eCYCLIC_MAIN_AMP,             /*! amplitude of main cyclic component  (degrees) */
+         eCYCLIC_MAIN_ANGLE,          /*! orientation of main cyclic component (degrees) */
+         eCYCLIC_MAIN_PHASE,          /*! phase of main cyclic component (degrees) */
+         eCYCLIC_SEC_FREQ,            /*! frequency of secondary cyclic component (Hz) */
+         eCYCLIC_SEC_AMP,             /*! amplitude of secondary cyclic component (degrees) */
+         eCYCLIC_SEC_ANGLE,          /*! orientation of secondary cyclic component (degrees) */
+         eCYCLIC_SEC_PHASE,          /*! phase of secondary cyclic component (degrees) */
+         eCYCLIC_ACTION,                  /*! start/stop cycler movement */
          eCYCLIC_DIM
     };
 
-    /*! cycler concept names */
-    const std::string CYCLER_MAIN_FREQ = "freq";      /*! frequency of cycler main component (Hz) */
-    const std::string CYCLER_MAIN_AMP = "amp";        /*! amplitude of cycler main component (degrees) */
-    const std::string CYCLER_MAIN_ANGLE = "angle";      /*! orientation of cycler main component (degrees) */
-    const std::string CYCLER_MAIN_PHASE = "phase";  /*! phase of cycler main component (degrees) */
-    const std::string CYCLER_SEC_FREQ = "freq2";      /*! frequency of cycler secondary component (Hz) */
-    const std::string CYCLER_SEC_AMP = "amp2";        /*! amplitude of cycler secondary component (degrees) */
-    const std::string CYCLER_SEC_ANGLE = "angle2";      /*! orientation of cycler secondary component (degrees) */
-    const std::string CYCLER_SEC_PHASE = "phase2";  /*! phase of cycler secondary component (degrees) */
-    const std::string CYCLER_ACTION = "go";                  /*! start/stop cycler movement */
+    /*! cyclic concept names */
+    const std::string CYCLIC_MAIN_FREQ = "freq";      /*! frequency of main cyclic component (Hz) */
+    const std::string CYCLIC_MAIN_AMP = "amp";        /*! amplitude of main cyclic component (degrees) */
+    const std::string CYCLIC_MAIN_ANGLE = "angle";      /*! orientation of main cyclic component (degrees) */
+    const std::string CYCLIC_MAIN_PHASE = "phase";  /*! phase of main cyclic component (degrees) */
+    const std::string CYCLIC_SEC_FREQ = "freq2";      /*! frequency of secondary cyclic component (Hz) */
+    const std::string CYCLIC_SEC_AMP = "amp2";        /*! amplitude of secondary cyclic component (degrees) */
+    const std::string CYCLIC_SEC_ANGLE = "angle2";      /*! orientation of secondary cyclic component (degrees) */
+    const std::string CYCLIC_SEC_PHASE = "phase2";  /*! phase of secondary cyclic component (degrees) */
+    const std::string CYCLIC_ACTION = "go";                  /*! start/stop cyclic movement */
 
  public:    
     CyclicTopic(); 

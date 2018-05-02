@@ -45,6 +45,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tron2/robot2/body/ArtisticTopic.o \
 	${OBJECTDIR}/src/tron2/robot2/body/BodyNode.o \
 	${OBJECTDIR}/src/tron2/robot2/body/ExpressiveTopic.o \
+	${OBJECTDIR}/src/tron2/robot2/common/ExtraTopic.o \
 	${OBJECTDIR}/src/tron2/robot2/system/TronRobot.o \
 	${OBJECTDIR}/src/tron2/robot2/vision/FocusTopic.o \
 	${OBJECTDIR}/src/tron2/robot2/vision/VisionNode.o
@@ -123,6 +124,11 @@ ${OBJECTDIR}/src/tron2/robot2/body/ExpressiveTopic.o: src/tron2/robot2/body/Expr
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot2/body
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot2/body/ExpressiveTopic.o src/tron2/robot2/body/ExpressiveTopic.cpp
+
+${OBJECTDIR}/src/tron2/robot2/common/ExtraTopic.o: src/tron2/robot2/common/ExtraTopic.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot2/common
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot2/common/ExtraTopic.o src/tron2/robot2/common/ExtraTopic.cpp
 
 ${OBJECTDIR}/src/tron2/robot2/system/TronRobot.o: src/tron2/robot2/system/TronRobot.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot2/system

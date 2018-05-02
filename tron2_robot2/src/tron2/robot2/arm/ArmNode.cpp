@@ -10,8 +10,7 @@ namespace tron2
 {    
 const std::string ArmNode::ARM_JOINT = "joint";
 const std::string ArmNode::ARM_AXIS = "axis";
-const std::string ArmNode::ARM_CYCLER = "cycler";
-const std::string ArmNode::ARM_EXTRA = "extra";    
+const std::string ArmNode::ARM_CYCLIC = "cyclic";
 
 ArmNode::ArmNode() : Node(RobotSystem::eNODE_ARM, RobotSystem::ARM_NODE)
 {
@@ -23,8 +22,8 @@ void ArmNode::fillTopics()
     // build topics map
     addCode(eARM_JOINT, ARM_JOINT);
     addCode(eARM_AXIS, ARM_AXIS);
-    addCode(eARM_CYCLER, ARM_CYCLER);
-    addCode(eARM_EXTRA, ARM_EXTRA);
+    addCode(eARM_CYCLIC, ARM_CYCLIC);
+    addCode(Node::eEXTRA_TOPIC, Node::EXTRA_TOPIC);
 }
 
 }

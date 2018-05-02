@@ -7,6 +7,8 @@
 
 namespace tron2
 {    
+const std::string Node::EXTRA_TOPIC = "extra";    
+
 Node::Node(int id, std::string name)
 {
     this->ID = id;

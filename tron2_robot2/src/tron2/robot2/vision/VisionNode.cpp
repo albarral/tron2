@@ -9,7 +9,6 @@
 namespace tron2
 {    
 const std::string VisionNode::VISION_FOCUS = "focus";
-const std::string VisionNode::VISION_EXTRA = "extra";    
 
 VisionNode::VisionNode() : Node(RobotSystem::eNODE_VISION, RobotSystem::VISION_NODE)
 {
@@ -20,7 +19,7 @@ void VisionNode::fillTopics()
 {
     // build topics map
     addCode(eVISION_FOCUS, VISION_FOCUS);
-    addCode(eVISION_EXTRA, VISION_EXTRA);
+    addCode(Node::eEXTRA_TOPIC, Node::EXTRA_TOPIC);
 }
 
 }

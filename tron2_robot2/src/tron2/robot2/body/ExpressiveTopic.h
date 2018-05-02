@@ -15,7 +15,7 @@ namespace tron2
 {
  public:
     /*! expressive concepts  */
-    enum eExpressiveCat
+    enum eConcepts
     {
         eEXPRESS_FEELING,                   /*! express given feeling */
         eEXPRESS_HALT,                        /*! halt expressive action */

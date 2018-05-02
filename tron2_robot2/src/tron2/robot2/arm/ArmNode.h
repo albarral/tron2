@@ -19,16 +19,14 @@ public:
     {
         eARM_JOINT,                  /*! joint topic */
         eARM_AXIS,                   /*! axis topic  */
-        eARM_CYCLER,             /*! cycler topic  */
-        eARM_EXTRA,                 /*! extra topic  */
+        eARM_CYCLIC,             /*! cyclic topic  */
         eARM_DIM
     };
 
     /*! arm topic names */
     static const std::string ARM_JOINT;
     static const std::string ARM_AXIS;
-    static const std::string ARM_CYCLER;
-    static const std::string ARM_EXTRA;
+    static const std::string ARM_CYCLIC;
 
  public:     
      ArmNode();

@@ -15,7 +15,7 @@ namespace tron2
 {
  public:
     /*! axis concepts  */
-    enum eAxisCat
+    enum eConcepts
     {
          eAXIS_PAN_POS,                       /*! pan position (degrees) */
          eAXIS_TILT_POS,                       /*! tilt position (degrees) */

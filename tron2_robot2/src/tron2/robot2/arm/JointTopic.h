@@ -15,7 +15,7 @@ namespace tron2
 {
  public:
     /*! joint concepts */
-    enum eJointCat
+    enum eConcepts
     {
          eJOINT_HS_POS,                         /*! horizontal shoulder position (degrees)*/
          eJOINT_VS_POS,                         /*! vertical shoulder position (degrees) */

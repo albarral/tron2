@@ -18,13 +18,11 @@ public:
     enum eVisionTopics
     {
         eVISION_FOCUS,                /*! focus topic */
-        eVISION_EXTRA,                 /*! extra topic  */
         eVISION_DIM
     };
 
     /*! vision topic names */
     static const std::string VISION_FOCUS;
-    static const std::string VISION_EXTRA;
 
  public:     
      VisionNode();

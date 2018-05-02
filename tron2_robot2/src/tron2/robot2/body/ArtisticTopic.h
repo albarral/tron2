@@ -15,7 +15,7 @@ namespace tron2
 {
  public:
     /*! artistic concepts */
-    enum eArtistic
+    enum eConcepts
     {
         eARTISTIC_FIGURE,        // id of artistic figure to implement
         eARTISTIC_FREQ,       // frequency of cyclic figure (Hz) 

@@ -15,14 +15,14 @@ namespace tron2
 {
  public:
     /*! focus concepts  */
-    enum eFocusCat
+    enum eConcepts
     {
          eFOCUS_SHIFT,                       /*! shift focus target (bool) */
          eFOCUS_MODE,                       /*! focus mode (int) */
          eFOCUS_DIM
     };
 
-    /*! axis concepts names */
+    /*! focus concepts names */
     const std::string FOCUS_SHIFT = "shift";                 /*! shift focus target (bool) */
     const std::string FOCUS_MODE = "mode";                /*! focus mode (int) */
 

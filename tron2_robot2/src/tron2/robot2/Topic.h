@@ -16,8 +16,8 @@ namespace tron2
  class Topic : public tron::CodeMap
 {    
  protected:
-     int ID;
-     std::string name;
+     int ID;                   // topic id
+     std::string name;  // topic name
      
  public:     
      Topic(int id, std::string name);
