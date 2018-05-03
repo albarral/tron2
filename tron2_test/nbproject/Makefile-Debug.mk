@@ -58,13 +58,13 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-llog4cxx -lopencv_core -lopencv_highgui -Wl,-rpath,../tron2_coms/dist/Debug/GNU-Linux -L../tron2_coms/dist/Debug/GNU-Linux -ltron2_talky -Wl,-rpath,../tron2_robot2/dist/Debug/GNU-Linux -L../tron2_robot2/dist/Debug/GNU-Linux -ltron2_robot2 -Wl,-rpath,../tron2_talky/dist/Debug/GNU-Linux -L../tron2_talky/dist/Debug/GNU-Linux -ltron2_talky -Wl,-rpath,../tron2_tivy/dist/Debug/GNU-Linux -L../tron2_tivy/dist/Debug/GNU-Linux -ltron2_tivy -Wl,-rpath,../../tron/tron_tools/dist/Debug/GNU-Linux -L../../tron/tron_tools/dist/Debug/GNU-Linux -ltron_tools -Wl,-rpath,../../tron/tron_util/dist/Debug/GNU-Linux -L../../tron/tron_util/dist/Debug/GNU-Linux -ltron_util -Wl,-rpath,../../tron/tron_wire/dist/Debug/GNU-Linux -L../../tron/tron_wire/dist/Debug/GNU-Linux -ltron_wire -Wl,-rpath,../../tron/tron_wire2/dist/Debug/GNU-Linux -L../../tron/tron_wire2/dist/Debug/GNU-Linux -ltron_wire2
+LDLIBSOPTIONS=-llog4cxx -lopencv_core -lopencv_highgui -Wl,-rpath,../tron2_coms/dist/Debug/GNU-Linux -L../tron2_coms/dist/Debug/GNU-Linux -ltron2_coms -Wl,-rpath,../tron2_robot2/dist/Debug/GNU-Linux -L../tron2_robot2/dist/Debug/GNU-Linux -ltron2_robot2 -Wl,-rpath,../tron2_talky/dist/Debug/GNU-Linux -L../tron2_talky/dist/Debug/GNU-Linux -ltron2_talky -Wl,-rpath,../tron2_tivy/dist/Debug/GNU-Linux -L../tron2_tivy/dist/Debug/GNU-Linux -ltron2_tivy -Wl,-rpath,../../tron/tron_tools/dist/Debug/GNU-Linux -L../../tron/tron_tools/dist/Debug/GNU-Linux -ltron_tools -Wl,-rpath,../../tron/tron_util/dist/Debug/GNU-Linux -L../../tron/tron_util/dist/Debug/GNU-Linux -ltron_util -Wl,-rpath,../../tron/tron_wire/dist/Debug/GNU-Linux -L../../tron/tron_wire/dist/Debug/GNU-Linux -ltron_wire -Wl,-rpath,../../tron/tron_wire2/dist/Debug/GNU-Linux -L../../tron/tron_wire2/dist/Debug/GNU-Linux -ltron_wire2
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test: ../tron2_coms/dist/Debug/GNU-Linux/libtron2_talky.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test: ../tron2_coms/dist/Debug/GNU-Linux/libtron2_coms.so
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test: ../tron2_robot2/dist/Debug/GNU-Linux/libtron2_robot2.so
 

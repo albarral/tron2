@@ -83,7 +83,7 @@
                             WD="../tron2_coms"
                             BC="${MAKE}  -f Makefile CONF=Debug"
                             CC="${MAKE}  -f Makefile CONF=Debug clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_talky.${CND_DLIB_EXT}">
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_coms.${CND_DLIB_EXT}">
               </makeArtifact>
             </linkerLibProjectItem>
             <linkerLibProjectItem>
