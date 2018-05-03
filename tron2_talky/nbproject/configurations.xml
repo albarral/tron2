@@ -60,7 +60,7 @@
           <incDir>
             <pElem>src</pElem>
             <pElem>../../tron/tron_util/src</pElem>
-            <pElem>../tron2_robot2/src</pElem>
+            <pElem>../tron2_robot/src</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
@@ -79,15 +79,15 @@
               </makeArtifact>
             </linkerLibProjectItem>
             <linkerLibProjectItem>
-              <makeArtifact PL="../tron2_robot2"
+              <makeArtifact PL="../tron2_robot"
                             CT="2"
                             CN="Debug"
                             AC="true"
                             BL="true"
-                            WD="../tron2_robot2"
+                            WD="../tron2_robot"
                             BC="${MAKE}  -f Makefile CONF=Debug"
                             CC="${MAKE}  -f Makefile CONF=Debug clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_robot2.${CND_DLIB_EXT}">
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_robot.${CND_DLIB_EXT}">
               </makeArtifact>
             </linkerLibProjectItem>
           </linkerLibItems>

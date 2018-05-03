@@ -6,7 +6,7 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
-#include "tron2/robot2/arm/ArmSensors.h"
+#include "tron2/robot/arm/ArmSensors.h"
 
 namespace tron2
 {

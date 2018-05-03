@@ -9,10 +9,10 @@
 #include <string>
 #include <log4cxx/logger.h>
 
-#include "tron2/robot2/system/TronRobot.h"
-#include "tron2/robot2/arm/ArmNode.h"
-#include "tron2/robot2/body/BodyNode.h"
-#include "tron2/robot2/vision/VisionNode.h"
+#include "tron2/robot/system/TronRobot.h"
+#include "tron2/robot/arm/ArmNode.h"
+#include "tron2/robot/body/BodyNode.h"
+#include "tron2/robot/vision/VisionNode.h"
 
 namespace tron2
 {

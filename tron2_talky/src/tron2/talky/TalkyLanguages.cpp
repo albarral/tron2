@@ -5,7 +5,7 @@
 
 #include "tron2/talky/TalkyLanguages.h"
 // nodes and topics
-#include "tron2/robot2/RobotSystem.h"
+#include "tron2/robot/RobotSystem.h"
 #include "tron2/talky/arm/ArmLanguage.h"
 #include "tron2/talky/body/BodyLanguage.h"
 #include "tron2/talky/vision/VisionLanguage.h"

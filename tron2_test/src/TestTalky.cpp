@@ -6,8 +6,8 @@
 #include "TestTalky.h"
 #include "tron2/talky/TalkyLanguages.h"
 #include "tron2/talky/Talker.h"
-#include "tron2/robot2/RobotSystem.h"
-#include "tron2/robot2/arm/ArmNode.h"
+#include "tron2/robot/RobotSystem.h"
+#include "tron2/robot/arm/ArmNode.h"
 
 
 using namespace log4cxx;

@@ -10,9 +10,9 @@
 #include "tron2/coms/arm/ArmClient.h"
 #include "tron2/coms/body/BodyClient.h"
 #include "tron2/coms/ChannelPublisher.h"
-#include "tron2/robot2/RobotSystem.h"
-#include "tron2/robot2/arm/ArmNode.h"
-#include "tron2/robot2/arm/JointTopic.h"
+#include "tron2/robot/RobotSystem.h"
+#include "tron2/robot/arm/ArmNode.h"
+#include "tron2/robot/arm/JointTopic.h"
 
 using namespace log4cxx;
 

@@ -4,11 +4,11 @@
  ***************************************************************************/
 
 #include "tron2/coms/body/BodyClient.h"
-#include "tron2/robot2/RobotSystem.h"
-#include "tron2/robot2/body/BodyNode.h"
-#include "tron2/robot2/body/ExpressiveTopic.h"
-#include "tron2/robot2/body/ArtisticTopic.h"
-#include "tron2/robot2/common/ExtraTopic.h"
+#include "tron2/robot/RobotSystem.h"
+#include "tron2/robot/body/BodyNode.h"
+#include "tron2/robot/body/ExpressiveTopic.h"
+#include "tron2/robot/body/ArtisticTopic.h"
+#include "tron2/robot/common/ExtraTopic.h"
 
 using namespace log4cxx;
 

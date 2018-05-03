@@ -9,8 +9,8 @@
             <header-extensions>h</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects>
+                <make-dep-project>../tron2_robot</make-dep-project>
                 <make-dep-project>../../tron/tron_util</make-dep-project>
-                <make-dep-project>../tron2_robot2</make-dep-project>
             </make-dep-projects>
             <sourceRootList>
                 <sourceRootElem>src/tron2/talky</sourceRootElem>

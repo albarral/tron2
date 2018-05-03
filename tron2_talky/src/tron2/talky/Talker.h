@@ -11,7 +11,7 @@
 #include <string>
 
 #include "tron/util/CodeMap.h"
-#include "tron2/robot2/Topic.h"
+#include "tron2/robot/Topic.h"
 
 namespace tron2
 {

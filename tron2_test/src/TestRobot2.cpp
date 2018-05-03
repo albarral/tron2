@@ -4,8 +4,8 @@
  ***************************************************************************/
 
 #include "TestRobot2.h"
-#include "tron2/robot2/arm/ArmNode.h"
-#include "tron2/robot2/arm/JointTopic.h"
+#include "tron2/robot/arm/ArmNode.h"
+#include "tron2/robot/arm/JointTopic.h"
 
 using namespace log4cxx;
 

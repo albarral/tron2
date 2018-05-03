@@ -4,9 +4,9 @@
  ***************************************************************************/
 
 #include "tron2/coms/arm/ChannelSubscriber4Axes.h"
-#include "tron2/robot2/RobotSystem.h"
-#include "tron2/robot2/arm/ArmNode.h"
-#include "tron2/robot2/arm/AxisTopic.h"
+#include "tron2/robot/RobotSystem.h"
+#include "tron2/robot/arm/ArmNode.h"
+#include "tron2/robot/arm/AxisTopic.h"
 
 using namespace log4cxx;
 

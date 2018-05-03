@@ -4,9 +4,9 @@
  ***************************************************************************/
 
 #include "tron2/talky/vision/VisionLanguage.h"
-#include "tron2/robot2/vision/VisionNode.h"
-#include "tron2/robot2/vision/FocusTopic.h"
-#include "tron2/robot2/common/ExtraTopic.h"
+#include "tron2/robot/vision/VisionNode.h"
+#include "tron2/robot/vision/FocusTopic.h"
+#include "tron2/robot/common/ExtraTopic.h"
 
 using namespace log4cxx;
 

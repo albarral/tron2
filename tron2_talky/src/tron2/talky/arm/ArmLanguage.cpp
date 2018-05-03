@@ -4,11 +4,11 @@
  ***************************************************************************/
 
 #include "tron2/talky/arm/ArmLanguage.h"
-#include "tron2/robot2/arm/ArmNode.h"
-#include "tron2/robot2/arm/JointTopic.h"
-#include "tron2/robot2/arm/AxisTopic.h"
-#include "tron2/robot2/arm/CyclicTopic.h"
-#include "tron2/robot2/common/ExtraTopic.h"
+#include "tron2/robot/arm/ArmNode.h"
+#include "tron2/robot/arm/JointTopic.h"
+#include "tron2/robot/arm/AxisTopic.h"
+#include "tron2/robot/arm/CyclicTopic.h"
+#include "tron2/robot/common/ExtraTopic.h"
 
 using namespace log4cxx;
 

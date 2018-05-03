@@ -10,7 +10,7 @@
 
 #include "tron2/coms/arm/ArmListener.h"
 #include "tron2/coms/ChannelServer.h"
-#include "tron2/robot2/arm/ArmSensors.h"
+#include "tron2/robot/arm/ArmSensors.h"
 
 
 // Class used to test coms with libtron2_coms.
