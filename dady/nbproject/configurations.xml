@@ -46,19 +46,42 @@
           <standard>8</standard>
           <incDir>
             <pElem>src</pElem>
+            <pElem>../tron2_robot2/src</pElem>
+            <pElem>../tron2_talky/src</pElem>
             <pElem>../../tron/tron_util/src</pElem>
             <pElem>../../tron/tron_wire/src</pElem>
             <pElem>../../tron/tron_wire2/src</pElem>
             <pElem>../../tron/tron_tools/src</pElem>
-            <pElem>../tron2_talky/src</pElem>
-            <pElem>../tron2_robot/src</pElem>
-            <pElem>../tron2_talky/src</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
           <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/dady</output>
           <linkerLibItems>
             <linkerLibLibItem>log4cxx</linkerLibLibItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../tron2_robot2"
+                            CT="2"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../tron2_robot2"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_robot2.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../tron2_talky"
+                            CT="2"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../tron2_talky"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_talky.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
             <linkerLibProjectItem>
               <makeArtifact PL="../../tron/tron_util"
                             CT="2"
@@ -105,30 +128,6 @@
                             BC="${MAKE}  -f Makefile CONF=Debug"
                             CC="${MAKE}  -f Makefile CONF=Debug clean"
                             OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron_tools.${CND_DLIB_EXT}">
-              </makeArtifact>
-            </linkerLibProjectItem>
-            <linkerLibProjectItem>
-              <makeArtifact PL="../tron2_robot"
-                            CT="2"
-                            CN="Debug"
-                            AC="true"
-                            BL="true"
-                            WD="../tron2_robot"
-                            BC="${MAKE}  -f Makefile CONF=Debug"
-                            CC="${MAKE}  -f Makefile CONF=Debug clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_robot.${CND_DLIB_EXT}">
-              </makeArtifact>
-            </linkerLibProjectItem>
-            <linkerLibProjectItem>
-              <makeArtifact PL="../tron2_talky"
-                            CT="2"
-                            CN="Debug"
-                            AC="true"
-                            BL="true"
-                            WD="../tron2_talky"
-                            BC="${MAKE}  -f Makefile CONF=Debug"
-                            CC="${MAKE}  -f Makefile CONF=Debug clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_talky.${CND_DLIB_EXT}">
               </makeArtifact>
             </linkerLibProjectItem>
           </linkerLibItems>

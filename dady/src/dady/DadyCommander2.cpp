@@ -53,7 +53,7 @@ bool DadyCommander2::checkValidCommand(std::string entry)
     {
         // interpret node
         nodeName = listTokens.at(eCOMMAND_NODE);
-        targetNode = oRobotNodes.getCode4Node(nodeName);
+        targetNode = oTronRobot.getCode4Node(nodeName);
         // and check its validity
         if (targetNode != -1)
             validElements++;
@@ -115,16 +115,16 @@ int DadyCommander2::interpretTopic(int node, std::string topicName)
     // check valid topic
     switch (node)
     {
-        case tron2::RobotNodes::eNODE_ARM: 
-            topic = oArmTopics.getCode4Topic(topicName);
+        case tron2::RobotSystem::eNODE_ARM: 
+            topic = oArmNode.getCode4Topic(topicName);
             break;
             
-        case tron2::RobotNodes::eNODE_BODYROLE: 
-            topic = oBodyTopics.getCode4Topic(topicName);
+        case tron2::RobotSystem::eNODE_BODYROLE: 
+            topic = oBodyNode.getCode4Topic(topicName);
             break;
 
-        case tron2::RobotNodes::eNODE_VISION: 
-            topic = oVisionTopics.getCode4Topic(topicName);
+        case tron2::RobotSystem::eNODE_VISION: 
+            topic = oVisionNode.getCode4Topic(topicName);
             break;
     }
     return topic;
@@ -159,7 +159,7 @@ bool DadyCommander2::sendMessage()
 
 void DadyCommander2::showAvailableNodes()
 {
-   LOG4CXX_INFO(logger, "available nodes: \n" + oRobotNodes.getMapDescription());   
+   LOG4CXX_INFO(logger, "available nodes: \n" + oTronRobot.toString());   
 }
 
 void DadyCommander2::showAvailableTopics(int node)
@@ -167,16 +167,16 @@ void DadyCommander2::showAvailableTopics(int node)
     std::string desc; 
     switch (node)
     {
-        case tron2::RobotNodes::eNODE_ARM: 
-            desc = oArmTopics.getMapDescription();
+        case tron2::RobotSystem::eNODE_ARM: 
+            desc = oArmNode.toString();
             break;
 
-        case tron2::RobotNodes::eNODE_BODYROLE: 
-            desc = oBodyTopics.getMapDescription();
+        case tron2::RobotSystem::eNODE_BODYROLE: 
+            desc = oBodyNode.toString();
             break;
 
-        case tron2::RobotNodes::eNODE_VISION: 
-            desc = oVisionTopics.getMapDescription();
+        case tron2::RobotSystem::eNODE_VISION: 
+            desc = oVisionNode.toString();
             break;
     }   
     LOG4CXX_INFO(logger, "available topics: \n" + desc);      
@@ -190,7 +190,7 @@ void DadyCommander2::showAvailableConcepts(int node, int topic)
     // if talker created
     if (pTalker != 0)
     {        
-        LOG4CXX_INFO(logger, "available concepts: \n" + pTalker->getMapDescription());
+        LOG4CXX_INFO(logger, "available concepts: \n" + pTalker->getKnownConcepts());
         // release the talker
         delete(pTalker);
     }

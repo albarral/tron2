@@ -50,7 +50,7 @@ namespace tron2
     // gets code for given node name
     int getCode4Node(std::string nodeName);
         
-    //  return node description
+    //  return system description
     virtual std::string toString();
 
  protected:

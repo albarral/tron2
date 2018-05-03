@@ -9,10 +9,10 @@
 #include <string>
 #include <log4cxx/logger.h>
 
-#include "tron2/robot/RobotNodes.h"
-#include "tron2/robot/topics/ArmTopics.h"
-#include "tron2/robot/topics/BodyTopics.h"
-#include "tron2/robot/topics/VisionTopics.h"
+#include "tron2/robot2/system/TronRobot.h"
+#include "tron2/robot2/arm/ArmNode.h"
+#include "tron2/robot2/body/BodyNode.h"
+#include "tron2/robot2/vision/VisionNode.h"
 
 namespace tron2
 {
@@ -36,10 +36,10 @@ private:
     int targetNode;                          // target node (arm, vision, ...) 
     int targetTopic;                          // target topic (for arm node: joints, axis, ...)
     std::string message;                 // message to send
-    RobotNodes oRobotNodes;
-    ArmTopics oArmTopics;
-    BodyTopics oBodyTopics;
-    VisionTopics oVisionTopics;
+    TronRobot oTronRobot;
+    ArmNode oArmNode;
+    BodyNode oBodyNode;
+    VisionNode oVisionNode;
     
 
 public:
