@@ -10,6 +10,7 @@
 #include "tron2/coms/arm/ArmClient.h"
 #include "tron2/coms/body/BodyClient.h"
 #include "tron2/coms/ChannelPublisher.h"
+#include "tron2/robot/RobotNetwork.h"
 #include "tron2/robot/RobotSystem.h"
 #include "tron2/robot/arm/ArmNode.h"
 #include "tron2/robot/arm/JointTopic.h"
@@ -27,8 +28,8 @@ void TestComs::makeTest()
 {
     LOG4CXX_INFO(logger, "TestComs: test start \n");
 
-    testUnicastComs();    
-    //testBroadcastComs();
+    //testUnicastComs();    
+    testBroadcastComs();
         
     LOG4CXX_INFO(logger, "TestComs: test end \n");
 }
@@ -66,7 +67,7 @@ void TestComs::testBroadcastComs()
     LOG4CXX_INFO(logger, "TestComs::testBroadcastComs \n");
 
     tron2::ChannelPublisher oChannelPublisher;
-    oChannelPublisher.tune4NodeAndTopic(tron2::RobotSystem::eNODE_ARM, tron2::ArmNode::eARM_JOINT);
+    oChannelPublisher.connect2Channel(tron2::RobotSystem::eNODE_ARM, tron2::RobotNetwork::eARM_JOINTS_CHANNEL, tron2::ArmNode::eARM_JOINT);
 
     float value = 80.0;
 

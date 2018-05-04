@@ -4,6 +4,7 @@
  ***************************************************************************/
 
 #include "tron2/coms/arm/ArmClient.h"
+#include "tron2/robot/RobotNetwork.h"
 #include "tron2/robot/RobotSystem.h"
 #include "tron2/robot/arm/ArmNode.h"
 #include "tron2/robot/arm/JointTopic.h"
@@ -20,11 +21,11 @@ LoggerPtr ArmClient::logger(Logger::getLogger("tron.talky2"));
 ArmClient::ArmClient()
 {    
     int node = RobotSystem::eNODE_ARM;
-    oJointChannelClient.tune4NodeAndTopic(node, ArmNode::eARM_JOINT);
-    oAxisChannelClient.tune4NodeAndTopic(node, ArmNode::eARM_AXIS);
-    oCycler1ChannelClient.tune4NodeAndTopic(node, ArmNode::eARM_CYCLIC);
-    oCycler2ChannelClient.tune4NodeAndTopic(node, ArmNode::eARM_CYCLIC);
-    oExtraChannelClient.tune4NodeAndTopic(node, Node::eEXTRA_TOPIC);
+    oJointChannelClient.connect2Channel(node, RobotNetwork::eARM_JOINTS_CHANNEL, ArmNode::eARM_JOINT);
+    oAxisChannelClient.connect2Channel(node, RobotNetwork::eARM_AXES_CHANNEL, ArmNode::eARM_AXIS);
+    oCycler1ChannelClient.connect2Channel(node, RobotNetwork::eARM_CYCLER1_CHANNEL, ArmNode::eARM_CYCLIC);
+    oCycler2ChannelClient.connect2Channel(node, RobotNetwork::eARM_CYCLER2_CHANNEL, ArmNode::eARM_CYCLIC);
+    oExtraChannelClient.connect2Channel(node, RobotNetwork::eARM_EXTRA_CHANNEL, Node::eEXTRA_TOPIC);
 }
 
 ArmClient::~ArmClient()

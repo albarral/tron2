@@ -27,7 +27,7 @@ bool ChannelClient::sendMessage(int code, float value)
         if (pTalker->buildMessage(code, value, message))
         {
             // send message through wire (wire establishes a client connection)
-            if (oWire.sendMsg(node, topic, message))
+            if (oWire.sendMsg(node, channel, message))
                 bok = true;
             else
             {
@@ -48,7 +48,7 @@ bool ChannelClient::sendMessage(int code, float value)
 
 void ChannelClient::setIdentity()
 {
-    identity = "ChannelClient" + std::to_string(node) + "-" + std::to_string(topic);
+    identity = "ChannelClient" + std::to_string(node) + "-" + std::to_string(channel);
     
 }
 }

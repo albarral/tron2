@@ -21,8 +21,8 @@
         </logicalFolder>
         <itemPath>src/TestComs.cpp</itemPath>
         <itemPath>src/TestComs.h</itemPath>
-        <itemPath>src/TestRobot2.cpp</itemPath>
-        <itemPath>src/TestRobot2.h</itemPath>
+        <itemPath>src/TestRobot.cpp</itemPath>
+        <itemPath>src/TestRobot.h</itemPath>
         <itemPath>src/TestTalky.cpp</itemPath>
         <itemPath>src/TestTalky.h</itemPath>
         <itemPath>src/TestTivy.cpp</itemPath>
@@ -177,9 +177,9 @@
       </item>
       <item path="src/TestComs.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/TestRobot2.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/TestRobot.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/TestRobot2.h" ex="false" tool="3" flavor2="0">
+      <item path="src/TestRobot.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TestTalky.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -224,9 +224,9 @@
       </item>
       <item path="src/TestComs.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/TestRobot2.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/TestRobot.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/TestRobot2.h" ex="false" tool="3" flavor2="0">
+      <item path="src/TestRobot.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TestTalky.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -24,7 +24,7 @@ bool ChannelServer::senseChannel()
     // clear message queue
     listMessages.clear();  
     // get messages from wire (wire establishes a server connection)
-    if (oWire.receiveMessages(node, topic, listMessages))                    
+    if (oWire.receiveMessages(node, channel, listMessages))                    
         return true;
     else
     {
@@ -36,7 +36,7 @@ bool ChannelServer::senseChannel()
 bool ChannelServer::clearChannel()
 {
     // clear the info in our wire's server channel
-    if (oWire.clearServerChannel(node, topic))
+    if (oWire.clearServerChannel(node, channel))
         return true;
     else
     {
@@ -47,7 +47,7 @@ bool ChannelServer::clearChannel()
 
 void ChannelServer::setIdentity()
 {
-    identity = "ChannelServer" + std::to_string(node) + "-" + std::to_string(topic);
+    identity = "ChannelServer" + std::to_string(node) + "-" + std::to_string(channel);
     
 }
 }

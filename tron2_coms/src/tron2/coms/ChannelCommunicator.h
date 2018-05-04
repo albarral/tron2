@@ -19,18 +19,19 @@ class ChannelCommunicator
 {    
 protected:
     static log4cxx::LoggerPtr logger;
-    int node;
-    int topic;
-    Talker* pTalker;
+    int node;                       // target node for communication
+    int channel;                   // communication channel in the node 
+    int topic;                       // topic used for communication   
+    Talker* pTalker;            // talker for data interpretation
     bool btuned;                // the communicator is tuned when it has a talker
-    std::string identity;    
-    tron::FileWire oWire;                 // communications wire   
+    std::string identity;       // communicator identity
+    tron::FileWire oWire;      // communications wire   
         
 public:
     ChannelCommunicator();
     ~ChannelCommunicator();
     
-    void tune4NodeAndTopic(int node, int topic);
+    void connect2Channel(int node, int channel, int topic);
     bool isTuned() {return btuned;};
     std::string getIdentity() {return identity;};
     

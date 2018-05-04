@@ -10,7 +10,7 @@
 
 #include "TestTivy.h"
 #include "TestTalky.h"
-#include "TestRobot2.h"
+#include "TestRobot.h"
 #include "TestComs.h"
 
 // obtains user's home path
@@ -49,7 +49,7 @@ int main(int argc, char** argv)
         case eTEST_ROBOT:
         {
             // test robot2 lib
-            TestRobot2 oTestRobot2;
+            TestRobot oTestRobot2;
             oTestRobot2.makeTest();
             break;
         }

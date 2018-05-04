@@ -24,7 +24,7 @@ bool ChannelSubscriber::senseChannel()
     // clear messages queue
     listMessages.clear();  
     // hear messages from wire (wire establishes a subscriber connection)
-    if (oWire.hearMessages(node, topic, listMessages))                    
+    if (oWire.hearMessages(node, channel, listMessages))                    
         return true;
     else
     {
@@ -35,7 +35,7 @@ bool ChannelSubscriber::senseChannel()
 
 void ChannelSubscriber::setIdentity()
 {
-    identity = "ChannelSubscriber" + std::to_string(node) + "-" + std::to_string(topic);
+    identity = "ChannelSubscriber" + std::to_string(node) + "-" + std::to_string(channel);
     
 }
 }

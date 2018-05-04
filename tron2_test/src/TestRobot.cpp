@@ -3,32 +3,32 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
-#include "TestRobot2.h"
+#include "TestRobot.h"
 #include "tron2/robot/arm/ArmNode.h"
 #include "tron2/robot/arm/JointTopic.h"
 
 using namespace log4cxx;
 
-LoggerPtr TestRobot2::logger(Logger::getLogger("tron"));
+LoggerPtr TestRobot::logger(Logger::getLogger("tron"));
 
 // Constructor 
-TestRobot2::TestRobot2()
+TestRobot::TestRobot()
 {    
  }
 
-void TestRobot2::makeTest()
+void TestRobot::makeTest()
 {
-    LOG4CXX_INFO(logger, "TestRobot2: test start \n");
+    LOG4CXX_INFO(logger, "TestRobot: test start \n");
 
     testTopics();
         
-    LOG4CXX_INFO(logger, "TestRobot2: test end \n");
+    LOG4CXX_INFO(logger, "TestRobot: test end \n");
 }
 
 
-void TestRobot2::testTopics()
+void TestRobot::testTopics()
 {
-    LOG4CXX_INFO(logger, "TestRobot2::testTopics \n");
+    LOG4CXX_INFO(logger, "TestRobot::testTopics \n");
 
     
     tron2::ArmNode oArmNode;

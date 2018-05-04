@@ -9,13 +9,13 @@
 #include <log4cxx/logger.h>
 
 // Class used to test libtron2_robot2.
-class TestRobot2
+class TestRobot
 {
 private:
     static log4cxx::LoggerPtr logger;
 
 public:
-    TestRobot2();
+    TestRobot();
     //~TestRobot2();
 
     void makeTest();      

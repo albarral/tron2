@@ -28,7 +28,7 @@ bool ChannelPublisher::publishMessage(int code, float value)
         if (pTalker->buildMessage(code, value, message))
         {
             // publish message through wire (wire establishes a publish connection)
-            if (oWire.publishMsg(node, topic, message))
+            if (oWire.publishMsg(node, channel, message))
                 bok = true;
             else
             {
@@ -80,7 +80,7 @@ bool ChannelPublisher::publishAll()
     if (!listMessages.empty())
     {
         // publish messages through wire (wire establishes a publish connection)
-        if (oWire.publishMessages(node, topic, listMessages))
+        if (oWire.publishMessages(node, channel, listMessages))
             bok = true;
         else
         {
@@ -99,7 +99,7 @@ bool ChannelPublisher::publishAll()
 bool ChannelPublisher::clearChannel()
 {
     // clear the info in our wire's publish channel
-    if (oWire.clearPublishChannel(node, topic))
+    if (oWire.clearPublishChannel(node, channel))
         return true;
     else
     {
@@ -110,7 +110,7 @@ bool ChannelPublisher::clearChannel()
 
 void ChannelPublisher::setIdentity()
 {
-    identity = "ChannelPublisher" + std::to_string(node) + "-" + std::to_string(topic);
+    identity = "ChannelPublisher" + std::to_string(node) + "-" + std::to_string(channel);
     
 }
 }

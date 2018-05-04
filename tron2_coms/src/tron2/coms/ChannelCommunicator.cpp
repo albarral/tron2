@@ -15,6 +15,7 @@ LoggerPtr ChannelCommunicator::logger(Logger::getLogger("tron.talky2"));
 ChannelCommunicator::ChannelCommunicator()
 {    
     node = -1;
+    channel = -1;
     topic = -1;
     pTalker = 0;
     btuned = false;
@@ -26,17 +27,14 @@ ChannelCommunicator::~ChannelCommunicator()
         delete(pTalker);
 }
 
-void ChannelCommunicator::tune4NodeAndTopic(int node, int topic)
+void ChannelCommunicator::connect2Channel(int node, int channel, int topic)
 {
-    // just one tuning allowed
-    if (!btuned)    
-    {
         this->node = node;
+        this->channel = channel;
         this->topic = topic;
         setIdentity();
         // create proper talker for this node & topic
         pTalker = TalkyLanguages::createTalker(node, topic);
         btuned = (pTalker != 0);
-    }
 }
 }

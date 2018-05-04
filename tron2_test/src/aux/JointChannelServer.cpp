@@ -6,6 +6,7 @@
 #include <string>
 
 #include "aux/JointChannelServer.h"
+#include "tron2/robot/RobotNetwork.h"
 #include "tron2/robot/RobotSystem.h"
 #include "tron2/robot/arm/ArmNode.h"
 #include "tron2/robot/arm/JointTopic.h"
@@ -16,7 +17,7 @@ namespace tron2
 {
 JointChannelServer::JointChannelServer()
 {    
-    tron2::ChannelServer::tune4NodeAndTopic(RobotSystem::eNODE_ARM, ArmNode::eARM_JOINT);
+    tron2::ChannelServer::connect2Channel(RobotSystem::eNODE_ARM, RobotNetwork::eARM_JOINTS_CHANNEL, ArmNode::eARM_JOINT);
 }
 
 //JointListener::~JointListener()

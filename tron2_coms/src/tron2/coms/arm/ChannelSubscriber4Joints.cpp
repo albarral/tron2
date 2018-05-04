@@ -4,6 +4,7 @@
  ***************************************************************************/
 
 #include "tron2/coms/arm/ChannelSubscriber4Joints.h"
+#include "tron2/robot/RobotNetwork.h"
 #include "tron2/robot/RobotSystem.h"
 #include "tron2/robot/arm/ArmNode.h"
 #include "tron2/robot/arm/JointTopic.h"
@@ -14,7 +15,7 @@ namespace tron2
 {
 ChannelSubscriber4Joints::ChannelSubscriber4Joints()
 {    
-    ChannelSubscriber::tune4NodeAndTopic(RobotSystem::eNODE_ARM, ArmNode::eARM_JOINT);    
+    ChannelSubscriber::connect2Channel(RobotSystem::eNODE_ARM, RobotNetwork::eARM_JOINTS_CHANNEL, ArmNode::eARM_JOINT);    
 }
 
 void ChannelSubscriber4Joints::processData()

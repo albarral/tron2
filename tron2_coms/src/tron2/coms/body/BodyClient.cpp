@@ -4,6 +4,7 @@
  ***************************************************************************/
 
 #include "tron2/coms/body/BodyClient.h"
+#include "tron2/robot/RobotNetwork.h"
 #include "tron2/robot/RobotSystem.h"
 #include "tron2/robot/body/BodyNode.h"
 #include "tron2/robot/body/ExpressiveTopic.h"
@@ -19,9 +20,9 @@ LoggerPtr BodyClient::logger(Logger::getLogger("tron.talky2"));
 BodyClient::BodyClient()
 {    
     int node = RobotSystem::eNODE_BODYROLE;
-    oExpressiveChannelClient.tune4NodeAndTopic(node, BodyNode::eBODY_EXPRESSIVE);
-    oArtisticChannelClient.tune4NodeAndTopic(node, BodyNode::eBODY_ARTISTIC);
-    oExtraChannelClient.tune4NodeAndTopic(node, Node::eEXTRA_TOPIC);
+    oExpressiveChannelClient.connect2Channel(node, RobotNetwork::eBODY_EXPRESSIVE_CHANNEL, BodyNode::eBODY_EXPRESSIVE);
+    oArtisticChannelClient.connect2Channel(node, RobotNetwork::eBODY_ARTISTIC1_CHANNEL, BodyNode::eBODY_ARTISTIC);
+    oExtraChannelClient.connect2Channel(node, RobotNetwork::eBODY_EXTRA_CHANNEL, Node::eEXTRA_TOPIC);
 }
 
 BodyClient::~BodyClient()

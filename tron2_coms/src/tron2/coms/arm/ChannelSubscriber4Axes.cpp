@@ -4,6 +4,7 @@
  ***************************************************************************/
 
 #include "tron2/coms/arm/ChannelSubscriber4Axes.h"
+#include "tron2/robot/RobotNetwork.h"
 #include "tron2/robot/RobotSystem.h"
 #include "tron2/robot/arm/ArmNode.h"
 #include "tron2/robot/arm/AxisTopic.h"
@@ -14,7 +15,7 @@ namespace tron2
 {
 ChannelSubscriber4Axes::ChannelSubscriber4Axes()
 {    
-    ChannelSubscriber::tune4NodeAndTopic(RobotSystem::eNODE_ARM, ArmNode::eARM_AXIS);
+    ChannelSubscriber::connect2Channel(RobotSystem::eNODE_ARM, RobotNetwork::eARM_AXES_CHANNEL, ArmNode::eARM_AXIS);
 }
 
 void ChannelSubscriber4Axes::processData()
