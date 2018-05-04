@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/src/tron2/robot/Node.o \
+	${OBJECTDIR}/src/tron2/robot/RobotNetwork.o \
 	${OBJECTDIR}/src/tron2/robot/RobotSystem.o \
 	${OBJECTDIR}/src/tron2/robot/Topic.o \
 	${OBJECTDIR}/src/tron2/robot/arm/ArmNode.o \
@@ -81,6 +82,11 @@ ${OBJECTDIR}/src/tron2/robot/Node.o: src/tron2/robot/Node.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/Node.o src/tron2/robot/Node.cpp
+
+${OBJECTDIR}/src/tron2/robot/RobotNetwork.o: src/tron2/robot/RobotNetwork.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/RobotNetwork.o src/tron2/robot/RobotNetwork.cpp
 
 ${OBJECTDIR}/src/tron2/robot/RobotSystem.o: src/tron2/robot/RobotSystem.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot
