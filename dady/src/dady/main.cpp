@@ -31,7 +31,7 @@ int main(int argc, char** argv)
     // if command has wrong number of params, show usage
     if (argc != oDadyCommander.getCommandSize() + 1)
     {
-        LOG4CXX_WARN(logger, "usage: dady node topic concept*quantity");        
+        LOG4CXX_WARN(logger, "usage: dady node channel concept*quantity");        
     }    
     
     // read command

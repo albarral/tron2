@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/src/dady/DadyCommander2.o \
+	${OBJECTDIR}/src/dady/RobotChannels.o \
 	${OBJECTDIR}/src/dady/main.o
 
 
@@ -79,6 +80,11 @@ ${OBJECTDIR}/src/dady/DadyCommander2.o: src/dady/DadyCommander2.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/dady
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Isrc -I../tron2_robot/src -I../tron2_talky/src -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/dady/DadyCommander2.o src/dady/DadyCommander2.cpp
+
+${OBJECTDIR}/src/dady/RobotChannels.o: src/dady/RobotChannels.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/dady
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Isrc -I../tron2_robot/src -I../tron2_talky/src -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/dady/RobotChannels.o src/dady/RobotChannels.cpp
 
 ${OBJECTDIR}/src/dady/main.o: src/dady/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/dady

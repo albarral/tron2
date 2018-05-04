@@ -20,7 +20,10 @@ const std::string DadyCommander2::COMMAND_SEPARATOR = " ";
 
 // Constructor 
 DadyCommander2::DadyCommander2()
-{    
+{ 
+    targetNode = -1;
+    targetChannel = -1;
+    targetTopic = -1;
 }
 
 bool DadyCommander2::checkValidCommand(std::string entry)
@@ -28,7 +31,7 @@ bool DadyCommander2::checkValidCommand(std::string entry)
     int processedElements = 0;
     int validElements = 0;
     std::string nodeName;
-    std::string topicName;
+    std::string channelName;
     
     // if no command
     if (entry.empty())
@@ -69,21 +72,30 @@ bool DadyCommander2::checkValidCommand(std::string entry)
     if (processedElements != validElements)
         return false;
         
-    // if topic informed
-    if (listTokens.size() > eCOMMAND_TOPIC)
+    // if channel informed
+    if (listTokens.size() > eCOMMAND_CHANNEL)
     {
-        // interpret topic
-        topicName = listTokens.at(eCOMMAND_TOPIC);
-        targetTopic = interpretTopic(targetNode, topicName);    
-        // and check its validity
-        if (targetTopic != -1)
-            validElements++;
+        // interpret channel
+        channelName = listTokens.at(eCOMMAND_CHANNEL);
+        oRobotChannels.fillMapChannels4Node(targetNode);
+        oRobotChannels.getMapChannels4Node(targetNode)->getCode4Name(channelName, targetChannel);
+
+        // get topic for channel
+        if (targetChannel != -1)
+        {
+            targetTopic = oRobotChannels.getTopic4NodeChannel(targetNode, targetChannel);        
+            // and check its validity
+            if (targetTopic != -1)
+                validElements++;
+            else
+                LOG4CXX_WARN(logger, "DadyCommander2: no topic for channel " + channelName);    
+        }
         else
-            LOG4CXX_WARN(logger, "DadyCommander2: unknown topic " + topicName);    
+            LOG4CXX_WARN(logger, "DadyCommander2: unknown channel " + channelName);    
     }
     else
-        // show available topics for node
-        showAvailableTopics(targetNode);        
+        // show available channels for node
+        showAvailableChannels(targetNode);        
     
     processedElements++;
     // skip if topic invalid or not informed
@@ -107,27 +119,6 @@ bool DadyCommander2::checkValidCommand(std::string entry)
     processedElements++;
     // return false if concept invalid or not informed
     return (processedElements == validElements);
-}
-
-int DadyCommander2::interpretTopic(int node, std::string topicName)
-{
-    int topic = -1;
-    // check valid topic
-    switch (node)
-    {
-        case tron2::RobotSystem::eNODE_ARM: 
-            topic = oArmNode.getCode4Topic(topicName);
-            break;
-            
-        case tron2::RobotSystem::eNODE_BODYROLE: 
-            topic = oBodyNode.getCode4Topic(topicName);
-            break;
-
-        case tron2::RobotSystem::eNODE_VISION: 
-            topic = oVisionNode.getCode4Topic(topicName);
-            break;
-    }
-    return topic;
 }
 
 bool DadyCommander2::checkCorrectMessage(int node, int topic, std::string msg)
@@ -154,7 +145,7 @@ bool DadyCommander2::checkCorrectMessage(int node, int topic, std::string msg)
 bool DadyCommander2::sendMessage()
 {
     tron::FileWire oWire; // communications wire       
-    return oWire.sendMsg(targetNode, targetTopic, message);
+    return oWire.sendMsg(targetNode, targetChannel, message);
 }
 
 void DadyCommander2::showAvailableNodes()
@@ -162,24 +153,11 @@ void DadyCommander2::showAvailableNodes()
    LOG4CXX_INFO(logger, "available nodes: \n" + oTronRobot.toString());   
 }
 
-void DadyCommander2::showAvailableTopics(int node)
+void DadyCommander2::showAvailableChannels(int node)
 {
-    std::string desc; 
-    switch (node)
-    {
-        case tron2::RobotSystem::eNODE_ARM: 
-            desc = oArmNode.toString();
-            break;
-
-        case tron2::RobotSystem::eNODE_BODYROLE: 
-            desc = oBodyNode.toString();
-            break;
-
-        case tron2::RobotSystem::eNODE_VISION: 
-            desc = oVisionNode.toString();
-            break;
-    }   
-    LOG4CXX_INFO(logger, "available topics: \n" + desc);      
+    oRobotChannels.fillMapChannels4Node(node);    
+    std::string desc = oRobotChannels.getMapChannels4Node(node)->toString(); 
+    LOG4CXX_INFO(logger, "available channels: \n" + desc);      
 }
 
 void DadyCommander2::showAvailableConcepts(int node, int topic)
