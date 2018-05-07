@@ -124,17 +124,16 @@ bool DadyCommander2::checkValidCommand(std::string entry)
 bool DadyCommander2::checkCorrectMessage(int node, int topic, std::string msg)
 {    
     // create proper talker for target node & topic
-    tron2::Talker* pTalker = tron2::TalkyLanguages::createTalker(node, topic);
+    tron2::Talker oTalker;    
+    tron2::TalkyLanguages::setLanguage4Talker(oTalker, node, topic);
         
-    // if talker created
-    if (pTalker != 0)
+    // if talker tuned
+    if (oTalker.isTuned())
     {
         int code; 
         float value;
         // check if it can interpret the message
-        bool bok = pTalker->interpretMessage(message, code, value);
-        // release the talker
-        delete(pTalker);
+        bool bok = oTalker.interpretMessage(message, code, value);
         return bok;        
     }
     // if no talker created, message can not be correct
@@ -163,14 +162,13 @@ void DadyCommander2::showAvailableChannels(int node)
 void DadyCommander2::showAvailableConcepts(int node, int topic)
 {
     // create proper talker for target node & topic
-    tron2::Talker* pTalker = tron2::TalkyLanguages::createTalker(node, topic);
+    tron2::Talker oTalker;    
+    tron2::TalkyLanguages::setLanguage4Talker(oTalker, node, topic);
         
-    // if talker created
-    if (pTalker != 0)
+    // if talker tuned
+    if (oTalker.isTuned())
     {        
-        LOG4CXX_INFO(logger, "available concepts: \n" + pTalker->getKnownConcepts());
-        // release the talker
-        delete(pTalker);
+        LOG4CXX_INFO(logger, "available concepts: \n" + oTalker.getKnownConcepts());
     }
 }
 }
