@@ -30,7 +30,7 @@ void ChannelSubscriber4Axes::processData()
         {
             LOG4CXX_TRACE(logger, "ChannelSubscriber4Axes: check msg " << message);
             // if message interpreted, inform axes data
-            if (pTalker->interpretMessage(message, code, value))
+            if (oTalker.interpretMessage(message, code, value))
             {
                 switch (code)
                 {

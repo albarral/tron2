@@ -19,8 +19,8 @@ private:
     static log4cxx::LoggerPtr logger;
 
 public:
-    // create talker for specific arm topic
-    static Talker* createTalker4Topic(int topic);
+    // tune talker for specific arm topic
+    static bool tuneTalker4Topic(Talker& oTalker, int topic);
 };
 
 }

@@ -25,7 +25,7 @@ bool ChannelPublisher::publishMessage(int code, float value)
     if (btuned)
     {
         // build message with topic talker
-        if (pTalker->buildMessage(code, value, message))
+        if (oTalker.buildMessage(code, value, message))
         {
             // publish message through wire (wire establishes a publish connection)
             if (oWire.publishMsg(node, channel, message))
@@ -53,7 +53,7 @@ bool ChannelPublisher::addMessage(int code, float value)
     if (btuned)
     {
         // build message with topic talker
-        if (pTalker->buildMessage(code, value, message))
+        if (oTalker.buildMessage(code, value, message))
         {
             // and add it to output queue
             listMessages.push_back(message);

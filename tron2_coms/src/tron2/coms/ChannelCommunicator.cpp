@@ -17,14 +17,11 @@ ChannelCommunicator::ChannelCommunicator()
     node = -1;
     channel = -1;
     topic = -1;
-    pTalker = 0;
     btuned = false;
 }
 
 ChannelCommunicator::~ChannelCommunicator()
 {    
-    if (pTalker != 0)
-        delete(pTalker);
 }
 
 void ChannelCommunicator::connect2Channel(int node, int channel, int topic)
@@ -33,8 +30,8 @@ void ChannelCommunicator::connect2Channel(int node, int channel, int topic)
         this->channel = channel;
         this->topic = topic;
         setIdentity();
-        // create proper talker for this node & topic
-        pTalker = TalkyLanguages::createTalker(node, topic);
-        btuned = (pTalker != 0);
+        // tune talker for this node & topic
+        TalkyLanguages::setLanguage4Talker(oTalker, node, topic);
+        btuned = oTalker.isTuned();
 }
 }

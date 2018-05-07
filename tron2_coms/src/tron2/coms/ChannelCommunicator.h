@@ -22,7 +22,7 @@ protected:
     int node;                       // target node for communication
     int channel;                   // communication channel in the node 
     int topic;                       // topic used for communication   
-    Talker* pTalker;            // talker for data interpretation
+    Talker oTalker;            // talker for data interpretation
     bool btuned;                // the communicator is tuned when it has a talker
     std::string identity;       // communicator identity
     tron::FileWire oWire;      // communications wire   

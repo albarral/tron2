@@ -36,7 +36,7 @@ void JointChannelServer::processCommands()
         {
             LOG4CXX_TRACE(logger, "JointChannelServer: check msg " << message);
             // if message interpreted, inform joints data
-            if (pTalker->interpretMessage(message, code, value))
+            if (oTalker.interpretMessage(message, code, value))
             {
                 switch (code)
                 {

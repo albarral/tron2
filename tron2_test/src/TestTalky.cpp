@@ -33,13 +33,13 @@ void TestTalky::testArmJointTalker()
 {
     LOG4CXX_INFO(logger, "TestTalky::testArmJointTalker \n");
 
-    tron2::Talker* pTalker = 0;
-    pTalker = tron2::TalkyLanguages::createTalker(tron2::RobotSystem::eNODE_ARM, tron2::ArmNode::eARM_JOINT);
+    tron2::Talker oTalker;
+    tron2::TalkyLanguages::setLanguage4Talker(oTalker, tron2::RobotSystem::eNODE_ARM, tron2::ArmNode::eARM_JOINT);
     
     int code;
     float value;
     std::string message = "vs*10.0";
-    if (pTalker->interpretMessage(message, code, value))
+    if (oTalker.interpretMessage(message, code, value))
     {
         LOG4CXX_INFO(logger, "message: " + message);                
         LOG4CXX_INFO(logger, "code: " + std::to_string(code));                

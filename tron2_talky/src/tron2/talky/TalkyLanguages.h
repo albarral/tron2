@@ -19,8 +19,8 @@ private:
     static log4cxx::LoggerPtr logger;
 
 public:
-    // create talker for the specified node & topic
-    static Talker* createTalker(int node, int topic);        
+    // set language for talker for the specified node & topic
+    static bool setLanguage4Talker(Talker& oTalker, int node, int topic);        
 };
 
 }

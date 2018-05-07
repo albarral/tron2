@@ -30,7 +30,7 @@ void ChannelSubscriber4Joints::processData()
         {
             LOG4CXX_TRACE(logger, "ChannelSubscriber4Joints: check msg " << message);
             // if message interpreted, inform joints data
-            if (pTalker->interpretMessage(message, code, value))
+            if (oTalker.interpretMessage(message, code, value))
             {
                 switch (code)
                 {

@@ -15,40 +15,40 @@ namespace tron2
 {
 LoggerPtr BodyLanguage::logger(Logger::getLogger("tron.talky2"));
 
-Talker* BodyLanguage::createTalker4Topic(int topic)
+bool BodyLanguage::tuneTalker4Topic(Talker& oTalker, int topic)
 {
-    // create proper talker for body node topic
-    Talker* pTalker = new Talker();
+    bool bret;
     switch (topic)
     {
         case BodyNode::eBODY_EXPRESSIVE: 
         {
             ExpressiveTopic oExpressiveTopic;
-            pTalker->tune4Topic(oExpressiveTopic);
-            return pTalker;
+            oTalker.tune4Topic(oExpressiveTopic);
+            bret = true;
             break;
         }
             
         case BodyNode::eBODY_ARTISTIC: 
         {
             ArtisticTopic oArtisticTopic;
-            pTalker->tune4Topic(oArtisticTopic);
-            return pTalker;
+            oTalker.tune4Topic(oArtisticTopic);
+            bret = true;
             break;
         }
                         
         case Node::eEXTRA_TOPIC: 
         {
             ExtraTopic oExtraTopic;
-            pTalker->tune4Topic(oExtraTopic);
-            return pTalker;
+            oTalker.tune4Topic(oExtraTopic);
+            bret = true;
             break;
         }
             
         default:
             LOG4CXX_WARN(logger, "TalkyLanguages: can't create talker, unknown body topic " << std::to_string(topic));                                      
-            return 0;
+            bret = false;                   
     }    
+    return bret;
 }
 
 }
