@@ -12,7 +12,6 @@
                 <make-dep-project>../../tron/tron_util</make-dep-project>
             </make-dep-projects>
             <sourceRootList>
-                <sourceRootElem>src/tron</sourceRootElem>
                 <sourceRootElem>src/tron2/robot</sourceRootElem>
             </sourceRootList>
             <confList>

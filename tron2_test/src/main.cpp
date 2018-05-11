@@ -9,12 +9,22 @@
 #include <log4cxx/xml/domconfigurator.h>
 
 #include "TestTivy.h"
-#include "TestTalky2.h"
+#include "TestTalky.h"
+#include "TestRobot.h"
+#include "TestComs.h"
 
 // obtains user's home path
 std::string getHomePath();
 
 log4cxx::LoggerPtr logger(log4cxx::Logger::getLogger("tron"));
+
+enum eTest
+{
+    eTEST_COMS, 
+    eTEST_ROBOT,
+    eTEST_TALKY,
+    eTEST_TIVY
+};
 
 // main program
 int main(int argc, char** argv) 
@@ -25,14 +35,40 @@ int main(int argc, char** argv)
         
     LOG4CXX_INFO(logger, "\n\nSTART tron test\n");
     
-    // test tivy lib
-    TestTivy oTestTivy;
-    oTestTivy.makeTest();
-    
-    // test talky lib
-//    TestTalky2 oTestTalky2;
-//    oTestTalky2.makeTest();
-    
+    int test = eTEST_COMS;
+
+    switch (test)
+    {
+        case eTEST_COMS:
+        {
+            // test coms lib
+            TestComs oTestComs;
+            oTestComs.makeTest();
+            break;
+        }
+        case eTEST_ROBOT:
+        {
+            // test robot2 lib
+            TestRobot oTestRobot2;
+            oTestRobot2.makeTest();
+            break;
+        }
+        case eTEST_TALKY:
+        {
+            // test talky lib
+            TestTalky oTestTalky;
+            oTestTalky.makeTest();
+            break;
+        }
+        case eTEST_TIVY:
+        {
+            // test tivy lib
+            TestTivy oTestTivy;
+            oTestTivy.makeTest();
+            break;
+        }
+    }
+           
     LOG4CXX_INFO(logger, "tron test FINISHED\n");
     
     return 0;

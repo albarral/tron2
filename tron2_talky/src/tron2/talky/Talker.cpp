@@ -4,7 +4,6 @@
  ***************************************************************************/
 
 #include "tron2/talky/Talker.h"
-#include "tron2/robot/RobotNodes.h"
 #include "tron/util/StringUtil.h"
 
 using namespace log4cxx;
@@ -17,29 +16,24 @@ const std::string Talker::FIELD_SEPARATOR = "*";
 
 Talker::Talker()
 {
-    node = -1;
+    btuned = false;
     topic = -1;
     name = "?";
 }
 
-Talker::Talker(int node, int topic)
+Talker::~Talker()
 {
-    this->node = node;
-    this->topic = topic;
-        
-    // start talker name with node word
-    RobotNodes oRobotNodes;
-    name = oRobotNodes.getName4Node(node) + "-";    
+    oCodeMap.reset();
 }
 
-//Talker::~Talker()
-//{
-//}
-
-void Talker::addConcept(int code, std::string name)
+void Talker::tune4Topic(Topic& oTopic)
 {
-    // add concept to code map
-    oCodeMap.addCode(code, name);
+    name = oTopic.getName() + "Talker";
+
+    // fills code map with the topic's code map elements
+    oCodeMap = (tron::CodeMap)oTopic;
+    
+    btuned = true;
 }
 
 
@@ -57,7 +51,7 @@ bool Talker::buildMessage(int code, float value, std::string& message)
     else
     {
         message = "";
-        LOG4CXX_WARN(logger, name + " Talker: message not built, unknown code " << code);
+        LOG4CXX_WARN(logger, name + ": message not built, unknown code " << code);
         return false;
     }
 }
@@ -81,19 +75,19 @@ bool Talker::interpretMessage(std::string message, int& code, float& value)
             // invalid quantity
             else
             {
-                LOG4CXX_WARN(logger, name + " Talker: invalid quantity " << listTokens.at(1));          
+                LOG4CXX_WARN(logger, name + ": invalid quantity " << listTokens.at(1));          
             }
         }
         // unknown concept 
         else
         {
-            LOG4CXX_WARN(logger, name + " Talker: unknown concept " << listTokens.at(0));   
+            LOG4CXX_WARN(logger, name + ": unknown concept " << listTokens.at(0));   
         }
     }
     // wrong message size
     else
     {
-        LOG4CXX_WARN(logger, name + " Talker: wrong concept format! (concept*quantity expected)");    
+        LOG4CXX_WARN(logger, name + ": wrong concept format! (concept*quantity expected)");    
     }
     
     // if program arrives here, interpretation failed
@@ -101,7 +95,7 @@ bool Talker::interpretMessage(std::string message, int& code, float& value)
 }
 
 
-std::string Talker::getMapDescription()
+std::string Talker::getKnownConcepts()
 {
     return oCodeMap.toString();
 }

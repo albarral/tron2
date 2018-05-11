@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="coms" displayName="coms" projectFiles="true">
+        <logicalFolder name="arm" displayName="arm" projectFiles="true">
+          <itemPath>src/tron2/coms/arm/ArmClient.cpp</itemPath>
+          <itemPath>src/tron2/coms/arm/ArmClient.h</itemPath>
+          <itemPath>src/tron2/coms/arm/ArmListener.cpp</itemPath>
+          <itemPath>src/tron2/coms/arm/ArmListener.h</itemPath>
+          <itemPath>src/tron2/coms/arm/ChannelSubscriber4Axes.cpp</itemPath>
+          <itemPath>src/tron2/coms/arm/ChannelSubscriber4Axes.h</itemPath>
+          <itemPath>src/tron2/coms/arm/ChannelSubscriber4Joints.cpp</itemPath>
+          <itemPath>src/tron2/coms/arm/ChannelSubscriber4Joints.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="body" displayName="body" projectFiles="true">
+          <itemPath>src/tron2/coms/body/BodyClient.cpp</itemPath>
+          <itemPath>src/tron2/coms/body/BodyClient.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="ifaces" displayName="ifaces" projectFiles="true">
+          <itemPath>src/tron2/coms/ifaces/TronAnyClient.h</itemPath>
+          <itemPath>src/tron2/coms/ifaces/TronArmClient.h</itemPath>
+          <itemPath>src/tron2/coms/ifaces/TronArmListener.h</itemPath>
+          <itemPath>src/tron2/coms/ifaces/TronBodyClient.h</itemPath>
+        </logicalFolder>
+        <itemPath>src/tron2/coms/ChannelClient.cpp</itemPath>
+        <itemPath>src/tron2/coms/ChannelClient.h</itemPath>
+        <itemPath>src/tron2/coms/ChannelCommunicator.cpp</itemPath>
+        <itemPath>src/tron2/coms/ChannelCommunicator.h</itemPath>
+        <itemPath>src/tron2/coms/ChannelPublisher.cpp</itemPath>
+        <itemPath>src/tron2/coms/ChannelPublisher.h</itemPath>
+        <itemPath>src/tron2/coms/ChannelServer.cpp</itemPath>
+        <itemPath>src/tron2/coms/ChannelServer.h</itemPath>
+        <itemPath>src/tron2/coms/ChannelSubscriber.cpp</itemPath>
+        <itemPath>src/tron2/coms/ChannelSubscriber.h</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>src/tron2/coms</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="2">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>8</standard>
+          <incDir>
+            <pElem>src</pElem>
+            <pElem>../tron2_robot/src</pElem>
+            <pElem>../tron2_talky/src</pElem>
+            <pElem>../../tron/tron_util/src</pElem>
+            <pElem>../../tron/tron_wire/src</pElem>
+            <pElem>../../tron/tron_wire2/src</pElem>
+            <pElem>../../tron/tron_tools/src</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_coms.${CND_DLIB_EXT}</output>
+          <linkerLibItems>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../tron2_robot"
+                            CT="2"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../tron2_robot"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_robot.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../tron2_talky"
+                            CT="2"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../tron2_talky"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_talky.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../../tron/tron_util"
+                            CT="2"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../../tron/tron_util"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron_util.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../../tron/tron_tools"
+                            CT="2"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../../tron/tron_tools"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron_tools.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../../tron/tron_wire"
+                            CT="2"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../../tron/tron_wire"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron_wire.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../../tron/tron_wire2"
+                            CT="2"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../../tron/tron_wire2"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron_wire2.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="src/tron2/coms/ChannelClient.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelClient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelCommunicator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelCommunicator.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelPublisher.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelPublisher.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelServer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelServer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelSubscriber.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelSubscriber.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/arm/ArmClient.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/arm/ArmClient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/arm/ArmListener.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/arm/ArmListener.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/arm/ChannelSubscriber4Axes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/arm/ChannelSubscriber4Axes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/arm/ChannelSubscriber4Joints.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/arm/ChannelSubscriber4Joints.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/body/BodyClient.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/body/BodyClient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ifaces/TronAnyClient.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ifaces/TronArmClient.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ifaces/TronArmListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ifaces/TronBodyClient.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="2">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="src/tron2/coms/ChannelClient.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelClient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelCommunicator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelCommunicator.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelPublisher.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelPublisher.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelServer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelServer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelSubscriber.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ChannelSubscriber.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/arm/ArmClient.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/arm/ArmClient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/arm/ArmListener.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/arm/ArmListener.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/arm/ChannelSubscriber4Axes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/arm/ChannelSubscriber4Axes.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/arm/ChannelSubscriber4Joints.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/arm/ChannelSubscriber4Joints.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/body/BodyClient.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/body/BodyClient.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ifaces/TronAnyClient.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ifaces/TronArmClient.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ifaces/TronArmListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/coms/ifaces/TronBodyClient.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

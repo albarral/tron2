@@ -19,8 +19,12 @@
           <itemPath>src/aux/TestPlot.cpp</itemPath>
           <itemPath>src/aux/TestPlot.h</itemPath>
         </logicalFolder>
-        <itemPath>src/TestTalky2.cpp</itemPath>
-        <itemPath>src/TestTalky2.h</itemPath>
+        <itemPath>src/TestComs.cpp</itemPath>
+        <itemPath>src/TestComs.h</itemPath>
+        <itemPath>src/TestRobot.cpp</itemPath>
+        <itemPath>src/TestRobot.h</itemPath>
+        <itemPath>src/TestTalky.cpp</itemPath>
+        <itemPath>src/TestTalky.h</itemPath>
         <itemPath>src/TestTivy.cpp</itemPath>
         <itemPath>src/TestTivy.h</itemPath>
         <itemPath>src/main.cpp</itemPath>
@@ -54,6 +58,7 @@
           <standard>8</standard>
           <incDir>
             <pElem>src</pElem>
+            <pElem>../tron2_coms/src</pElem>
             <pElem>../tron2_robot/src</pElem>
             <pElem>../tron2_talky/src</pElem>
             <pElem>../tron2_tivy/src</pElem>
@@ -69,6 +74,18 @@
             <linkerLibLibItem>log4cxx</linkerLibLibItem>
             <linkerLibLibItem>opencv_core</linkerLibLibItem>
             <linkerLibLibItem>opencv_highgui</linkerLibLibItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../tron2_coms"
+                            CT="2"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../tron2_coms"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_coms.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
             <linkerLibProjectItem>
               <makeArtifact PL="../tron2_robot"
                             CT="2"
@@ -156,9 +173,17 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="src/TestTalky2.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/TestComs.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/TestTalky2.h" ex="false" tool="3" flavor2="0">
+      <item path="src/TestComs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/TestRobot.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TestRobot.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/TestTalky.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TestTalky.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TestTivy.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -195,9 +220,17 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="src/TestTalky2.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/TestComs.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/TestTalky2.h" ex="false" tool="3" flavor2="0">
+      <item path="src/TestComs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/TestRobot.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TestRobot.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/TestTalky.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TestTalky.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TestTivy.cpp" ex="false" tool="1" flavor2="0">
       </item>

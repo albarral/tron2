@@ -4,11 +4,10 @@
  ***************************************************************************/
 
 #include "tron2/talky/body/BodyLanguage.h"
-#include "tron2/talky/body/ExpressiveTalker.h"
-#include "tron2/talky/body/ArtisticTalker.h"
-#include "tron2/talky/BasicTalker.h"
-#include "tron2/robot/RobotNodes.h"
-#include "tron2/robot/topics/BodyTopics.h"
+#include "tron2/robot/body/BodyNode.h"
+#include "tron2/robot/body/ExpressiveTopic.h"
+#include "tron2/robot/body/ArtisticTopic.h"
+#include "tron2/robot/common/ExtraTopic.h"
 
 using namespace log4cxx;
 
@@ -16,27 +15,40 @@ namespace tron2
 {
 LoggerPtr BodyLanguage::logger(Logger::getLogger("tron.talky2"));
 
-Talker* BodyLanguage::createTalker4Topic(int topic)
+bool BodyLanguage::tuneTalker4Topic(Talker& oTalker, int topic)
 {
-    // create proper talker for body node topic
+    bool bret;
     switch (topic)
     {
-        case BodyTopics::eBODY_EXPRESSIVE: 
-            return new ExpressiveTalker();
+        case BodyNode::eBODY_EXPRESSIVE: 
+        {
+            ExpressiveTopic oExpressiveTopic;
+            oTalker.tune4Topic(oExpressiveTopic);
+            bret = true;
             break;
+        }
             
-        case BodyTopics::eBODY_ARTISTIC: 
-            return new ArtisticTalker();
+        case BodyNode::eBODY_ARTISTIC: 
+        {
+            ArtisticTopic oArtisticTopic;
+            oTalker.tune4Topic(oArtisticTopic);
+            bret = true;
             break;
+        }
                         
-        case BodyTopics::eBODY_EXTRA: 
-            return new BasicTalker(RobotNodes::eNODE_BODYROLE, BodyTopics::eBODY_EXTRA);
+        case Node::eEXTRA_TOPIC: 
+        {
+            ExtraTopic oExtraTopic;
+            oTalker.tune4Topic(oExtraTopic);
+            bret = true;
             break;
+        }
             
         default:
             LOG4CXX_WARN(logger, "TalkyLanguages: can't create talker, unknown body topic " << std::to_string(topic));                                      
-            return 0;
+            bret = false;                   
     }    
+    return bret;
 }
 
 }

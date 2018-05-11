@@ -20,7 +20,10 @@ const std::string DadyCommander2::COMMAND_SEPARATOR = " ";
 
 // Constructor 
 DadyCommander2::DadyCommander2()
-{    
+{ 
+    targetNode = -1;
+    targetChannel = -1;
+    targetTopic = -1;
 }
 
 bool DadyCommander2::checkValidCommand(std::string entry)
@@ -28,7 +31,7 @@ bool DadyCommander2::checkValidCommand(std::string entry)
     int processedElements = 0;
     int validElements = 0;
     std::string nodeName;
-    std::string topicName;
+    std::string channelName;
     
     // if no command
     if (entry.empty())
@@ -53,7 +56,7 @@ bool DadyCommander2::checkValidCommand(std::string entry)
     {
         // interpret node
         nodeName = listTokens.at(eCOMMAND_NODE);
-        targetNode = oRobotNodes.getCode4Node(nodeName);
+        targetNode = oTronRobot.getCode4Node(nodeName);
         // and check its validity
         if (targetNode != -1)
             validElements++;
@@ -69,21 +72,30 @@ bool DadyCommander2::checkValidCommand(std::string entry)
     if (processedElements != validElements)
         return false;
         
-    // if topic informed
-    if (listTokens.size() > eCOMMAND_TOPIC)
+    // if channel informed
+    if (listTokens.size() > eCOMMAND_CHANNEL)
     {
-        // interpret topic
-        topicName = listTokens.at(eCOMMAND_TOPIC);
-        targetTopic = interpretTopic(targetNode, topicName);    
-        // and check its validity
-        if (targetTopic != -1)
-            validElements++;
+        // interpret channel
+        channelName = listTokens.at(eCOMMAND_CHANNEL);
+        oRobotChannels.fillMapChannels4Node(targetNode);
+        oRobotChannels.getMapChannels4Node(targetNode)->getCode4Name(channelName, targetChannel);
+
+        // get topic for channel
+        if (targetChannel != -1)
+        {
+            targetTopic = oRobotChannels.getTopic4NodeChannel(targetNode, targetChannel);        
+            // and check its validity
+            if (targetTopic != -1)
+                validElements++;
+            else
+                LOG4CXX_WARN(logger, "DadyCommander2: no topic for channel " + channelName);    
+        }
         else
-            LOG4CXX_WARN(logger, "DadyCommander2: unknown topic " + topicName);    
+            LOG4CXX_WARN(logger, "DadyCommander2: unknown channel " + channelName);    
     }
     else
-        // show available topics for node
-        showAvailableTopics(targetNode);        
+        // show available channels for node
+        showAvailableChannels(targetNode);        
     
     processedElements++;
     // skip if topic invalid or not informed
@@ -109,41 +121,19 @@ bool DadyCommander2::checkValidCommand(std::string entry)
     return (processedElements == validElements);
 }
 
-int DadyCommander2::interpretTopic(int node, std::string topicName)
-{
-    int topic = -1;
-    // check valid topic
-    switch (node)
-    {
-        case tron2::RobotNodes::eNODE_ARM: 
-            topic = oArmTopics.getCode4Topic(topicName);
-            break;
-            
-        case tron2::RobotNodes::eNODE_BODYROLE: 
-            topic = oBodyTopics.getCode4Topic(topicName);
-            break;
-
-        case tron2::RobotNodes::eNODE_VISION: 
-            topic = oVisionTopics.getCode4Topic(topicName);
-            break;
-    }
-    return topic;
-}
-
 bool DadyCommander2::checkCorrectMessage(int node, int topic, std::string msg)
 {    
     // create proper talker for target node & topic
-    tron2::Talker* pTalker = tron2::TalkyLanguages::createTalker(node, topic);
+    tron2::Talker oTalker;    
+    tron2::TalkyLanguages::setLanguage4Talker(oTalker, node, topic);
         
-    // if talker created
-    if (pTalker != 0)
+    // if talker tuned
+    if (oTalker.isTuned())
     {
         int code; 
         float value;
         // check if it can interpret the message
-        bool bok = pTalker->interpretMessage(message, code, value);
-        // release the talker
-        delete(pTalker);
+        bool bok = oTalker.interpretMessage(message, code, value);
         return bok;        
     }
     // if no talker created, message can not be correct
@@ -154,45 +144,31 @@ bool DadyCommander2::checkCorrectMessage(int node, int topic, std::string msg)
 bool DadyCommander2::sendMessage()
 {
     tron::FileWire oWire; // communications wire       
-    return oWire.sendMsg(targetNode, targetTopic, message);
+    return oWire.sendMsg(targetNode, targetChannel, message);
 }
 
 void DadyCommander2::showAvailableNodes()
 {
-   LOG4CXX_INFO(logger, "available nodes: \n" + oRobotNodes.getMapDescription());   
+   LOG4CXX_INFO(logger, "available nodes: \n" + oTronRobot.toString());   
 }
 
-void DadyCommander2::showAvailableTopics(int node)
+void DadyCommander2::showAvailableChannels(int node)
 {
-    std::string desc; 
-    switch (node)
-    {
-        case tron2::RobotNodes::eNODE_ARM: 
-            desc = oArmTopics.getMapDescription();
-            break;
-
-        case tron2::RobotNodes::eNODE_BODYROLE: 
-            desc = oBodyTopics.getMapDescription();
-            break;
-
-        case tron2::RobotNodes::eNODE_VISION: 
-            desc = oVisionTopics.getMapDescription();
-            break;
-    }   
-    LOG4CXX_INFO(logger, "available topics: \n" + desc);      
+    oRobotChannels.fillMapChannels4Node(node);    
+    std::string desc = oRobotChannels.getMapChannels4Node(node)->toString(); 
+    LOG4CXX_INFO(logger, "available channels: \n" + desc);      
 }
 
 void DadyCommander2::showAvailableConcepts(int node, int topic)
 {
     // create proper talker for target node & topic
-    tron2::Talker* pTalker = tron2::TalkyLanguages::createTalker(node, topic);
+    tron2::Talker oTalker;    
+    tron2::TalkyLanguages::setLanguage4Talker(oTalker, node, topic);
         
-    // if talker created
-    if (pTalker != 0)
+    // if talker tuned
+    if (oTalker.isTuned())
     {        
-        LOG4CXX_INFO(logger, "available concepts: \n" + pTalker->getMapDescription());
-        // release the talker
-        delete(pTalker);
+        LOG4CXX_INFO(logger, "available concepts: \n" + oTalker.getKnownConcepts());
     }
 }
 }

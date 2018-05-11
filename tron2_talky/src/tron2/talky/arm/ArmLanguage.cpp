@@ -4,12 +4,11 @@
  ***************************************************************************/
 
 #include "tron2/talky/arm/ArmLanguage.h"
-#include "tron2/talky/arm/JointTalker.h"
-#include "tron2/talky/arm/AxisTalker.h"
-#include "tron2/talky/arm/CyclicTalker.h"
-#include "tron2/talky/BasicTalker.h"
-#include "tron2/robot/RobotNodes.h"
-#include "tron2/robot/topics/ArmTopics.h"
+#include "tron2/robot/arm/ArmNode.h"
+#include "tron2/robot/arm/JointTopic.h"
+#include "tron2/robot/arm/AxisTopic.h"
+#include "tron2/robot/arm/CyclicTopic.h"
+#include "tron2/robot/common/ExtraTopic.h"
 
 using namespace log4cxx;
 
@@ -17,32 +16,48 @@ namespace tron2
 {
 LoggerPtr ArmLanguage::logger(Logger::getLogger("tron.talky2"));
 
-Talker* ArmLanguage::createTalker4Topic(int topic)
+bool ArmLanguage::tuneTalker4Topic(Talker& oTalker, int topic)
 {
-    // create proper talker for arm node topic
+    bool bret;
     switch (topic)
     {
-        case ArmTopics::eARM_JOINT: 
-            return new JointTalker();
+        case ArmNode::eARM_JOINT:
+        {
+            JointTopic oJointTopic;
+            oTalker.tune4Topic(oJointTopic);
+            bret = true;
             break;
+        }
             
-        case ArmTopics::eARM_AXIS: 
-            return new AxisTalker();
+        case ArmNode::eARM_AXIS: 
+        {
+            AxisTopic oAxisTopic;
+            oTalker.tune4Topic(oAxisTopic);
+            bret = true;
             break;
+        }
             
-        case ArmTopics::eARM_CYCLER1: 
-        case ArmTopics::eARM_CYCLER2: 
-            return new CyclicTalker();
+        case ArmNode::eARM_CYCLIC: 
+        {
+            CyclicTopic oCyclicTopic;
+            oTalker.tune4Topic(oCyclicTopic);
+            bret = true;
             break;
+        }
             
-        case ArmTopics::eARM_EXTRA: 
-            return new BasicTalker(RobotNodes::eNODE_ARM, ArmTopics::eARM_EXTRA);
+        case Node::eEXTRA_TOPIC: 
+        {
+            ExtraTopic oExtraTopic;
+            oTalker.tune4Topic(oExtraTopic);
+            bret = true;
             break;
+        }
             
         default:
             LOG4CXX_WARN(logger, "ArmLanguage: can't create talker, unknown arm topic " << std::to_string(topic));                                      
-            return 0;
+            bret = false;                   
     }    
+    return bret;
 }
 
 }

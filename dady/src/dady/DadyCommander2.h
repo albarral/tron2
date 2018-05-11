@@ -9,10 +9,8 @@
 #include <string>
 #include <log4cxx/logger.h>
 
-#include "tron2/robot/RobotNodes.h"
-#include "tron2/robot/topics/ArmTopics.h"
-#include "tron2/robot/topics/BodyTopics.h"
-#include "tron2/robot/topics/VisionTopics.h"
+#include "dady/RobotChannels.h"
+#include "tron2/robot/system/TronRobot.h"
 
 namespace tron2
 {
@@ -27,20 +25,18 @@ private:
     enum eCommand
     {
         eCOMMAND_NODE,
-        eCOMMAND_TOPIC,
+        eCOMMAND_CHANNEL,
         eCOMMAND_CONCEPT,
         eCOMMAND_DIM
     };
     
     static log4cxx::LoggerPtr logger;    
     int targetNode;                          // target node (arm, vision, ...) 
+    int targetChannel;                      // target channel
     int targetTopic;                          // target topic (for arm node: joints, axis, ...)
     std::string message;                 // message to send
-    RobotNodes oRobotNodes;
-    ArmTopics oArmTopics;
-    BodyTopics oBodyTopics;
-    VisionTopics oVisionTopics;
-    
+    TronRobot oTronRobot;
+    RobotChannels oRobotChannels;       
 
 public:
     DadyCommander2();
@@ -52,11 +48,10 @@ public:
     bool sendMessage();
     
 private:
-    int interpretTopic(int node, std::string topicName);
     bool checkCorrectMessage(int node, int topic, std::string msg);
 
     void showAvailableNodes();
-    void showAvailableTopics(int node);
+    void showAvailableChannels(int node);
     void showAvailableConcepts(int node, int topic);
     
 };
