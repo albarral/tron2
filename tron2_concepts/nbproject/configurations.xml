@@ -13,11 +13,36 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="concepts" displayName="concepts" projectFiles="true">
+        <logicalFolder name="verbs" displayName="actions" projectFiles="true">
+          <itemPath>src/tron2/concepts/actions/ActionCategories.h</itemPath>
+          <itemPath>src/tron2/concepts/actions/ManipulationCategory.cpp</itemPath>
+          <itemPath>src/tron2/concepts/actions/ManipulationCategory.h</itemPath>
+          <itemPath>src/tron2/concepts/actions/MovementCategory.cpp</itemPath>
+          <itemPath>src/tron2/concepts/actions/MovementCategory.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="objects" displayName="objects" projectFiles="true">
+          <itemPath>src/tron2/concepts/objects/BodyCategory.cpp</itemPath>
+          <itemPath>src/tron2/concepts/objects/BodyCategory.h</itemPath>
+          <itemPath>src/tron2/concepts/objects/ObjectCategories.h</itemPath>
+          <itemPath>src/tron2/concepts/objects/ShapesCategory.cpp</itemPath>
+          <itemPath>src/tron2/concepts/objects/ShapesCategory.h</itemPath>
         </logicalFolder>
         <logicalFolder name="qualifiers" displayName="qualifiers" projectFiles="true">
-        </logicalFolder>
-        <logicalFolder name="verbs" displayName="verbs" projectFiles="true">
+          <itemPath>src/tron2/concepts/qualifiers/AffirmationCategory.cpp</itemPath>
+          <itemPath>src/tron2/concepts/qualifiers/AffirmationCategory.h</itemPath>
+          <itemPath>src/tron2/concepts/qualifiers/ColorCategory.cpp</itemPath>
+          <itemPath>src/tron2/concepts/qualifiers/ColorCategory.h</itemPath>
+          <itemPath>src/tron2/concepts/qualifiers/DirectionCategory.cpp</itemPath>
+          <itemPath>src/tron2/concepts/qualifiers/DirectionCategory.h</itemPath>
+          <itemPath>src/tron2/concepts/qualifiers/LocationCategory.cpp</itemPath>
+          <itemPath>src/tron2/concepts/qualifiers/LocationCategory.h</itemPath>
+          <itemPath>src/tron2/concepts/qualifiers/ProximityCategory.cpp</itemPath>
+          <itemPath>src/tron2/concepts/qualifiers/ProximityCategory.h</itemPath>
+          <itemPath>src/tron2/concepts/qualifiers/QualifierCategories.h</itemPath>
+          <itemPath>src/tron2/concepts/qualifiers/QuantityCategory.cpp</itemPath>
+          <itemPath>src/tron2/concepts/qualifiers/QuantityCategory.h</itemPath>
+          <itemPath>src/tron2/concepts/qualifiers/SpeedCategory.cpp</itemPath>
+          <itemPath>src/tron2/concepts/qualifiers/SpeedCategory.h</itemPath>
         </logicalFolder>
         <itemPath>src/tron2/concepts/Category.cpp</itemPath>
         <itemPath>src/tron2/concepts/Category.h</itemPath>
@@ -87,6 +112,131 @@
       </item>
       <item path="src/tron2/concepts/Knowledge.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/tron2/concepts/actions/ActionCategories.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/actions/ManipulationCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/actions/ManipulationCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/actions/MovementCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/actions/MovementCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/objects/BodyCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/objects/BodyCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/objects/ObjectCategories.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/objects/ShapesCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/objects/ShapesCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/AffirmationCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/AffirmationCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/ColorCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/ColorCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/DirectionCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/DirectionCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/LocationCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/LocationCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/ProximityCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/ProximityCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/QualifierCategories.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/QuantityCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/QuantityCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/SpeedCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/SpeedCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="2">
       <toolsSet>
@@ -119,6 +269,131 @@
       <item path="src/tron2/concepts/Knowledge.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tron2/concepts/Knowledge.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/actions/ActionCategories.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/actions/ManipulationCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/actions/ManipulationCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/actions/MovementCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/actions/MovementCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/objects/BodyCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/objects/BodyCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/objects/ObjectCategories.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/objects/ShapesCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/objects/ShapesCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/AffirmationCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/AffirmationCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/ColorCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/ColorCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/DirectionCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/DirectionCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/LocationCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/LocationCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/ProximityCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/ProximityCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/QualifierCategories.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/QuantityCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/QuantityCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/SpeedCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/concepts/qualifiers/SpeedCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
     </conf>
   </confs>

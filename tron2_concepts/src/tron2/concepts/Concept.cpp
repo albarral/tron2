@@ -21,6 +21,12 @@ Concept::Concept(int id, std::string name) : tron::Element(id, name)
 //{
 //}
 
+void Concept::set(int id, std::string name)
+{
+    this->id = id;
+    this->name = name;    
+}
+
 std::string Concept::toString()
 {
     std::string text = "Concept: " + tron::Element::toString()  + ", nature=" + std::to_string(nature);    

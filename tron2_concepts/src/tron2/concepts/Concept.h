@@ -30,6 +30,7 @@ public:
     Concept(int id, std::string name);
     //~Concept();
     
+    void set(int id, std::string name);
     void setNature(int value) {nature = value;};
     int getNature() {return nature;}; 
 

@@ -37,7 +37,18 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/src/tron2/concepts/Category.o \
 	${OBJECTDIR}/src/tron2/concepts/Concept.o \
-	${OBJECTDIR}/src/tron2/concepts/Knowledge.o
+	${OBJECTDIR}/src/tron2/concepts/Knowledge.o \
+	${OBJECTDIR}/src/tron2/concepts/actions/ManipulationCategory.o \
+	${OBJECTDIR}/src/tron2/concepts/actions/MovementCategory.o \
+	${OBJECTDIR}/src/tron2/concepts/objects/BodyCategory.o \
+	${OBJECTDIR}/src/tron2/concepts/objects/ShapesCategory.o \
+	${OBJECTDIR}/src/tron2/concepts/qualifiers/AffirmationCategory.o \
+	${OBJECTDIR}/src/tron2/concepts/qualifiers/ColorCategory.o \
+	${OBJECTDIR}/src/tron2/concepts/qualifiers/DirectionCategory.o \
+	${OBJECTDIR}/src/tron2/concepts/qualifiers/LocationCategory.o \
+	${OBJECTDIR}/src/tron2/concepts/qualifiers/ProximityCategory.o \
+	${OBJECTDIR}/src/tron2/concepts/qualifiers/QuantityCategory.o \
+	${OBJECTDIR}/src/tron2/concepts/qualifiers/SpeedCategory.o
 
 
 # C Compiler Flags
@@ -78,6 +89,61 @@ ${OBJECTDIR}/src/tron2/concepts/Knowledge.o: src/tron2/concepts/Knowledge.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/concepts
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/concepts/Knowledge.o src/tron2/concepts/Knowledge.cpp
+
+${OBJECTDIR}/src/tron2/concepts/actions/ManipulationCategory.o: src/tron2/concepts/actions/ManipulationCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/concepts/actions
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/concepts/actions/ManipulationCategory.o src/tron2/concepts/actions/ManipulationCategory.cpp
+
+${OBJECTDIR}/src/tron2/concepts/actions/MovementCategory.o: src/tron2/concepts/actions/MovementCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/concepts/actions
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/concepts/actions/MovementCategory.o src/tron2/concepts/actions/MovementCategory.cpp
+
+${OBJECTDIR}/src/tron2/concepts/objects/BodyCategory.o: src/tron2/concepts/objects/BodyCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/concepts/objects
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/concepts/objects/BodyCategory.o src/tron2/concepts/objects/BodyCategory.cpp
+
+${OBJECTDIR}/src/tron2/concepts/objects/ShapesCategory.o: src/tron2/concepts/objects/ShapesCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/concepts/objects
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/concepts/objects/ShapesCategory.o src/tron2/concepts/objects/ShapesCategory.cpp
+
+${OBJECTDIR}/src/tron2/concepts/qualifiers/AffirmationCategory.o: src/tron2/concepts/qualifiers/AffirmationCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/concepts/qualifiers
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/concepts/qualifiers/AffirmationCategory.o src/tron2/concepts/qualifiers/AffirmationCategory.cpp
+
+${OBJECTDIR}/src/tron2/concepts/qualifiers/ColorCategory.o: src/tron2/concepts/qualifiers/ColorCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/concepts/qualifiers
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/concepts/qualifiers/ColorCategory.o src/tron2/concepts/qualifiers/ColorCategory.cpp
+
+${OBJECTDIR}/src/tron2/concepts/qualifiers/DirectionCategory.o: src/tron2/concepts/qualifiers/DirectionCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/concepts/qualifiers
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/concepts/qualifiers/DirectionCategory.o src/tron2/concepts/qualifiers/DirectionCategory.cpp
+
+${OBJECTDIR}/src/tron2/concepts/qualifiers/LocationCategory.o: src/tron2/concepts/qualifiers/LocationCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/concepts/qualifiers
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/concepts/qualifiers/LocationCategory.o src/tron2/concepts/qualifiers/LocationCategory.cpp
+
+${OBJECTDIR}/src/tron2/concepts/qualifiers/ProximityCategory.o: src/tron2/concepts/qualifiers/ProximityCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/concepts/qualifiers
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/concepts/qualifiers/ProximityCategory.o src/tron2/concepts/qualifiers/ProximityCategory.cpp
+
+${OBJECTDIR}/src/tron2/concepts/qualifiers/QuantityCategory.o: src/tron2/concepts/qualifiers/QuantityCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/concepts/qualifiers
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/concepts/qualifiers/QuantityCategory.o src/tron2/concepts/qualifiers/QuantityCategory.cpp
+
+${OBJECTDIR}/src/tron2/concepts/qualifiers/SpeedCategory.o: src/tron2/concepts/qualifiers/SpeedCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/concepts/qualifiers
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/concepts/qualifiers/SpeedCategory.o src/tron2/concepts/qualifiers/SpeedCategory.cpp
 
 # Subprojects
 .build-subprojects:
