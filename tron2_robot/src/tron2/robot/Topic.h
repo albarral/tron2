@@ -7,29 +7,29 @@
  ***************************************************************************/
 
 #include <string>
+#include <vector>
 
-#include "tron/util/CodeMap.h"
+#include "tron/util/Code.h"
 
 namespace tron2
 {
-// A Topic is a code map of concepts.
- class Topic : public tron::CodeMap
+// A topic is a list of concept codes related to a given node part (arm joints, arm axes, ...).
+ class Topic
 {    
  protected:
      int ID;                   // topic id
      std::string name;  // topic name
+     std::vector<tron::Code> listCodes;     // concepts list
      
  public:     
      Topic(int id, std::string name);
      
      int getID() {return ID;}
      std::string getName() {return name;}
+     std::vector<tron::Code>& getListCodes() {return listCodes;};
      
-    // gets name for given concept
-    std::string getName4Concept(int concept);
-    // gets code for given concept name
-    int getCode4Concept(std::string conceptName);
-        
+     void addCode(int codeId, std::string codeName);
+     
     //  return topic description
     virtual std::string toString();
 

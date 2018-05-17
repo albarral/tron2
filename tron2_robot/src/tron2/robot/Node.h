@@ -7,13 +7,14 @@
  ***************************************************************************/
 
 #include <string>
+#include <vector>
 
-#include "tron/util/CodeMap.h"
+#include "tron/util/Code.h"
 
 namespace tron2
 {
-// A Node is a code map of topics.
- class Node : public tron::CodeMap
+// A Node is a list of topic codes related to a robot part (controlled by a dedicated process).    
+ class Node
 {    
  public:
     static const int eEXTRA_TOPIC = 100;   /*! ID of extra topic */  
@@ -22,18 +23,17 @@ namespace tron2
  protected:
      int ID;
      std::string name;
+     std::vector<tron::Code> listCodes;     // topics list
      
  public:     
      Node(int id, std::string name);
      
      int getID() {return ID;}
      std::string getName() {return name;}
+     std::vector<tron::Code>& getListTopics() {return listCodes;};
      
-    // gets name for given topic
-    std::string getName4Topic(int topic);
-    // gets code for given topic name
-    int getCode4Topic(std::string topicName);
-        
+     void addCode(int codeId, std::string codeName);
+     
     //  return node description
     virtual std::string toString();
 

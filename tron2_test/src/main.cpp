@@ -9,8 +9,8 @@
 #include <log4cxx/xml/domconfigurator.h>
 
 #include "TestTivy.h"
-#include "TestTalky.h"
 #include "TestRobot.h"
+#include "TestConcepts.h"
 #include "TestComs.h"
 
 // obtains user's home path
@@ -20,9 +20,9 @@ log4cxx::LoggerPtr logger(log4cxx::Logger::getLogger("tron"));
 
 enum eTest
 {
+    eTEST_CONCEPTS, 
     eTEST_COMS, 
     eTEST_ROBOT,
-    eTEST_TALKY,
     eTEST_TIVY
 };
 
@@ -39,6 +39,13 @@ int main(int argc, char** argv)
 
     switch (test)
     {
+        case eTEST_CONCEPTS:
+        {
+            // test concepts lib
+            TestConcepts oTestConcepts;
+            oTestConcepts.makeTest();
+            break;
+        }
         case eTEST_COMS:
         {
             // test coms lib
@@ -51,13 +58,6 @@ int main(int argc, char** argv)
             // test robot2 lib
             TestRobot oTestRobot2;
             oTestRobot2.makeTest();
-            break;
-        }
-        case eTEST_TALKY:
-        {
-            // test talky lib
-            TestTalky oTestTalky;
-            oTestTalky.makeTest();
             break;
         }
         case eTEST_TIVY:

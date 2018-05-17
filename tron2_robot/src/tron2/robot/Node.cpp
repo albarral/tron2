@@ -15,29 +15,23 @@ Node::Node(int id, std::string name)
     this->name = name;
 }
 
-std::string Node::getName4Topic(int topic)
+void Node::addCode(int codeId, std::string codeName)
 {
-    std::string tname;
-    if (tron::CodeMap::getName4Code(topic, tname))
-        return tname;
-    // return empty name if unknown topic code
-    else
-        return ""; 
-}
-
-int Node::getCode4Topic(std::string topicName)
-{
-    int code;
-    if (tron::CodeMap::getCode4Name(topicName, code))
-        return code;
-    // return -1 if unknown topic name
-    else 
-        return -1;
+    tron::Code oCode(codeId, codeName);
+    listCodes.push_back(oCode);
 }
 
 std::string Node::toString()
 {
-    return "Node: " + name + ", topics:\n" + tron::CodeMap::toString();
+    std::string text = "Node: " + name + ", topics:\n";
+        
+    for (tron::Code& oCode : listCodes)
+    {
+        text += oCode.toString() + "\n"; 
+    }
+
+    return text;
+    
 }
 
 }

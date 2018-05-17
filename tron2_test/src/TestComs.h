@@ -28,7 +28,8 @@ public:
 private:
     void testUnicastComs();      
     void testBroadcastComs();      
-
+    void testArmJointTalker();      
+    
     // receive commands
     void checkServerChannel(tron2::ChannelServer& oChannelServer);
     

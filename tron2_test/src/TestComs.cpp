@@ -10,10 +10,14 @@
 #include "tron2/coms/arm/ArmClient.h"
 #include "tron2/coms/body/BodyClient.h"
 #include "tron2/coms/ChannelPublisher.h"
+#include "tron2/coms/talker/ChannelTalker.h"
+#include "tron2/coms/talker/TalkerLanguage.h"
 #include "tron2/robot/RobotNetwork.h"
 #include "tron2/robot/RobotSystem.h"
 #include "tron2/robot/arm/ArmNode.h"
 #include "tron2/robot/arm/JointTopic.h"
+#include "tron2/robot/RobotSystem.h"
+#include "tron2/robot/arm/ArmNode.h"
 
 using namespace log4cxx;
 
@@ -29,7 +33,8 @@ void TestComs::makeTest()
     LOG4CXX_INFO(logger, "TestComs: test start \n");
 
     //testUnicastComs();    
-    testBroadcastComs();
+    //testBroadcastComs();
+    testArmJointTalker();
         
     LOG4CXX_INFO(logger, "TestComs: test end \n");
 }
@@ -105,6 +110,23 @@ void TestComs::testBroadcastComs()
 //    }
 }
 
+void TestComs::testArmJointTalker()
+{
+    LOG4CXX_INFO(logger, "TestComs::testArmJointTalker \n");
+
+    tron2::ChannelTalker oTalker;
+    tron2::TalkerLanguage::setLanguage4Talker(oTalker, tron2::RobotSystem::eNODE_ARM, tron2::ArmNode::eARM_JOINT);
+    
+    int code;
+    float value;
+    std::string message = "vs*10.0";
+    if (oTalker.interpretMessage(message, code, value))
+    {
+        LOG4CXX_INFO(logger, "message: " + message);                
+        LOG4CXX_INFO(logger, "code: " + std::to_string(code));                
+        LOG4CXX_INFO(logger, "value: " + std::to_string(value));        
+    }
+}
 
 void TestComs::checkServerChannel(tron2::ChannelServer& oChannelServer)
 {    

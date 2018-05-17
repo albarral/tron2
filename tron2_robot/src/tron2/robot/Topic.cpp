@@ -13,29 +13,22 @@ Topic::Topic(int id, std::string name)
     this->name = name;
 }
 
-std::string Topic::getName4Concept(int concept)
+void Topic::addCode(int codeId, std::string codeName)
 {
-    std::string cname;
-    if (tron::CodeMap::getName4Code(concept, cname))
-        return cname;
-    // return empty name if unknown concept code
-    else
-        return ""; 
-}
-
-int Topic::getCode4Concept(std::string conceptName)
-{
-    int code;
-    if (tron::CodeMap::getCode4Name(conceptName, code))
-        return code;
-    // return -1 if unknown concept name
-    else 
-        return -1;
+    tron::Code oCode(codeId, codeName);
+    listCodes.push_back(oCode);
 }
 
 std::string Topic::toString()
 {
-    return "Topic: " + name + ", concepts:\n" + tron::CodeMap::toString();
+    std::string text = "Topic: " + name + ", concepts:\n";
+        
+    for (tron::Code& oCode : listCodes)
+    {
+        text += oCode.toString() + "\n"; 
+    }
+
+    return text;
 }
 
 }

@@ -44,7 +44,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tron2/coms/arm/ArmListener.o \
 	${OBJECTDIR}/src/tron2/coms/arm/ChannelSubscriber4Axes.o \
 	${OBJECTDIR}/src/tron2/coms/arm/ChannelSubscriber4Joints.o \
-	${OBJECTDIR}/src/tron2/coms/body/BodyClient.o
+	${OBJECTDIR}/src/tron2/coms/body/BodyClient.o \
+	${OBJECTDIR}/src/tron2/coms/talker/ChannelTalker.o \
+	${OBJECTDIR}/src/tron2/coms/talker/TalkerLanguage.o
 
 
 # C Compiler Flags
@@ -120,6 +122,16 @@ ${OBJECTDIR}/src/tron2/coms/body/BodyClient.o: src/tron2/coms/body/BodyClient.cp
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/coms/body
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/coms/body/BodyClient.o src/tron2/coms/body/BodyClient.cpp
+
+${OBJECTDIR}/src/tron2/coms/talker/ChannelTalker.o: src/tron2/coms/talker/ChannelTalker.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/coms/talker
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/coms/talker/ChannelTalker.o src/tron2/coms/talker/ChannelTalker.cpp
+
+${OBJECTDIR}/src/tron2/coms/talker/TalkerLanguage.o: src/tron2/coms/talker/TalkerLanguage.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/coms/talker
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/coms/talker/TalkerLanguage.o src/tron2/coms/talker/TalkerLanguage.cpp
 
 # Subprojects
 .build-subprojects:

@@ -9,8 +9,8 @@
 #include <string>
 #include <log4cxx/logger.h>
 
-#include "tron2/talky/Talker.h"
 #include "tron/wire2/FileWire.h"
+#include "tron2/coms/talker/ChannelTalker.h"
 
 namespace tron2
 {
@@ -22,7 +22,7 @@ protected:
     int node;                       // target node for communication
     int channel;                   // communication channel in the node 
     int topic;                       // topic used for communication   
-    Talker oTalker;            // talker for data interpretation
+    ChannelTalker oTalker;    // talker for data interpretation
     bool btuned;                // the communicator is tuned when it has a talker
     std::string identity;       // communicator identity
     tron::FileWire oWire;      // communications wire   

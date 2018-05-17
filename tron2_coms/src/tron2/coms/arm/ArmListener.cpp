@@ -9,7 +9,7 @@ using namespace log4cxx;
 
 namespace tron2
 {
-LoggerPtr ArmListener::logger(Logger::getLogger("tron.talky2"));
+LoggerPtr ArmListener::logger(Logger::getLogger("tron2.coms"));
 
 ArmListener::ArmListener()
 {    

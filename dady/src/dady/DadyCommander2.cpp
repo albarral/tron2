@@ -8,7 +8,8 @@
 #include "dady/DadyCommander2.h"
 #include "tron/util/StringUtil.h"
 #include "tron/wire2/FileWire.h"
-#include "tron2/talky/TalkyLanguages.h"
+#include "tron2/coms/talker/ChannelTalker.h"
+#include "tron2/coms/talker/TalkerLanguage.h"
 
 using namespace log4cxx;
 
@@ -124,8 +125,8 @@ bool DadyCommander2::checkValidCommand(std::string entry)
 bool DadyCommander2::checkCorrectMessage(int node, int topic, std::string msg)
 {    
     // create proper talker for target node & topic
-    tron2::Talker oTalker;    
-    tron2::TalkyLanguages::setLanguage4Talker(oTalker, node, topic);
+    tron2::ChannelTalker oTalker;    
+    tron2::TalkerLanguage::setLanguage4Talker(oTalker, node, topic);
         
     // if talker tuned
     if (oTalker.isTuned())
@@ -162,13 +163,13 @@ void DadyCommander2::showAvailableChannels(int node)
 void DadyCommander2::showAvailableConcepts(int node, int topic)
 {
     // create proper talker for target node & topic
-    tron2::Talker oTalker;    
-    tron2::TalkyLanguages::setLanguage4Talker(oTalker, node, topic);
+    tron2::ChannelTalker oTalker;    
+    tron2::TalkerLanguage::setLanguage4Talker(oTalker, node, topic);
         
     // if talker tuned
     if (oTalker.isTuned())
     {        
-        LOG4CXX_INFO(logger, "available concepts: \n" + oTalker.getKnownConcepts());
+        LOG4CXX_INFO(logger, "available concepts: \n" + oTalker.describeKnowledge());
     }
 }
 }
