@@ -1,5 +1,5 @@
-#ifndef __TRON2_TALKY_TALKER_H
-#define __TRON2_TALKY_TALKER_H
+#ifndef __TRON2_COMS_CHANNELTALKER_H
+#define __TRON2_COMS_CHANNELTALKER_H
 
 /***************************************************************************
  *   Copyright (C) 2018 by Migtron Robotics   *
@@ -10,15 +10,15 @@
 
 #include <string>
 
-#include "tron/util/CodeMap.h"
+#include "tron/util/CodeInterpreter.h"
 #include "tron2/robot/Topic.h"
 
 namespace tron2
 {
 /** 
- * Base class used to build & interpret messages of a given topic.
+ * Channel talker class, used to interpret & build messages of a given topic.
  */
-class Talker
+class ChannelTalker : public tron::CodeInterpreter
 {
 public:
     static const int MSG_FIELDS = 2;                    /*! number of fields in message */ 
@@ -29,11 +29,10 @@ protected:
     bool btuned;                                        /*! talker is tuned to a topic */    
     int topic;                                              /*! associated topic */    
     std::string name;                                  /*! talker name */     
-    tron::CodeMap oCodeMap;                      /*! code map for known concepts */    
     
 public:
-    Talker();              	
-    ~Talker();
+    ChannelTalker();              	
+    //~ChannelTalker();
 
     bool isTuned() {return btuned;};
     int getTopic() {return topic;};        
@@ -49,9 +48,6 @@ public:
     // interprets given message informing given code and value
     // returns true if message could be interpreted
     bool interpretMessage(std::string message, int& code, float& value);
-    
-    // get description of all concepts known by the talker
-    std::string getKnownConcepts();    
 };
 }
 #endif

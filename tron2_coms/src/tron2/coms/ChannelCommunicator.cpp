@@ -4,13 +4,13 @@
  ***************************************************************************/
 
 #include "tron2/coms/ChannelCommunicator.h"
-#include "tron2/talky/TalkyLanguages.h"
+#include "tron2/coms/talker/TalkerLanguage.h"
 
 using namespace log4cxx;
 
 namespace tron2
 {
-LoggerPtr ChannelCommunicator::logger(Logger::getLogger("tron.talky2"));
+LoggerPtr ChannelCommunicator::logger(Logger::getLogger("tron2.coms"));
 
 ChannelCommunicator::ChannelCommunicator()
 {    
@@ -31,7 +31,7 @@ void ChannelCommunicator::connect2Channel(int node, int channel, int topic)
         this->topic = topic;
         setIdentity();
         // tune talker for this node & topic
-        TalkyLanguages::setLanguage4Talker(oTalker, node, topic);
+        TalkerLanguage::setLanguage4Talker(oTalker, node, topic);
         btuned = oTalker.isTuned();
 }
 }

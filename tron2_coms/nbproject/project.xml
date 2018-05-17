@@ -14,7 +14,6 @@
                 <make-dep-project>../../tron/tron_wire</make-dep-project>
                 <make-dep-project>../../tron/tron_wire2</make-dep-project>
                 <make-dep-project>../../tron/tron_tools</make-dep-project>
-                <make-dep-project>../tron2_talky</make-dep-project>
             </make-dep-projects>
             <sourceRootList>
                 <sourceRootElem>src/tron2/coms</sourceRootElem>

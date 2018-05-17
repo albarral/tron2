@@ -3,48 +3,48 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
-#include "tron2/talky/Talker.h"
+#include "tron2/coms/talker/ChannelTalker.h"
 #include "tron/util/StringUtil.h"
 
 using namespace log4cxx;
 
 namespace tron2
 {
-LoggerPtr Talker::logger(Logger::getLogger("tron.talky2"));
+LoggerPtr ChannelTalker::logger(Logger::getLogger("tron2.coms"));
 
-const std::string Talker::FIELD_SEPARATOR = "*";
+const std::string ChannelTalker::FIELD_SEPARATOR = "*";
 
-Talker::Talker()
+ChannelTalker::ChannelTalker()
 {
     btuned = false;
     topic = -1;
     name = "?";
 }
 
-Talker::~Talker()
-{
-    oCodeMap.reset();
-}
+//ChannelTalker::~ChannelTalker()
+//{
+//}
 
-void Talker::tune4Topic(Topic& oTopic)
+void ChannelTalker::tune4Topic(Topic& oTopic)
 {
-    name = oTopic.getName() + "Talker";
+    name = oTopic.getName() + "ChannelTalker";
 
-    // fills code map with the topic's code map elements
-    oCodeMap = (tron::CodeMap)oTopic;
+    // set CodeInterpreter knowledge with given topic codes
+    tron::CodeInterpreter::setKnowledge(oTopic.getListCodes());
     
     btuned = true;
 }
 
 
-bool Talker::buildMessage(int code, float value, std::string& message)
+bool ChannelTalker::buildMessage(int code, float value, std::string& message)
 {
-    std::string word;
+    // get code name
+    std::string word = tron::CodeInterpreter::writeCode(code);
 
-    // if known concept, build message with the concept name
-    if (oCodeMap.getName4Code(code, word))
+    // if known code, build message with the code name
+    if (!word.empty())
     {
-        message = word + Talker::FIELD_SEPARATOR + std::to_string(value);
+        message = word + ChannelTalker::FIELD_SEPARATOR + std::to_string(value);
         return true;
     }
     // otherwise return false
@@ -57,16 +57,18 @@ bool Talker::buildMessage(int code, float value, std::string& message)
 }
 
 // expected message is code*value
-bool Talker::interpretMessage(std::string message, int& code, float& value)
+bool ChannelTalker::interpretMessage(std::string message, int& code, float& value)
 {           
     // get message parts (concept*value)
-    std::vector<std::string> listTokens = tron::StringUtil::split(message, Talker::FIELD_SEPARATOR); 
+    std::vector<std::string> listTokens = tron::StringUtil::split(message, ChannelTalker::FIELD_SEPARATOR); 
 
     // if right message size, interpret it
-    if (listTokens.size() == Talker::MSG_FIELDS)
+    if (listTokens.size() == ChannelTalker::MSG_FIELDS)
     {
-        // if known concept, interpret value 
-        if (oCodeMap.getCode4Name(listTokens.at(0), code))
+        // interpret code 
+        code = tron::CodeInterpreter::interpretCode(listTokens.at(0));
+        // if known code, interpret value 
+        if (code != -1)
         {
             if (tron::StringUtil::convert2Float(listTokens.at(1), value))            
             {
@@ -92,12 +94,6 @@ bool Talker::interpretMessage(std::string message, int& code, float& value)
     
     // if program arrives here, interpretation failed
     return false;
-}
-
-
-std::string Talker::getKnownConcepts()
-{
-    return oCodeMap.toString();
 }
 
 }

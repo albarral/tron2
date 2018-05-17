@@ -15,7 +15,7 @@ using namespace log4cxx;
 
 namespace tron2
 {
-LoggerPtr BodyClient::logger(Logger::getLogger("tron.talky2"));
+LoggerPtr BodyClient::logger(Logger::getLogger("tron2.coms"));
 
 BodyClient::BodyClient()
 {    

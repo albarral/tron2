@@ -14,7 +14,7 @@
 
 namespace tron2
 {
-// Class used to interpret user entered commands in talky communication language.
+// Class used to interpret user entered commands for robot communication.
 // Commands format: ./dady <node> <topic> <concept>*<value>
 class DadyCommander2 
 {

@@ -25,8 +25,6 @@
         <itemPath>src/TestConcepts.h</itemPath>
         <itemPath>src/TestRobot.cpp</itemPath>
         <itemPath>src/TestRobot.h</itemPath>
-        <itemPath>src/TestTalky.cpp</itemPath>
-        <itemPath>src/TestTalky.h</itemPath>
         <itemPath>src/TestTivy.cpp</itemPath>
         <itemPath>src/TestTivy.h</itemPath>
         <itemPath>src/main.cpp</itemPath>
@@ -63,7 +61,6 @@
             <pElem>../tron2_concepts/src</pElem>
             <pElem>../tron2_coms/src</pElem>
             <pElem>../tron2_robot/src</pElem>
-            <pElem>../tron2_talky/src</pElem>
             <pElem>../tron2_tivy/src</pElem>
             <pElem>../../tron/tron_tools/src</pElem>
             <pElem>../../tron/tron_util/src</pElem>
@@ -111,18 +108,6 @@
                             BC="${MAKE}  -f Makefile CONF=Debug"
                             CC="${MAKE}  -f Makefile CONF=Debug clean"
                             OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_robot.${CND_DLIB_EXT}">
-              </makeArtifact>
-            </linkerLibProjectItem>
-            <linkerLibProjectItem>
-              <makeArtifact PL="../tron2_talky"
-                            CT="2"
-                            CN="Debug"
-                            AC="true"
-                            BL="true"
-                            WD="../tron2_talky"
-                            BC="${MAKE}  -f Makefile CONF=Debug"
-                            CC="${MAKE}  -f Makefile CONF=Debug clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_talky.${CND_DLIB_EXT}">
               </makeArtifact>
             </linkerLibProjectItem>
             <linkerLibProjectItem>
@@ -200,10 +185,6 @@
       </item>
       <item path="src/TestRobot.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/TestTalky.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/TestTalky.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/TestTivy.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/TestTivy.h" ex="false" tool="3" flavor2="0">
@@ -250,10 +231,6 @@
       <item path="src/TestRobot.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/TestRobot.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/TestTalky.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/TestTalky.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TestTivy.cpp" ex="false" tool="1" flavor2="0">
       </item>

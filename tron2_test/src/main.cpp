@@ -9,7 +9,6 @@
 #include <log4cxx/xml/domconfigurator.h>
 
 #include "TestTivy.h"
-#include "TestTalky.h"
 #include "TestRobot.h"
 #include "TestConcepts.h"
 #include "TestComs.h"
@@ -24,7 +23,6 @@ enum eTest
     eTEST_CONCEPTS, 
     eTEST_COMS, 
     eTEST_ROBOT,
-    eTEST_TALKY,
     eTEST_TIVY
 };
 
@@ -37,7 +35,7 @@ int main(int argc, char** argv)
         
     LOG4CXX_INFO(logger, "\n\nSTART tron test\n");
     
-    int test = eTEST_CONCEPTS;
+    int test = eTEST_COMS;
 
     switch (test)
     {
@@ -60,13 +58,6 @@ int main(int argc, char** argv)
             // test robot2 lib
             TestRobot oTestRobot2;
             oTestRobot2.makeTest();
-            break;
-        }
-        case eTEST_TALKY:
-        {
-            // test talky lib
-            TestTalky oTestTalky;
-            oTestTalky.makeTest();
             break;
         }
         case eTEST_TIVY:

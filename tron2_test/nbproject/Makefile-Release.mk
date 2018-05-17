@@ -38,7 +38,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/TestComs.o \
 	${OBJECTDIR}/src/TestConcepts.o \
 	${OBJECTDIR}/src/TestRobot.o \
-	${OBJECTDIR}/src/TestTalky.o \
 	${OBJECTDIR}/src/TestTivy.o \
 	${OBJECTDIR}/src/aux/JointChannelServer.o \
 	${OBJECTDIR}/src/aux/TestPlot.o \
@@ -83,11 +82,6 @@ ${OBJECTDIR}/src/TestRobot.o: src/TestRobot.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestRobot.o src/TestRobot.cpp
-
-${OBJECTDIR}/src/TestTalky.o: src/TestTalky.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestTalky.o src/TestTalky.cpp
 
 ${OBJECTDIR}/src/TestTivy.o: src/TestTivy.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

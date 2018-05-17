@@ -17,7 +17,6 @@
                 <make-dep-project>../tron2_tivy</make-dep-project>
                 <make-dep-project>../../tron/tron_tools</make-dep-project>
                 <make-dep-project>../tron2_coms</make-dep-project>
-                <make-dep-project>../tron2_talky</make-dep-project>
             </make-dep-projects>
             <sourceRootList>
                 <sourceRootElem>src</sourceRootElem>
