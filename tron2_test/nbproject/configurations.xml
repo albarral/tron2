@@ -23,6 +23,8 @@
         <itemPath>src/TestComs.h</itemPath>
         <itemPath>src/TestConcepts.cpp</itemPath>
         <itemPath>src/TestConcepts.h</itemPath>
+        <itemPath>src/TestListen.cpp</itemPath>
+        <itemPath>src/TestListen.h</itemPath>
         <itemPath>src/TestRobot.cpp</itemPath>
         <itemPath>src/TestRobot.h</itemPath>
         <itemPath>src/TestTivy.cpp</itemPath>
@@ -60,6 +62,7 @@
             <pElem>src</pElem>
             <pElem>../tron2_concepts/src</pElem>
             <pElem>../tron2_coms/src</pElem>
+            <pElem>../tron2_listen/src</pElem>
             <pElem>../tron2_robot/src</pElem>
             <pElem>../tron2_tivy/src</pElem>
             <pElem>../../tron/tron_tools/src</pElem>
@@ -96,6 +99,18 @@
                             BC="${MAKE}  -f Makefile CONF=Debug"
                             CC="${MAKE}  -f Makefile CONF=Debug clean"
                             OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_coms.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../tron2_listen"
+                            CT="2"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../tron2_listen"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_listen.${CND_DLIB_EXT}">
               </makeArtifact>
             </linkerLibProjectItem>
             <linkerLibProjectItem>
@@ -181,6 +196,10 @@
       </item>
       <item path="src/TestConcepts.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/TestListen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TestListen.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/TestRobot.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/TestRobot.h" ex="false" tool="3" flavor2="0">
@@ -227,6 +246,10 @@
       <item path="src/TestConcepts.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/TestConcepts.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/TestListen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/TestListen.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TestRobot.cpp" ex="false" tool="1" flavor2="0">
       </item>

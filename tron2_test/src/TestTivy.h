@@ -6,15 +6,13 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
-#include <string>
 #include <log4cxx/logger.h>
 
-// class used to conduct tests
+// Class used to test tivy lib.
 class TestTivy
 {
  private:
      static log4cxx::LoggerPtr logger;
-    std::string modName;          // module name
 
 public:
     TestTivy();

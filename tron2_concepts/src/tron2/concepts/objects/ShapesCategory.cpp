@@ -27,6 +27,5 @@ ShapesCategory::ShapesCategory() : Category(ObjectCategories::eOBJECTS_SHAPES, "
     addConcept(oConcept);
     oConcept.set(eSHAPE_POINT, "point");       
     addConcept(oConcept);
-    addConcept(oConcept);
 }
 }

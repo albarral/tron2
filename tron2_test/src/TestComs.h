@@ -13,7 +13,7 @@
 #include "tron2/robot/arm/ArmSensors.h"
 
 
-// Class used to test coms with libtron2_coms.
+// Class used to test tron2_coms lib.
 class TestComs
 {
 private:

@@ -30,7 +30,7 @@ void ChannelTalker::tune4Topic(Topic& oTopic)
     name = oTopic.getName() + "ChannelTalker";
 
     // set CodeInterpreter knowledge with given topic codes
-    tron::CodeInterpreter::setKnowledge(oTopic.getListCodes());
+    tron::CodeInterpreter::addKnowledge(oTopic.getListCodes());
     
     btuned = true;
 }

@@ -8,7 +8,7 @@
 
 #include <log4cxx/logger.h>
 
-// Class used to test libtron2_robot2.
+// Class used to test tron2_robot lib.
 class TestRobot
 {
 private:

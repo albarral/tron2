@@ -4,6 +4,7 @@
  ***************************************************************************/
 
 #include <unistd.h> // for sleep() 
+#include <string>
 
 #include <log4cxx/logger.h>
 
@@ -22,19 +23,18 @@ LoggerPtr TestTivy::logger(Logger::getLogger("tron"));
 // Constructor 
 TestTivy::TestTivy()
 {    
-    modName = "TestTivy";
  }
 
 void TestTivy::makeTest()
 {
-    LOG4CXX_INFO(logger, modName + ": test start \n");
+    LOG4CXX_INFO(logger, "TestTivy: test start \n");
 
     //testPlot();
     //testHistoryPlot();
     testDiscPlot();    
     //testDualWindow();
         
-    LOG4CXX_INFO(logger, modName + ": test end \n");
+    LOG4CXX_INFO(logger, "TestTivy: test end \n");
 }
 
 void TestTivy::testPlot()

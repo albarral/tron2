@@ -3,33 +3,26 @@
     <type>org.netbeans.modules.cnd.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>tron2_test</name>
+            <name>tron2_listen</name>
             <c-extensions/>
             <cpp-extensions>cpp</cpp-extensions>
             <header-extensions>h</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects>
                 <make-dep-project>../tron2_concepts</make-dep-project>
-                <make-dep-project>../tron2_robot</make-dep-project>
                 <make-dep-project>../../tron/tron_util</make-dep-project>
-                <make-dep-project>../../tron/tron_wire</make-dep-project>
-                <make-dep-project>../../tron/tron_wire2</make-dep-project>
-                <make-dep-project>../tron2_tivy</make-dep-project>
-                <make-dep-project>../../tron/tron_tools</make-dep-project>
-                <make-dep-project>../tron2_coms</make-dep-project>
-                <make-dep-project>../tron2_listen</make-dep-project>
             </make-dep-projects>
             <sourceRootList>
-                <sourceRootElem>src</sourceRootElem>
+                <sourceRootElem>src/tron2/listen</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
                     <name>Debug</name>
-                    <type>1</type>
+                    <type>2</type>
                 </confElem>
                 <confElem>
                     <name>Release</name>
-                    <type>1</type>
+                    <type>2</type>
                 </confElem>
             </confList>
             <formatting>
