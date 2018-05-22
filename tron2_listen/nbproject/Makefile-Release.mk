@@ -35,7 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/tron2/listen/LetterProcessor.o
+	${OBJECTDIR}/src/tron2/listen/LetterProcessor.o \
+	${OBJECTDIR}/src/tron2/listen/WordProcessor.o
 
 
 # C Compiler Flags
@@ -66,6 +67,11 @@ ${OBJECTDIR}/src/tron2/listen/LetterProcessor.o: src/tron2/listen/LetterProcesso
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/listen
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/listen/LetterProcessor.o src/tron2/listen/LetterProcessor.cpp
+
+${OBJECTDIR}/src/tron2/listen/WordProcessor.o: src/tron2/listen/WordProcessor.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/listen
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/listen/WordProcessor.o src/tron2/listen/WordProcessor.cpp
 
 # Subprojects
 .build-subprojects:

@@ -10,6 +10,7 @@
 
 #include "tron2/concepts/Knowledge.h"
 #include "tron2/listen/LetterProcessor.h"
+#include "tron2/listen/WordProcessor.h"
 
 // Class used to test tron2_listen lib.
 class TestListen
@@ -24,10 +25,12 @@ public:
     void makeTest();      
     
 private:
+    tron2::Knowledge* createKnowledge();
     void testLetterProcessor();
+    void testWordProcessor();
     
-    void prepareProcessor(tron2::LetterProcessor& oLetterProcessor, tron2::Knowledge& oKnowledge);
-    bool checkProcessor(tron2::LetterProcessor& oLetterProcessor, std::string word);
+    void prepareLetterProcessor(tron2::LetterProcessor& oLetterProcessor, tron2::Knowledge& oKnowledge);
+    bool useLetterProcessor(tron2::LetterProcessor& oLetterProcessor, std::string word);
 
 };
 #endif

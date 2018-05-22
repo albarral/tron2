@@ -15,6 +15,8 @@
       <logicalFolder name="listen" displayName="listen" projectFiles="true">
         <itemPath>src/tron2/listen/LetterProcessor.cpp</itemPath>
         <itemPath>src/tron2/listen/LetterProcessor.h</itemPath>
+        <itemPath>src/tron2/listen/WordProcessor.cpp</itemPath>
+        <itemPath>src/tron2/listen/WordProcessor.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -86,6 +88,10 @@
       </item>
       <item path="src/tron2/listen/LetterProcessor.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/tron2/listen/WordProcessor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/listen/WordProcessor.h" ex="false" tool="3" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="2">
       <toolsSet>
@@ -113,6 +119,10 @@
             flavor2="0">
       </item>
       <item path="src/tron2/listen/LetterProcessor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/listen/WordProcessor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/listen/WordProcessor.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

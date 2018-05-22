@@ -20,14 +20,22 @@ LetterProcessor::LetterProcessor()
     letter = ' ';
 }
 
-//LetterProcessor::~LetterProcessor()
-//{
-//}
+LetterProcessor::~LetterProcessor()
+{
+    reset();
+}
 
 void LetterProcessor::setLetter(char value)
 {
     letter = value;
     processorName = "LetterProcessor" + std::to_string(letter);
+}
+
+void LetterProcessor::reset()
+{
+    letter = ' ';
+    listConcepts.clear();
+    tron::CodeInterpreter::clearKnowledge();
 }
 
 void LetterProcessor::loadKnowledge(Knowledge& oKnowledge)
@@ -52,7 +60,7 @@ void LetterProcessor::loadKnowledge(Knowledge& oKnowledge)
     }
 }
 
-tron::Element* LetterProcessor::interpretWord(std::string word)
+tron::Element* LetterProcessor::interpretWord(std::string& word)
 {           
     // check if code interpreter knows the concept name
     int code = tron::CodeInterpreter::interpretCode(word);
@@ -63,6 +71,7 @@ tron::Element* LetterProcessor::interpretWord(std::string word)
         // safety check
         if (code < listConcepts.size())
         {
+            oTry.update(true);
             return &(listConcepts.at(code));
         }
         // trace incoherent codes (shouldn't happen)
@@ -76,6 +85,7 @@ tron::Element* LetterProcessor::interpretWord(std::string word)
     else
     {
         LOG4CXX_WARN(logger, processorName + ": unknown concept " + word);   
+        oTry.update(false);
         return 0;
     }
 }

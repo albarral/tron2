@@ -36,20 +36,21 @@ private:
     
 public:
     LetterProcessor();              	
-    //~LetterProcessor();
+    ~LetterProcessor();
 
     std::string getName() {return processorName;};
     
     // set processor's letter
     void setLetter(char value);
     char getLetter() {return letter;};
+    void reset();
         
     // load partial knowledge, that is all concepts starting with the letter
     void loadKnowledge(Knowledge& oKnowledge);
-    
+   
     // interprets given word returning the corresponding concept (pointer)
-    // returns 0 if word unknown
-    tron::Element* interpretWord(std::string word);
+    // returns 0 if word is unknown
+    tron::Element* interpretWord(std::string& word);
     
     tron::Try& getUsage() {return oTry;}; 
 };

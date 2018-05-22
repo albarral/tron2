@@ -21,24 +21,31 @@ void TestListen::makeTest()
 {
     LOG4CXX_INFO(logger, "TestListen: test start \n");
 
-    testLetterProcessor();
+    //testLetterProcessor();
+    testWordProcessor();
         
     LOG4CXX_INFO(logger, "TestListen: test end \n");
 };
 
+tron2::Knowledge* TestListen::createKnowledge()
+{
+    tron2::BodyCategory oBodyCategory;
+    tron2::ShapesCategory oShapesCategory;
+    
+    tron2::Knowledge* pKnowledge = new tron2::Knowledge(1, "knowledge");
+    pKnowledge->addCategory(oBodyCategory);
+    pKnowledge->addCategory(oShapesCategory);    
+
+    LOG4CXX_INFO(logger, pKnowledge->toString());        
+    
+    return pKnowledge;
+}
 
 void TestListen::testLetterProcessor()
 {
     LOG4CXX_INFO(logger, "TestListen: testLetterProcessor ...");
 
-    tron2::BodyCategory oBodyCategory;
-    tron2::ShapesCategory oShapesCategory;
-    
-    tron2::Knowledge oKnowledge(1, "knowledge");
-    oKnowledge.addCategory(oBodyCategory);
-    oKnowledge.addCategory(oShapesCategory);
-    
-    LOG4CXX_INFO(logger, oKnowledge.toString());        
+    tron2::Knowledge* pKnowledge = createKnowledge();
     
     tron2::LetterProcessor oLetterProcessor1;
     tron2::LetterProcessor oLetterProcessor2;
@@ -46,24 +53,49 @@ void TestListen::testLetterProcessor()
     oLetterProcessor1.setLetter('l');
     oLetterProcessor2.setLetter('r');
     oLetterProcessor3.setLetter('t');
-    
-    prepareProcessor(oLetterProcessor1, oKnowledge);
-    prepareProcessor(oLetterProcessor2, oKnowledge);
-    prepareProcessor(oLetterProcessor3, oKnowledge);
+        
+    prepareLetterProcessor(oLetterProcessor1, *pKnowledge);
+    prepareLetterProcessor(oLetterProcessor2, *pKnowledge);
+    prepareLetterProcessor(oLetterProcessor3, *pKnowledge);
 
     std::string word = "triangle";         
-    checkProcessor(oLetterProcessor1, word);
-    checkProcessor(oLetterProcessor2, word);
-    checkProcessor(oLetterProcessor3, word);    
+    useLetterProcessor(oLetterProcessor1, word);
+    useLetterProcessor(oLetterProcessor2, word);
+    useLetterProcessor(oLetterProcessor3, word);    
+    
+    delete(pKnowledge);
 }
 
-void TestListen::prepareProcessor(tron2::LetterProcessor& oLetterProcessor, tron2::Knowledge& oKnowledge)
+void TestListen::testWordProcessor()
+{
+    LOG4CXX_INFO(logger, "TestListen: testWordProcessor ...");
+
+    tron2::Knowledge* pKnowledge = createKnowledge();
+    
+    tron2::WordProcessor oWordProcessor;
+    oWordProcessor.addLetter('l');
+    oWordProcessor.addLetter('r');
+    oWordProcessor.addLetter('t');
+    
+    oWordProcessor.setKnowledge(*pKnowledge);
+
+    std::string word = "trilobite";         
+    tron::Element* pElement = oWordProcessor.interpretWord(word);
+    if (pElement != 0)
+    {
+        LOG4CXX_INFO(logger, oWordProcessor.getName() + ": known concept! " + pElement->toString());       
+    }    
+
+    delete(pKnowledge);    
+}
+
+void TestListen::prepareLetterProcessor(tron2::LetterProcessor& oLetterProcessor, tron2::Knowledge& oKnowledge)
 {
     oLetterProcessor.loadKnowledge(oKnowledge);
     LOG4CXX_INFO(logger, oLetterProcessor.getName() + ":\n" + oLetterProcessor.describeKnowledge());       
 }
 
-bool TestListen::checkProcessor(tron2::LetterProcessor& oLetterProcessor, std::string word)
+bool TestListen::useLetterProcessor(tron2::LetterProcessor& oLetterProcessor, std::string word)
 {
     tron::Element* pElement = oLetterProcessor.interpretWord(word);
     if (pElement != 0)
