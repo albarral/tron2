@@ -8,9 +8,7 @@
 #include <log4cxx/logger.h>
 #include <log4cxx/xml/domconfigurator.h>
 
-#include "TestConcepts.h"
 #include "TestComs.h"
-#include "TestListen.h"
 #include "TestRobot.h"
 #include "TestTivy.h"
 
@@ -21,9 +19,7 @@ log4cxx::LoggerPtr logger(log4cxx::Logger::getLogger("tron"));
 
 enum eTest
 {
-    eTEST_CONCEPTS, 
     eTEST_COMS, 
-    eTEST_LISTEN,
     eTEST_ROBOT,
     eTEST_TIVY
 };
@@ -37,29 +33,15 @@ int main(int argc, char** argv)
         
     LOG4CXX_INFO(logger, "\n\nSTART tron test\n");
     
-    int test = eTEST_LISTEN;
+    int test = eTEST_COMS;
 
     switch (test)
     {
-        case eTEST_CONCEPTS:
-        {
-            // test concepts lib
-            TestConcepts oTestConcepts;
-            oTestConcepts.makeTest();
-            break;
-        }
         case eTEST_COMS:
         {
             // test coms lib
             TestComs oTestComs;
             oTestComs.makeTest();
-            break;
-        }
-        case eTEST_LISTEN:
-        {
-            // test listen lib
-            TestListen oTestListen;
-            oTestListen.makeTest();
             break;
         }
         case eTEST_ROBOT:
