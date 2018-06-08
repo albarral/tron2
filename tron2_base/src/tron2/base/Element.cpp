@@ -1,0 +1,58 @@
+/***************************************************************************
+ *   Copyright (C) 2018 by Migtron Robotics   *
+ *   albarral@migtron.com   *
+ ***************************************************************************/
+
+#include "tron2/base/Element.h"
+
+namespace tron2
+{
+Element::Element()
+{          
+    this->id = -1;
+    this->name = "";
+    type = Element::eTYPE_ELEMENT;
+    group = -1;
+}
+
+Element::Element(int id, std::string name)
+{          
+    this->id = id;
+    this->name = name;
+    type = Element::eTYPE_ELEMENT;
+    group = -1;
+}
+
+//Element::~Element ()
+//{
+//}
+
+std::string Element::toString()
+{
+    std::string text = "id=" + std::to_string(id)  + ", group=" + std::to_string(group) + ", name=" + name +  ", type=" +getTypeName(type);    
+    return text;    
+}
+
+std::string Element::getTypeName(int type)
+{
+    switch (type)
+    {
+        case eTYPE_ELEMENT:
+            return "element";
+            break;
+        case eTYPE_GROUP:
+            return "group";
+            break;
+        case eTYPE_SUPERGROUP:
+            return "supergroup";
+            break;
+        default: 
+            return "invalid";
+    }    
+}
+
+}
+
+
+
+
