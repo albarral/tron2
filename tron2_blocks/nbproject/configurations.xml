@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="blocks" displayName="blocks" projectFiles="true">
+        <logicalFolder name="brooks" displayName="brooks" projectFiles="true">
+          <itemPath>src/tron2/blocks/brooks/control.cpp</itemPath>
+          <itemPath>src/tron2/blocks/brooks/control.h</itemPath>
+          <itemPath>src/tron2/blocks/brooks/control1.cpp</itemPath>
+          <itemPath>src/tron2/blocks/brooks/control1.h</itemPath>
+          <itemPath>src/tron2/blocks/brooks/control2.cpp</itemPath>
+          <itemPath>src/tron2/blocks/brooks/control2.h</itemPath>
+          <itemPath>src/tron2/blocks/brooks/control3.cpp</itemPath>
+          <itemPath>src/tron2/blocks/brooks/control3.h</itemPath>
+          <itemPath>src/tron2/blocks/brooks/controlT.h</itemPath>
+          <itemPath>src/tron2/blocks/brooks/inhibition.cpp</itemPath>
+          <itemPath>src/tron2/blocks/brooks/inhibition.h</itemPath>
+          <itemPath>src/tron2/blocks/brooks/sensor.cpp</itemPath>
+          <itemPath>src/tron2/blocks/brooks/sensor.h</itemPath>
+          <itemPath>src/tron2/blocks/brooks/sensor2.cpp</itemPath>
+          <itemPath>src/tron2/blocks/brooks/sensor2.h</itemPath>
+          <itemPath>src/tron2/blocks/brooks/sensor3.cpp</itemPath>
+          <itemPath>src/tron2/blocks/brooks/sensor3.h</itemPath>
+          <itemPath>src/tron2/blocks/brooks/sensorT.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="extra" displayName="extra" projectFiles="true">
+          <itemPath>src/tron2/blocks/extra/Sensor2Led.cpp</itemPath>
+          <itemPath>src/tron2/blocks/extra/Sensor2Led.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="operators" displayName="operators" projectFiles="true">
+          <itemPath>src/tron2/blocks/operators/ControlAdder3.cpp</itemPath>
+          <itemPath>src/tron2/blocks/operators/ControlAdder3.h</itemPath>
+        </logicalFolder>
+        <itemPath>src/tron2/blocks/Action.cpp</itemPath>
+        <itemPath>src/tron2/blocks/Action.h</itemPath>
+        <itemPath>src/tron2/blocks/Behaviour.cpp</itemPath>
+        <itemPath>src/tron2/blocks/Behaviour.h</itemPath>
+        <itemPath>src/tron2/blocks/Module.cpp</itemPath>
+        <itemPath>src/tron2/blocks/Module.h</itemPath>
+        <itemPath>src/tron2/blocks/NodeConnector.cpp</itemPath>
+        <itemPath>src/tron2/blocks/NodeConnector.h</itemPath>
+        <itemPath>src/tron2/blocks/iNodeBus.h</itemPath>
+        <itemPath>src/tron2/blocks/iNodeData.h</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>src/tron2/blocks</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="2">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>8</standard>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </compileType>
+      <item path="src/tron2/blocks/Action.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/Action.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/Behaviour.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/Behaviour.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/Module.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/Module.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/NodeConnector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/NodeConnector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/control.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/control.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/control1.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/control1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/control2.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/control2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/control3.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/control3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/controlT.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/inhibition.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/inhibition.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/sensor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/sensor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/sensor2.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/sensor2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/sensor3.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/sensor3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/sensorT.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/extra/Sensor2Led.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/extra/Sensor2Led.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/iNodeBus.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/iNodeData.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/operators/ControlAdder3.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/operators/ControlAdder3.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="2">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="src/tron2/blocks/Action.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/Action.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/Behaviour.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/Behaviour.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/Module.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/Module.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/NodeConnector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/NodeConnector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/control.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/control.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/control1.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/control1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/control2.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/control2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/control3.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/control3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/controlT.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/inhibition.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/inhibition.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/sensor.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/sensor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/sensor2.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/sensor2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/sensor3.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/sensor3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/brooks/sensorT.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/extra/Sensor2Led.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/extra/Sensor2Led.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/iNodeBus.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/iNodeData.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/operators/ControlAdder3.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/blocks/operators/ControlAdder3.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
