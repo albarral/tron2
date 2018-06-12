@@ -20,9 +20,9 @@ LoggerPtr BodyClient::logger(Logger::getLogger("tron2.coms"));
 BodyClient::BodyClient()
 {    
     int node = RobotSystem::eNODE_BODYROLE;
-    oExpressiveChannelClient.connect2Channel(node, RobotNetwork::eBODY_EXPRESSIVE_CHANNEL, BodyNode::eBODY_EXPRESSIVE);
-    oArtisticChannelClient.connect2Channel(node, RobotNetwork::eBODY_ARTISTIC1_CHANNEL, BodyNode::eBODY_ARTISTIC);
-    oExtraChannelClient.connect2Channel(node, RobotNetwork::eBODY_EXTRA_CHANNEL, Node::eEXTRA_TOPIC);
+    oExpressiveChannelClient.connect2Channel(node, RobotNetwork::eBODY_EXPRESSIVE_CHANNEL, nullptr);
+    oArtisticChannelClient.connect2Channel(node, RobotNetwork::eBODY_ARTISTIC1_CHANNEL, nullptr);
+    oExtraChannelClient.connect2Channel(node, RobotNetwork::eBODY_EXTRA_CHANNEL, nullptr);
 }
 
 BodyClient::~BodyClient()

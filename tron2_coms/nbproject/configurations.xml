@@ -13,31 +13,17 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="coms" displayName="coms" projectFiles="true">
-        <logicalFolder name="arm" displayName="arm" projectFiles="true">
-          <itemPath>src/tron2/coms/arm/ArmClient.cpp</itemPath>
-          <itemPath>src/tron2/coms/arm/ArmClient.h</itemPath>
-          <itemPath>src/tron2/coms/arm/ArmListener.cpp</itemPath>
-          <itemPath>src/tron2/coms/arm/ArmListener.h</itemPath>
-          <itemPath>src/tron2/coms/arm/ChannelSubscriber4Axes.cpp</itemPath>
-          <itemPath>src/tron2/coms/arm/ChannelSubscriber4Axes.h</itemPath>
-          <itemPath>src/tron2/coms/arm/ChannelSubscriber4Joints.cpp</itemPath>
-          <itemPath>src/tron2/coms/arm/ChannelSubscriber4Joints.h</itemPath>
-        </logicalFolder>
         <logicalFolder name="body" displayName="body" projectFiles="true">
           <itemPath>src/tron2/coms/body/BodyClient.cpp</itemPath>
           <itemPath>src/tron2/coms/body/BodyClient.h</itemPath>
         </logicalFolder>
         <logicalFolder name="ifaces" displayName="ifaces" projectFiles="true">
           <itemPath>src/tron2/coms/ifaces/TronAnyClient.h</itemPath>
-          <itemPath>src/tron2/coms/ifaces/TronArmClient.h</itemPath>
-          <itemPath>src/tron2/coms/ifaces/TronArmListener.h</itemPath>
           <itemPath>src/tron2/coms/ifaces/TronBodyClient.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f1" displayName="talker" projectFiles="true">
           <itemPath>src/tron2/coms/talker/ChannelTalker.cpp</itemPath>
           <itemPath>src/tron2/coms/talker/ChannelTalker.h</itemPath>
-          <itemPath>src/tron2/coms/talker/TalkerLanguage.cpp</itemPath>
-          <itemPath>src/tron2/coms/talker/TalkerLanguage.h</itemPath>
         </logicalFolder>
         <itemPath>src/tron2/coms/ChannelClient.cpp</itemPath>
         <itemPath>src/tron2/coms/ChannelClient.h</itemPath>
@@ -184,49 +170,11 @@
       </item>
       <item path="src/tron2/coms/ChannelSubscriber.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/tron2/coms/arm/ArmClient.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tron2/coms/arm/ArmClient.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/coms/arm/ArmListener.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tron2/coms/arm/ArmListener.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/coms/arm/ChannelSubscriber4Axes.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/coms/arm/ChannelSubscriber4Axes.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/coms/arm/ChannelSubscriber4Joints.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/coms/arm/ChannelSubscriber4Joints.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
       <item path="src/tron2/coms/body/BodyClient.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tron2/coms/body/BodyClient.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/tron2/coms/ifaces/TronAnyClient.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/coms/ifaces/TronArmClient.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/coms/ifaces/TronArmListener.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -242,16 +190,6 @@
             flavor2="0">
       </item>
       <item path="src/tron2/coms/talker/ChannelTalker.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/coms/talker/TalkerLanguage.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/coms/talker/TalkerLanguage.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -309,49 +247,11 @@
       </item>
       <item path="src/tron2/coms/ChannelSubscriber.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/tron2/coms/arm/ArmClient.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tron2/coms/arm/ArmClient.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/coms/arm/ArmListener.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tron2/coms/arm/ArmListener.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/coms/arm/ChannelSubscriber4Axes.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/coms/arm/ChannelSubscriber4Axes.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/coms/arm/ChannelSubscriber4Joints.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/coms/arm/ChannelSubscriber4Joints.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
       <item path="src/tron2/coms/body/BodyClient.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tron2/coms/body/BodyClient.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/tron2/coms/ifaces/TronAnyClient.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/coms/ifaces/TronArmClient.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/coms/ifaces/TronArmListener.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -367,16 +267,6 @@
             flavor2="0">
       </item>
       <item path="src/tron2/coms/talker/ChannelTalker.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/coms/talker/TalkerLanguage.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/coms/talker/TalkerLanguage.h"
             ex="false"
             tool="3"
             flavor2="0">

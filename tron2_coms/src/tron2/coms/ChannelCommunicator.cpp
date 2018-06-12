@@ -4,7 +4,6 @@
  ***************************************************************************/
 
 #include "tron2/coms/ChannelCommunicator.h"
-#include "tron2/coms/talker/TalkerLanguage.h"
 
 using namespace log4cxx;
 
@@ -24,14 +23,15 @@ ChannelCommunicator::~ChannelCommunicator()
 {    
 }
 
-void ChannelCommunicator::connect2Channel(int node, int channel, int topic)
+void ChannelCommunicator::connect2Channel(int node, int channel, Topic* pTopic)
 {
-        this->node = node;
-        this->channel = channel;
-        this->topic = topic;
-        setIdentity();
-        // tune talker for this node & topic
-        TalkerLanguage::setLanguage4Talker(oTalker, node, topic);
-        btuned = oTalker.isTuned();
+    this->node = node;
+    this->channel = channel;
+    this->topic = topic;
+    setIdentity();
+    // tune talker for topic
+    if (pTopic != nullptr)
+        oTalker.tune4Topic(*pTopic);
+    btuned = oTalker.isTuned();
 }
 }

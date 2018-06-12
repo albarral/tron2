@@ -9,8 +9,9 @@
 #include <string>
 #include <log4cxx/logger.h>
 
-#include "tron/wire2/FileWire.h"
 #include "tron2/coms/talker/ChannelTalker.h"
+#include "tron2/robot/Topic.h"
+#include "tron/wire2/FileWire.h"
 
 namespace tron2
 {
@@ -31,7 +32,7 @@ public:
     ChannelCommunicator();
     ~ChannelCommunicator();
     
-    void connect2Channel(int node, int channel, int topic);
+    void connect2Channel(int node, int channel, Topic* pTopic);
     bool isTuned() {return btuned;};
     std::string getIdentity() {return identity;};
     

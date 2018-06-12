@@ -40,13 +40,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tron2/coms/ChannelPublisher.o \
 	${OBJECTDIR}/src/tron2/coms/ChannelServer.o \
 	${OBJECTDIR}/src/tron2/coms/ChannelSubscriber.o \
-	${OBJECTDIR}/src/tron2/coms/arm/ArmClient.o \
-	${OBJECTDIR}/src/tron2/coms/arm/ArmListener.o \
-	${OBJECTDIR}/src/tron2/coms/arm/ChannelSubscriber4Axes.o \
-	${OBJECTDIR}/src/tron2/coms/arm/ChannelSubscriber4Joints.o \
 	${OBJECTDIR}/src/tron2/coms/body/BodyClient.o \
-	${OBJECTDIR}/src/tron2/coms/talker/ChannelTalker.o \
-	${OBJECTDIR}/src/tron2/coms/talker/TalkerLanguage.o
+	${OBJECTDIR}/src/tron2/coms/talker/ChannelTalker.o
 
 
 # C Compiler Flags
@@ -108,26 +103,6 @@ ${OBJECTDIR}/src/tron2/coms/ChannelSubscriber.o: src/tron2/coms/ChannelSubscribe
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Isrc -I../tron2_robot/src -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/coms/ChannelSubscriber.o src/tron2/coms/ChannelSubscriber.cpp
 
-${OBJECTDIR}/src/tron2/coms/arm/ArmClient.o: src/tron2/coms/arm/ArmClient.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/coms/arm
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../tron2_robot/src -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/coms/arm/ArmClient.o src/tron2/coms/arm/ArmClient.cpp
-
-${OBJECTDIR}/src/tron2/coms/arm/ArmListener.o: src/tron2/coms/arm/ArmListener.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/coms/arm
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../tron2_robot/src -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/coms/arm/ArmListener.o src/tron2/coms/arm/ArmListener.cpp
-
-${OBJECTDIR}/src/tron2/coms/arm/ChannelSubscriber4Axes.o: src/tron2/coms/arm/ChannelSubscriber4Axes.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/coms/arm
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../tron2_robot/src -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/coms/arm/ChannelSubscriber4Axes.o src/tron2/coms/arm/ChannelSubscriber4Axes.cpp
-
-${OBJECTDIR}/src/tron2/coms/arm/ChannelSubscriber4Joints.o: src/tron2/coms/arm/ChannelSubscriber4Joints.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/coms/arm
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../tron2_robot/src -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/coms/arm/ChannelSubscriber4Joints.o src/tron2/coms/arm/ChannelSubscriber4Joints.cpp
-
 ${OBJECTDIR}/src/tron2/coms/body/BodyClient.o: src/tron2/coms/body/BodyClient.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/coms/body
 	${RM} "$@.d"
@@ -137,11 +112,6 @@ ${OBJECTDIR}/src/tron2/coms/talker/ChannelTalker.o: src/tron2/coms/talker/Channe
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/coms/talker
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Isrc -I../tron2_robot/src -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/coms/talker/ChannelTalker.o src/tron2/coms/talker/ChannelTalker.cpp
-
-${OBJECTDIR}/src/tron2/coms/talker/TalkerLanguage.o: src/tron2/coms/talker/TalkerLanguage.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/coms/talker
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../tron2_robot/src -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/coms/talker/TalkerLanguage.o src/tron2/coms/talker/TalkerLanguage.cpp
 
 # Subprojects
 .build-subprojects:
