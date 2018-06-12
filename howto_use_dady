@@ -6,9 +6,10 @@
 
 dady is a program that allows users to control robotic nodes (amy, goon, rolybody, ...) from CLI.
 
-It uses tron & tron2 libraries:
-- libtron2_talky
+It uses tron, tron2 & amy libraries:
+- libtron2_coms
 - libtron_wire
+- libamy_interface
 - ...
 
 

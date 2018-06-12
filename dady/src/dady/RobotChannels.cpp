@@ -4,10 +4,10 @@
  ***************************************************************************/
 
 #include "dady/RobotChannels.h"
-#include "tron2/robot/Node.h"
-#include "tron2/robot/RobotNetwork.h"
+#include "amy/interface/ArmNode.h"
+#include "tron2/robot/Node.h"   // to delete
+#include "tron2/robot/RobotNetwork.h"   // to delete
 #include "tron2/robot/RobotSystem.h"
-#include "tron2/robot/arm/ArmNode.h"
 #include "tron2/robot/body/BodyNode.h"
 #include "tron2/robot/vision/VisionNode.h"
 
@@ -42,11 +42,11 @@ void RobotChannels::fillMapChannels4Node(int node)
         case RobotSystem::eNODE_ARM: 
         {
             oMapChannels4Arm.reset();
-            oMapChannels4Arm.addCode(RobotNetwork::eARM_JOINTS_CHANNEL, "joints");
-            oMapChannels4Arm.addCode(RobotNetwork::eARM_AXES_CHANNEL, "axes");
-            oMapChannels4Arm.addCode(RobotNetwork::eARM_CYCLER1_CHANNEL, "cycler1");
-            oMapChannels4Arm.addCode(RobotNetwork::eARM_CYCLER2_CHANNEL, "cycler2");
-            oMapChannels4Arm.addCode(RobotNetwork::eARM_EXTRA_CHANNEL, "extra");
+            oMapChannels4Arm.addCode(amy::ArmNode::eARM_JOINTS_CHANNEL, "joints");
+            oMapChannels4Arm.addCode(amy::ArmNode::eARM_AXES_CHANNEL, "axes");
+            oMapChannels4Arm.addCode(amy::ArmNode::eARM_CYCLER1_CHANNEL, "cycler1");
+            oMapChannels4Arm.addCode(amy::ArmNode::eARM_CYCLER2_CHANNEL, "cycler2");
+            oMapChannels4Arm.addCode(amy::ArmNode::eARM_EXTRA_CHANNEL, "extra");
             break;
         }
         case RobotSystem::eNODE_BODYROLE: 
@@ -68,45 +68,21 @@ void RobotChannels::fillMapChannels4Node(int node)
     }
 }
 
-int RobotChannels::getTopic4NodeChannel(int node, int channel)
+Topic* RobotChannels::getTopic4NodeChannel(int node, int channel)
 {
     switch (node)
     {
         case RobotSystem::eNODE_ARM: 
-            return getTopic4ArmChannel(channel);
+            return amy::ArmNode::getTopic4Channel(channel);
             break;
         case RobotSystem::eNODE_BODYROLE: 
-            return getTopic4BodyChannel(channel);
+            return nullptr; // getTopic4BodyChannel(channel);
             break;
         case RobotSystem::eNODE_VISION: 
-            return getTopic4VisionChannel(channel);
+            return nullptr; //getTopic4VisionChannel(channel);
         break;
         default: 
-            return -1;
-    }    
-}
-
-int RobotChannels::getTopic4ArmChannel(int channel)
-{
-    switch (channel)
-    {
-        case RobotNetwork::eARM_JOINTS_CHANNEL: 
-            return ArmNode::eARM_JOINT;
-            break;
-        case RobotNetwork::eARM_AXES_CHANNEL: 
-            return ArmNode::eARM_AXIS;
-            break;
-        case RobotNetwork::eARM_CYCLER1_CHANNEL: 
-            return ArmNode::eARM_CYCLIC;
-            break;
-        case RobotNetwork::eARM_CYCLER2_CHANNEL: 
-            return ArmNode::eARM_CYCLIC;
-            break;
-        case RobotNetwork::eARM_EXTRA_CHANNEL: 
-            return Node::eEXTRA_TOPIC;
-            break;
-        default: 
-            return -1;            
+            return nullptr;
     }    
 }
 

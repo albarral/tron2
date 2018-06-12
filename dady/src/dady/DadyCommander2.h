@@ -11,6 +11,7 @@
 
 #include "dady/RobotChannels.h"
 #include "tron2/robot/system/TronRobot.h"
+#include "tron2/robot/Topic.h"
 
 namespace tron2
 {
@@ -33,7 +34,6 @@ private:
     static log4cxx::LoggerPtr logger;    
     int targetNode;                          // target node (arm, vision, ...) 
     int targetChannel;                      // target channel
-    int targetTopic;                          // target topic (for arm node: joints, axis, ...)
     std::string message;                 // message to send
     TronRobot oTronRobot;
     RobotChannels oRobotChannels;       
@@ -48,11 +48,11 @@ public:
     bool sendMessage();
     
 private:
-    bool checkCorrectMessage(int node, int topic, std::string msg);
+    bool checkCorrectMessage(Topic* pTopic, std::string msg);
 
     void showAvailableNodes();
     void showAvailableChannels(int node);
-    void showAvailableConcepts(int node, int topic);
+    void showAvailableConcepts(Topic* pTopic);
     
 };
 }		

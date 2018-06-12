@@ -9,6 +9,7 @@
 #include <string>
 
 #include "tron/util/CodeMap.h"
+#include "tron2/robot/Topic.h"
 
 namespace tron2
 {
@@ -26,10 +27,9 @@ namespace tron2
     tron::CodeMap* getMapChannels4Node(int node);     
     void fillMapChannels4Node(int node);
     
-    int getTopic4NodeChannel(int node, int channel);
+    Topic* getTopic4NodeChannel(int node, int channel);
 
  private:    
-    int getTopic4ArmChannel(int channel);
     int getTopic4BodyChannel(int channel);
     int getTopic4VisionChannel(int channel);
     

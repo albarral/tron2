@@ -9,7 +9,7 @@
 #include "tron/util/StringUtil.h"
 #include "tron/wire2/FileWire.h"
 #include "tron2/coms/talker/ChannelTalker.h"
-#include "tron2/coms/talker/TalkerLanguage.h"
+
 
 using namespace log4cxx;
 
@@ -24,7 +24,6 @@ DadyCommander2::DadyCommander2()
 { 
     targetNode = -1;
     targetChannel = -1;
-    targetTopic = -1;
 }
 
 bool DadyCommander2::checkValidCommand(std::string entry)
@@ -33,6 +32,7 @@ bool DadyCommander2::checkValidCommand(std::string entry)
     int validElements = 0;
     std::string nodeName;
     std::string channelName;
+    Topic* pTargetTopic = nullptr;
     
     // if no command
     if (entry.empty())
@@ -84,9 +84,9 @@ bool DadyCommander2::checkValidCommand(std::string entry)
         // get topic for channel
         if (targetChannel != -1)
         {
-            targetTopic = oRobotChannels.getTopic4NodeChannel(targetNode, targetChannel);        
+            pTargetTopic = oRobotChannels.getTopic4NodeChannel(targetNode, targetChannel);        
             // and check its validity
-            if (targetTopic != -1)
+            if (pTargetTopic != nullptr)
                 validElements++;
             else
                 LOG4CXX_WARN(logger, "DadyCommander2: no topic for channel " + channelName);    
@@ -108,25 +108,26 @@ bool DadyCommander2::checkValidCommand(std::string entry)
     {
         // interpret concept
         message = listTokens.at(eCOMMAND_CONCEPT);            
-        if (checkCorrectMessage(targetNode, targetTopic, message))
+        if (checkCorrectMessage(pTargetTopic, message))
             validElements++;
         else
             LOG4CXX_WARN(logger, "DadyCommander2: invalid concept " + message);            
     }
     else
         // show available concepts for node & topic
-        showAvailableConcepts(targetNode, targetTopic);
+        showAvailableConcepts(pTargetTopic);
 
     processedElements++;
     // return false if concept invalid or not informed
     return (processedElements == validElements);
 }
 
-bool DadyCommander2::checkCorrectMessage(int node, int topic, std::string msg)
+bool DadyCommander2::checkCorrectMessage(Topic* pTopic, std::string msg)
 {    
-    // create proper talker for target node & topic
+    // create talker and tune it for target topic
     tron2::ChannelTalker oTalker;    
-    tron2::TalkerLanguage::setLanguage4Talker(oTalker, node, topic);
+    if (pTopic != nullptr)
+        oTalker.tune4Topic(*pTopic);
         
     // if talker tuned
     if (oTalker.isTuned())
@@ -160,11 +161,12 @@ void DadyCommander2::showAvailableChannels(int node)
     LOG4CXX_INFO(logger, "available channels: \n" + desc);      
 }
 
-void DadyCommander2::showAvailableConcepts(int node, int topic)
+void DadyCommander2::showAvailableConcepts(Topic* pTopic)
 {
-    // create proper talker for target node & topic
+    // create talker and tune it for target topic
     tron2::ChannelTalker oTalker;    
-    tron2::TalkerLanguage::setLanguage4Talker(oTalker, node, topic);
+    if (pTopic != nullptr)
+        oTalker.tune4Topic(*pTopic);
         
     // if talker tuned
     if (oTalker.isTuned())
