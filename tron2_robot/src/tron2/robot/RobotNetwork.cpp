@@ -8,16 +8,6 @@
 namespace tron2
 {    
     
-std::vector<int> RobotNetwork::getArmChannels()
-{
-    std::vector<int> listChannels; 
-
-    for (int i=0; i<RobotNetwork::eARM_CHANNELS_DIM; i++)
-        listChannels.push_back(i);
-    
-    return listChannels;
-}
-
 std::vector<int> RobotNetwork::getBodyChannels()
 {
     std::vector<int> listChannels; 

@@ -39,10 +39,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tron2/robot/RobotNetwork.o \
 	${OBJECTDIR}/src/tron2/robot/RobotSystem.o \
 	${OBJECTDIR}/src/tron2/robot/Topic.o \
-	${OBJECTDIR}/src/tron2/robot/arm/ArmNode.o \
-	${OBJECTDIR}/src/tron2/robot/arm/AxisTopic.o \
-	${OBJECTDIR}/src/tron2/robot/arm/CyclicTopic.o \
-	${OBJECTDIR}/src/tron2/robot/arm/JointTopic.o \
 	${OBJECTDIR}/src/tron2/robot/body/ArtisticTopic.o \
 	${OBJECTDIR}/src/tron2/robot/body/BodyNode.o \
 	${OBJECTDIR}/src/tron2/robot/body/ExpressiveTopic.o \
@@ -95,26 +91,6 @@ ${OBJECTDIR}/src/tron2/robot/Topic.o: src/tron2/robot/Topic.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/Topic.o src/tron2/robot/Topic.cpp
-
-${OBJECTDIR}/src/tron2/robot/arm/ArmNode.o: src/tron2/robot/arm/ArmNode.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot/arm
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/arm/ArmNode.o src/tron2/robot/arm/ArmNode.cpp
-
-${OBJECTDIR}/src/tron2/robot/arm/AxisTopic.o: src/tron2/robot/arm/AxisTopic.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot/arm
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/arm/AxisTopic.o src/tron2/robot/arm/AxisTopic.cpp
-
-${OBJECTDIR}/src/tron2/robot/arm/CyclicTopic.o: src/tron2/robot/arm/CyclicTopic.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot/arm
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/arm/CyclicTopic.o src/tron2/robot/arm/CyclicTopic.cpp
-
-${OBJECTDIR}/src/tron2/robot/arm/JointTopic.o: src/tron2/robot/arm/JointTopic.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot/arm
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/arm/JointTopic.o src/tron2/robot/arm/JointTopic.cpp
 
 ${OBJECTDIR}/src/tron2/robot/body/ArtisticTopic.o: src/tron2/robot/body/ArtisticTopic.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot/body

@@ -13,17 +13,6 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="robot" displayName="robot" projectFiles="true">
-        <logicalFolder name="arm" displayName="arm" projectFiles="true">
-          <itemPath>src/tron2/robot/arm/ArmNode.cpp</itemPath>
-          <itemPath>src/tron2/robot/arm/ArmNode.h</itemPath>
-          <itemPath>src/tron2/robot/arm/ArmSensors.h</itemPath>
-          <itemPath>src/tron2/robot/arm/AxisTopic.cpp</itemPath>
-          <itemPath>src/tron2/robot/arm/AxisTopic.h</itemPath>
-          <itemPath>src/tron2/robot/arm/CyclicTopic.cpp</itemPath>
-          <itemPath>src/tron2/robot/arm/CyclicTopic.h</itemPath>
-          <itemPath>src/tron2/robot/arm/JointTopic.cpp</itemPath>
-          <itemPath>src/tron2/robot/arm/JointTopic.h</itemPath>
-        </logicalFolder>
         <logicalFolder name="body" displayName="body" projectFiles="true">
           <itemPath>src/tron2/robot/body/ArtisticTopic.cpp</itemPath>
           <itemPath>src/tron2/robot/body/ArtisticTopic.h</itemPath>
@@ -120,27 +109,6 @@
       <item path="src/tron2/robot/Topic.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tron2/robot/Topic.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/ArmNode.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/ArmNode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/ArmSensors.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/AxisTopic.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/AxisTopic.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/CyclicTopic.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/CyclicTopic.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/JointTopic.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/JointTopic.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/tron2/robot/body/ArtisticTopic.cpp"
             ex="false"
@@ -242,27 +210,6 @@
       <item path="src/tron2/robot/Topic.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tron2/robot/Topic.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/ArmNode.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/ArmNode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/ArmSensors.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/AxisTopic.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/AxisTopic.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/CyclicTopic.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/CyclicTopic.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/JointTopic.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/arm/JointTopic.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/tron2/robot/body/ArtisticTopic.cpp"
             ex="false"

@@ -14,17 +14,6 @@ namespace tron2
  class RobotNetwork 
 {    
  public:     
-    /*! arm node channels */
-    enum eArmChannels
-    {
-        eARM_JOINTS_CHANNEL,             /*! joints channel */
-        eARM_AXES_CHANNEL,                /*! axes channel  */
-        eARM_CYCLER1_CHANNEL,          /*! cycler 1 channel  */
-        eARM_CYCLER2_CHANNEL,          /*! cycler 2 channel  */
-        eARM_EXTRA_CHANNEL,              /*! extra channel  */
-        eARM_CHANNELS_DIM
-    };     
-
     /*! body node channels */
     enum eBodyTopics
     {
@@ -47,8 +36,6 @@ namespace tron2
  public:     
      // RobotNetwork();
      
-     // get list of arm node channels
-     static std::vector<int> getArmChannels();
      // get list of body node channels
      static std::vector<int> getBodyChannels();
      // get list of vision node channels

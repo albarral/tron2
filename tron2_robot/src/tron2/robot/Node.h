@@ -33,7 +33,7 @@ namespace tron2
      std::vector<tron::Code>& getListTopics() {return listCodes;};
      
      void addCode(int codeId, std::string codeName);
-     
+          
     //  return node description
     virtual std::string toString();
 
