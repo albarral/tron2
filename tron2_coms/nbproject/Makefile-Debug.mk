@@ -40,7 +40,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tron2/coms/ChannelPublisher.o \
 	${OBJECTDIR}/src/tron2/coms/ChannelServer.o \
 	${OBJECTDIR}/src/tron2/coms/ChannelSubscriber.o \
-	${OBJECTDIR}/src/tron2/coms/body/BodyClient.o \
 	${OBJECTDIR}/src/tron2/coms/talker/ChannelTalker.o
 
 
@@ -102,11 +101,6 @@ ${OBJECTDIR}/src/tron2/coms/ChannelSubscriber.o: src/tron2/coms/ChannelSubscribe
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/coms
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Isrc -I../tron2_robot/src -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/coms/ChannelSubscriber.o src/tron2/coms/ChannelSubscriber.cpp
-
-${OBJECTDIR}/src/tron2/coms/body/BodyClient.o: src/tron2/coms/body/BodyClient.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/coms/body
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../tron2_robot/src -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../tron/tron_tools/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/coms/body/BodyClient.o src/tron2/coms/body/BodyClient.cpp
 
 ${OBJECTDIR}/src/tron2/coms/talker/ChannelTalker.o: src/tron2/coms/talker/ChannelTalker.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/coms/talker

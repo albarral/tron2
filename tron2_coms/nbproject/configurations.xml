@@ -13,13 +13,8 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="coms" displayName="coms" projectFiles="true">
-        <logicalFolder name="body" displayName="body" projectFiles="true">
-          <itemPath>src/tron2/coms/body/BodyClient.cpp</itemPath>
-          <itemPath>src/tron2/coms/body/BodyClient.h</itemPath>
-        </logicalFolder>
         <logicalFolder name="ifaces" displayName="ifaces" projectFiles="true">
           <itemPath>src/tron2/coms/ifaces/TronAnyClient.h</itemPath>
-          <itemPath>src/tron2/coms/ifaces/TronBodyClient.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f1" displayName="talker" projectFiles="true">
           <itemPath>src/tron2/coms/talker/ChannelTalker.cpp</itemPath>
@@ -170,16 +165,7 @@
       </item>
       <item path="src/tron2/coms/ChannelSubscriber.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/tron2/coms/body/BodyClient.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tron2/coms/body/BodyClient.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/tron2/coms/ifaces/TronAnyClient.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/coms/ifaces/TronBodyClient.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -247,16 +233,7 @@
       </item>
       <item path="src/tron2/coms/ChannelSubscriber.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/tron2/coms/body/BodyClient.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tron2/coms/body/BodyClient.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/tron2/coms/ifaces/TronAnyClient.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/coms/ifaces/TronBodyClient.h"
             ex="false"
             tool="3"
             flavor2="0">
