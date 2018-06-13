@@ -5,11 +5,9 @@
 
 #include "dady/RobotChannels.h"
 #include "amy/interface/ArmNode.h"
-#include "tron2/robot/Node.h"   // to delete
-#include "tron2/robot/RobotNetwork.h"   // to delete
+#include "goon/interface/VisionNode.h"
+#include "roly/interface/BodyNode.h"
 #include "tron2/robot/RobotSystem.h"
-#include "tron2/robot/body/BodyNode.h"
-#include "tron2/robot/vision/VisionNode.h"
 
 namespace tron2
 {    
@@ -52,17 +50,17 @@ void RobotChannels::fillMapChannels4Node(int node)
         case RobotSystem::eNODE_BODYROLE: 
         {
             oMapChannels4Body.reset();
-            oMapChannels4Body.addCode(RobotNetwork::eBODY_EXPRESSIVE_CHANNEL, "express");
-            oMapChannels4Body.addCode(RobotNetwork::eBODY_ARTISTIC1_CHANNEL, "art1");
-            oMapChannels4Body.addCode(RobotNetwork::eBODY_ARTISTIC2_CHANNEL, "art2");
-            oMapChannels4Body.addCode(RobotNetwork::eBODY_EXTRA_CHANNEL, "extra");
+            oMapChannels4Body.addCode(roly::BodyNode::eBODY_EXPRESSIVE_CHANNEL, "express");
+            oMapChannels4Body.addCode(roly::BodyNode::eBODY_ARTISTIC1_CHANNEL, "art1");
+            oMapChannels4Body.addCode(roly::BodyNode::eBODY_ARTISTIC2_CHANNEL, "art2");
+            oMapChannels4Body.addCode(roly::BodyNode::eBODY_EXTRA_CHANNEL, "extra");
             break;
         }
         case RobotSystem::eNODE_VISION: 
         {
             oMapChannels4Vision.reset();
-            oMapChannels4Vision.addCode(RobotNetwork::eVISION_FOCUS_CHANNEL, "focus");
-            oMapChannels4Vision.addCode(RobotNetwork::eVISION_EXTRA_CHANNEL, "extra");
+            oMapChannels4Vision.addCode(goon::VisionNode::eVISION_FOCUS_CHANNEL, "focus");
+            oMapChannels4Vision.addCode(goon::VisionNode::eVISION_EXTRA_CHANNEL, "extra");
         }
         break;
     }
@@ -76,49 +74,13 @@ Topic* RobotChannels::getTopic4NodeChannel(int node, int channel)
             return amy::ArmNode::getTopic4Channel(channel);
             break;
         case RobotSystem::eNODE_BODYROLE: 
-            return nullptr; // getTopic4BodyChannel(channel);
+            return roly::BodyNode::getTopic4Channel(channel);
             break;
         case RobotSystem::eNODE_VISION: 
-            return nullptr; //getTopic4VisionChannel(channel);
+            return goon::VisionNode::getTopic4Channel(channel);
         break;
         default: 
             return nullptr;
-    }    
-}
-
-int RobotChannels::getTopic4BodyChannel(int channel)
-{
-    switch (channel)
-    {
-        case RobotNetwork::eBODY_EXPRESSIVE_CHANNEL: 
-            return BodyNode::eBODY_EXPRESSIVE;
-            break;
-        case RobotNetwork::eBODY_ARTISTIC1_CHANNEL: 
-            return BodyNode::eBODY_ARTISTIC;
-            break;
-        case RobotNetwork::eBODY_ARTISTIC2_CHANNEL: 
-            return BodyNode::eBODY_ARTISTIC;
-            break;
-        case RobotNetwork::eBODY_EXTRA_CHANNEL: 
-            return Node::eEXTRA_TOPIC;
-            break;
-        default: 
-            return -1;            
-    }    
-}
-
-int RobotChannels::getTopic4VisionChannel(int channel)
-{
-    switch (channel)
-    {
-        case RobotNetwork::eVISION_FOCUS_CHANNEL: 
-            return VisionNode::eVISION_FOCUS;
-            break;
-        case RobotNetwork::eVISION_EXTRA_CHANNEL: 
-            return Node::eEXTRA_TOPIC;
-            break;
-        default: 
-            return -1;            
     }    
 }
 

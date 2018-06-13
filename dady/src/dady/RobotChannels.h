@@ -27,12 +27,7 @@ namespace tron2
     tron::CodeMap* getMapChannels4Node(int node);     
     void fillMapChannels4Node(int node);
     
-    Topic* getTopic4NodeChannel(int node, int channel);
-
- private:    
-    int getTopic4BodyChannel(int channel);
-    int getTopic4VisionChannel(int channel);
-    
+    Topic* getTopic4NodeChannel(int node, int channel);    
 };
 }
 #endif
