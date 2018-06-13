@@ -13,14 +13,6 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="robot" displayName="robot" projectFiles="true">
-        <logicalFolder name="body" displayName="body" projectFiles="true">
-          <itemPath>src/tron2/robot/body/ArtisticTopic.cpp</itemPath>
-          <itemPath>src/tron2/robot/body/ArtisticTopic.h</itemPath>
-          <itemPath>src/tron2/robot/body/BodyNode.cpp</itemPath>
-          <itemPath>src/tron2/robot/body/BodyNode.h</itemPath>
-          <itemPath>src/tron2/robot/body/ExpressiveTopic.cpp</itemPath>
-          <itemPath>src/tron2/robot/body/ExpressiveTopic.h</itemPath>
-        </logicalFolder>
         <logicalFolder name="common" displayName="common" projectFiles="true">
           <itemPath>src/tron2/robot/common/ExtraTopic.cpp</itemPath>
           <itemPath>src/tron2/robot/common/ExtraTopic.h</itemPath>
@@ -29,16 +21,8 @@
           <itemPath>src/tron2/robot/system/TronRobot.cpp</itemPath>
           <itemPath>src/tron2/robot/system/TronRobot.h</itemPath>
         </logicalFolder>
-        <logicalFolder name="vision" displayName="vision" projectFiles="true">
-          <itemPath>src/tron2/robot/vision/FocusTopic.cpp</itemPath>
-          <itemPath>src/tron2/robot/vision/FocusTopic.h</itemPath>
-          <itemPath>src/tron2/robot/vision/VisionNode.cpp</itemPath>
-          <itemPath>src/tron2/robot/vision/VisionNode.h</itemPath>
-        </logicalFolder>
         <itemPath>src/tron2/robot/Node.cpp</itemPath>
         <itemPath>src/tron2/robot/Node.h</itemPath>
-        <itemPath>src/tron2/robot/RobotNetwork.cpp</itemPath>
-        <itemPath>src/tron2/robot/RobotNetwork.h</itemPath>
         <itemPath>src/tron2/robot/RobotSystem.cpp</itemPath>
         <itemPath>src/tron2/robot/RobotSystem.h</itemPath>
         <itemPath>src/tron2/robot/Topic.cpp</itemPath>
@@ -98,10 +82,6 @@
       </item>
       <item path="src/tron2/robot/Node.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/tron2/robot/RobotNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/RobotNetwork.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/tron2/robot/RobotSystem.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tron2/robot/RobotSystem.h" ex="false" tool="3" flavor2="0">
@@ -109,30 +89,6 @@
       <item path="src/tron2/robot/Topic.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tron2/robot/Topic.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/body/ArtisticTopic.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/robot/body/ArtisticTopic.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/robot/body/BodyNode.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/body/BodyNode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/body/ExpressiveTopic.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/robot/body/ExpressiveTopic.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
       </item>
       <item path="src/tron2/robot/common/ExtraTopic.cpp"
             ex="false"
@@ -150,26 +106,6 @@
             flavor2="0">
       </item>
       <item path="src/tron2/robot/system/TronRobot.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/vision/FocusTopic.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/robot/vision/FocusTopic.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/robot/vision/VisionNode.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/robot/vision/VisionNode.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="2">
@@ -199,10 +135,6 @@
       </item>
       <item path="src/tron2/robot/Node.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/tron2/robot/RobotNetwork.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/RobotNetwork.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/tron2/robot/RobotSystem.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tron2/robot/RobotSystem.h" ex="false" tool="3" flavor2="0">
@@ -210,30 +142,6 @@
       <item path="src/tron2/robot/Topic.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tron2/robot/Topic.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/body/ArtisticTopic.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/robot/body/ArtisticTopic.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/robot/body/BodyNode.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/body/BodyNode.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/body/ExpressiveTopic.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/robot/body/ExpressiveTopic.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
       </item>
       <item path="src/tron2/robot/common/ExtraTopic.cpp"
             ex="false"
@@ -251,26 +159,6 @@
             flavor2="0">
       </item>
       <item path="src/tron2/robot/system/TronRobot.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/tron2/robot/vision/FocusTopic.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/robot/vision/FocusTopic.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/robot/vision/VisionNode.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="src/tron2/robot/vision/VisionNode.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
       </item>
     </conf>
   </confs>

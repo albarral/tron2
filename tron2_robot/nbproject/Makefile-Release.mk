@@ -36,16 +36,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/src/tron2/robot/Node.o \
-	${OBJECTDIR}/src/tron2/robot/RobotNetwork.o \
 	${OBJECTDIR}/src/tron2/robot/RobotSystem.o \
 	${OBJECTDIR}/src/tron2/robot/Topic.o \
-	${OBJECTDIR}/src/tron2/robot/body/ArtisticTopic.o \
-	${OBJECTDIR}/src/tron2/robot/body/BodyNode.o \
-	${OBJECTDIR}/src/tron2/robot/body/ExpressiveTopic.o \
 	${OBJECTDIR}/src/tron2/robot/common/ExtraTopic.o \
-	${OBJECTDIR}/src/tron2/robot/system/TronRobot.o \
-	${OBJECTDIR}/src/tron2/robot/vision/FocusTopic.o \
-	${OBJECTDIR}/src/tron2/robot/vision/VisionNode.o
+	${OBJECTDIR}/src/tron2/robot/system/TronRobot.o
 
 
 # C Compiler Flags
@@ -77,11 +71,6 @@ ${OBJECTDIR}/src/tron2/robot/Node.o: src/tron2/robot/Node.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/Node.o src/tron2/robot/Node.cpp
 
-${OBJECTDIR}/src/tron2/robot/RobotNetwork.o: src/tron2/robot/RobotNetwork.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/RobotNetwork.o src/tron2/robot/RobotNetwork.cpp
-
 ${OBJECTDIR}/src/tron2/robot/RobotSystem.o: src/tron2/robot/RobotSystem.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot
 	${RM} "$@.d"
@@ -92,21 +81,6 @@ ${OBJECTDIR}/src/tron2/robot/Topic.o: src/tron2/robot/Topic.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/Topic.o src/tron2/robot/Topic.cpp
 
-${OBJECTDIR}/src/tron2/robot/body/ArtisticTopic.o: src/tron2/robot/body/ArtisticTopic.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot/body
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/body/ArtisticTopic.o src/tron2/robot/body/ArtisticTopic.cpp
-
-${OBJECTDIR}/src/tron2/robot/body/BodyNode.o: src/tron2/robot/body/BodyNode.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot/body
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/body/BodyNode.o src/tron2/robot/body/BodyNode.cpp
-
-${OBJECTDIR}/src/tron2/robot/body/ExpressiveTopic.o: src/tron2/robot/body/ExpressiveTopic.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot/body
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/body/ExpressiveTopic.o src/tron2/robot/body/ExpressiveTopic.cpp
-
 ${OBJECTDIR}/src/tron2/robot/common/ExtraTopic.o: src/tron2/robot/common/ExtraTopic.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot/common
 	${RM} "$@.d"
@@ -116,16 +90,6 @@ ${OBJECTDIR}/src/tron2/robot/system/TronRobot.o: src/tron2/robot/system/TronRobo
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot/system
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/system/TronRobot.o src/tron2/robot/system/TronRobot.cpp
-
-${OBJECTDIR}/src/tron2/robot/vision/FocusTopic.o: src/tron2/robot/vision/FocusTopic.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot/vision
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/vision/FocusTopic.o src/tron2/robot/vision/FocusTopic.cpp
-
-${OBJECTDIR}/src/tron2/robot/vision/VisionNode.o: src/tron2/robot/vision/VisionNode.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/tron2/robot/vision
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/robot/vision/VisionNode.o src/tron2/robot/vision/VisionNode.cpp
 
 # Subprojects
 .build-subprojects:
