@@ -4,8 +4,8 @@
  ***************************************************************************/
 
 #include "TestRobot.h"
-#include "tron2/robot/arm/ArmNode.h"
-#include "tron2/robot/arm/JointTopic.h"
+#include "amy/interface/ArmNode.h"
+#include "amy/interface/topics/JointTopic.h"
 
 using namespace log4cxx;
 
@@ -31,8 +31,8 @@ void TestRobot::testTopics()
     LOG4CXX_INFO(logger, "TestRobot::testTopics \n");
 
     
-    tron2::ArmNode oArmNode;
-    tron2::JointTopic oJointTopic;
+    amy::ArmNode oArmNode;
+    amy::JointTopic oJointTopic;
 
     LOG4CXX_INFO(logger, oArmNode.toString());            
     LOG4CXX_INFO(logger, oJointTopic.toString());            

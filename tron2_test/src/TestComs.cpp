@@ -7,21 +7,18 @@
 
 #include "TestComs.h"
 #include "aux/JointChannelServer.h"
-#include "tron2/coms/arm/ArmClient.h"
-#include "tron2/coms/body/BodyClient.h"
+#include "amy/interface/ArmClient.h"
+#include "amy/interface/ArmListener.h"
+#include "amy/interface/ArmNode.h"
+#include "amy/interface/topics/JointTopic.h"
+#include "roly/interface/BodyClient.h"
 #include "tron2/coms/ChannelPublisher.h"
 #include "tron2/coms/talker/ChannelTalker.h"
-#include "tron2/coms/talker/TalkerLanguage.h"
-#include "tron2/robot/RobotNetwork.h"
 #include "tron2/robot/RobotSystem.h"
-#include "tron2/robot/arm/ArmNode.h"
-#include "tron2/robot/arm/JointTopic.h"
-#include "tron2/robot/RobotSystem.h"
-#include "tron2/robot/arm/ArmNode.h"
 
 using namespace log4cxx;
 
-LoggerPtr TestComs::logger(Logger::getLogger("tron"));
+LoggerPtr TestComs::logger(Logger::getLogger("tron2"));
 
 // Constructor 
 TestComs::TestComs()
@@ -33,8 +30,8 @@ void TestComs::makeTest()
     LOG4CXX_INFO(logger, "TestComs: test start \n");
 
     //testUnicastComs();    
-    //testBroadcastComs();
-    testArmJointTalker();
+    testBroadcastComs();
+    //testArmJointTalker();
         
     LOG4CXX_INFO(logger, "TestComs: test end \n");
 }
@@ -50,7 +47,7 @@ void TestComs::testUnicastComs()
 
     // command joints positions
     float value = 10.0;
-    tron2::ArmClient oArmClient;
+    amy::ArmClient oArmClient;
     oArmClient.setHS(value++);
     oArmClient.setVS(value++);
     oArmClient.setELB(value++);
@@ -61,7 +58,7 @@ void TestComs::testUnicastComs()
     checkServerChannel(oJointChannelServer);
     
     // command body expression
-    tron2::BodyClient oBodyClient;
+    roly::BodyClient oBodyClient;
     oBodyClient.expressFeeling(10);
     oBodyClient.endNode();
 }
@@ -72,19 +69,20 @@ void TestComs::testBroadcastComs()
     LOG4CXX_INFO(logger, "TestComs::testBroadcastComs \n");
 
     tron2::ChannelPublisher oChannelPublisher;
-    oChannelPublisher.connect2Channel(tron2::RobotSystem::eNODE_ARM, tron2::RobotNetwork::eARM_JOINTS_CHANNEL, tron2::ArmNode::eARM_JOINT);
+    int channel = amy::ArmNode::eARM_JOINTS_CHANNEL;
+    oChannelPublisher.connect2Channel(tron2::RobotSystem::eNODE_ARM, channel, amy::ArmNode::getTopic4Channel(channel));
 
     float value = 80.0;
 
     oChannelPublisher.clearChannel();
-    oChannelPublisher.addMessage(tron2::JointTopic::eJOINT_HS_POS, value++);
-    oChannelPublisher.addMessage(tron2::JointTopic::eJOINT_VS_POS, value++);
-    oChannelPublisher.addMessage(tron2::JointTopic::eJOINT_ELB_POS, value++);
-    oChannelPublisher.addMessage(tron2::JointTopic::eJOINT_HWRI_POS, value++);
-    oChannelPublisher.addMessage(tron2::JointTopic::eJOINT_VWRI_POS, value++);    
+    oChannelPublisher.addMessage(amy::JointTopic::eJOINT_HS_POS, value++);
+    oChannelPublisher.addMessage(amy::JointTopic::eJOINT_VS_POS, value++);
+    oChannelPublisher.addMessage(amy::JointTopic::eJOINT_ELB_POS, value++);
+    oChannelPublisher.addMessage(amy::JointTopic::eJOINT_HWRI_POS, value++);
+    oChannelPublisher.addMessage(amy::JointTopic::eJOINT_VWRI_POS, value++);    
     oChannelPublisher.publishAll();
     
-    tron2::ArmListener oArmListener;
+    amy::ArmListener oArmListener;
 
     int iteration = 0;
 
@@ -95,11 +93,11 @@ void TestComs::testBroadcastComs()
         // interpret test message
         if (oArmListener.senseChannels())
         {
-            tron2::JointsData& jointsData = oArmListener.getJointPositions();
+            amy::JointsData& jointsData = oArmListener.getJointPositions();
             showArmJointsData(jointsData);
 
-            tron2::AxesData& axesPositions = oArmListener.getAxesPositions();
-            tron2::AxesData& axesSpeeds = oArmListener.getAxesSpeeds();
+            amy::AxesData& axesPositions = oArmListener.getAxesPositions();
+            amy::AxesData& axesSpeeds = oArmListener.getAxesSpeeds();
             showArmAxesData(axesPositions, axesSpeeds);
         }
         else
@@ -115,7 +113,8 @@ void TestComs::testArmJointTalker()
     LOG4CXX_INFO(logger, "TestComs::testArmJointTalker \n");
 
     tron2::ChannelTalker oTalker;
-    tron2::TalkerLanguage::setLanguage4Talker(oTalker, tron2::RobotSystem::eNODE_ARM, tron2::ArmNode::eARM_JOINT);
+    amy::JointTopic oJointTopic;
+    oTalker.tune4Topic(oJointTopic);
     
     int code;
     float value;
@@ -145,7 +144,7 @@ void TestComs::checkServerChannel(tron2::ChannelServer& oChannelServer)
     }
 }
 
-void TestComs::showArmJointsData(tron2::JointsData& jointsData)
+void TestComs::showArmJointsData(amy::JointsData& jointsData)
 {
     // show obtained values
     LOG4CXX_INFO(logger, "TestComs: joints data ...");            
@@ -156,7 +155,7 @@ void TestComs::showArmJointsData(tron2::JointsData& jointsData)
     LOG4CXX_INFO(logger, "TestComs: sensed VW < " << std::to_string(jointsData.vwri));
 }
 
-void TestComs::showArmAxesData(tron2::AxesData& axesPositions, tron2::AxesData& axesSpeeds)
+void TestComs::showArmAxesData(amy::AxesData& axesPositions, amy::AxesData& axesSpeeds)
 {
     // show obtained values
     LOG4CXX_INFO(logger, "TestComs: axes data ...");            

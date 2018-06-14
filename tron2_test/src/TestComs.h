@@ -8,9 +8,8 @@
 
 #include <log4cxx/logger.h>
 
-#include "tron2/coms/arm/ArmListener.h"
 #include "tron2/coms/ChannelServer.h"
-#include "tron2/robot/arm/ArmSensors.h"
+#include "amy/interface/ArmSensors.h"
 
 
 // Class used to test tron2_coms lib.
@@ -33,8 +32,8 @@ private:
     // receive commands
     void checkServerChannel(tron2::ChannelServer& oChannelServer);
     
-    void showArmJointsData(tron2::JointsData& jointsData);                
-    void showArmAxesData(tron2::AxesData& axesPositions, tron2::AxesData& axesSpeeds);                
+    void showArmJointsData(amy::JointsData& jointsData);                
+    void showArmAxesData(amy::AxesData& axesPositions, amy::AxesData& axesSpeeds);                
 };
 
 #endif

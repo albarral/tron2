@@ -15,7 +15,9 @@
                 <make-dep-project>../../tron/tron_wire2</make-dep-project>
                 <make-dep-project>../tron2_tivy</make-dep-project>
                 <make-dep-project>../../tron/tron_tools</make-dep-project>
+                <make-dep-project>../../roly/roly_interface</make-dep-project>
                 <make-dep-project>../tron2_coms</make-dep-project>
+                <make-dep-project>../../amy/amy_interface</make-dep-project>
             </make-dep-projects>
             <sourceRootList>
                 <sourceRootElem>src</sourceRootElem>

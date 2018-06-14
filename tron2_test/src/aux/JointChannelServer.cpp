@@ -6,10 +6,9 @@
 #include <string>
 
 #include "aux/JointChannelServer.h"
-#include "tron2/robot/RobotNetwork.h"
+#include "amy/interface/ArmNode.h"
+#include "amy/interface/topics/JointTopic.h"
 #include "tron2/robot/RobotSystem.h"
-#include "tron2/robot/arm/ArmNode.h"
-#include "tron2/robot/arm/JointTopic.h"
 
 using namespace log4cxx;
 
@@ -17,7 +16,8 @@ namespace tron2
 {
 JointChannelServer::JointChannelServer()
 {    
-    tron2::ChannelServer::connect2Channel(RobotSystem::eNODE_ARM, RobotNetwork::eARM_JOINTS_CHANNEL, ArmNode::eARM_JOINT);
+    int channel = amy::ArmNode::eARM_JOINTS_CHANNEL;
+    tron2::ChannelServer::connect2Channel(RobotSystem::eNODE_ARM, channel, amy::ArmNode::getTopic4Channel(channel));
 }
 
 //JointListener::~JointListener()
@@ -40,23 +40,23 @@ void JointChannelServer::processCommands()
             {
                 switch (code)
                 {
-                    case JointTopic::eJOINT_HS_POS:
+                    case amy::JointTopic::eJOINT_HS_POS:
                         LOG4CXX_INFO(logger, "JointChannelServer: command < hs " << std::to_string(value));
                         break;
 
-                    case JointTopic::eJOINT_VS_POS:
+                    case amy::JointTopic::eJOINT_VS_POS:
                         LOG4CXX_INFO(logger, "JointChannelServer: command < vs " << std::to_string(value));
                         break;
 
-                    case JointTopic::eJOINT_ELB_POS:
+                    case amy::JointTopic::eJOINT_ELB_POS:
                         LOG4CXX_INFO(logger, "JointChannelServer: command < elb " << std::to_string(value));
                         break;
 
-                    case JointTopic::eJOINT_HWRI_POS:
+                    case amy::JointTopic::eJOINT_HWRI_POS:
                         LOG4CXX_INFO(logger, "JointChannelServer: command < hwri " << std::to_string(value));
                         break;
 
-                    case JointTopic::eJOINT_VWRI_POS:
+                    case amy::JointTopic::eJOINT_VWRI_POS:
                         LOG4CXX_INFO(logger, "JointChannelServer: command < vwri " << std::to_string(value));
                         break;
                 }    
