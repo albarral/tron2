@@ -19,9 +19,9 @@ public:
     //~CircularGenerator();
     
     // create circular movement
-    static void createCircle(CyclicMovement& oCyclicMovement, float freq, float amplitude, float angle, bool brotation); 
+    static CyclicMovement createCircle(float freq, float amplitude, float angle, bool brotation); 
     // create elliptic movement
-    static void createEllipse(CyclicMovement& oCyclicMovement, float freq, float amplitude, float relFactor, float angle, bool brotation); 
+    static CyclicMovement createEllipse(float freq, float amplitude, float relFactor, float angle, bool brotation); 
     
 private:
     static void computePhases(bool brotation, float orientation, float& xphase, float& yphase);

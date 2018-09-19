@@ -16,14 +16,15 @@ namespace tron2
 //{
 //}
 
-void CircularGenerator::createCircle(CyclicMovement& oCyclicMovement, float freq, float amplitude, float angle, bool brotation)
+CyclicMovement CircularGenerator::createCircle(float freq, float amplitude, float angle, bool brotation)
 {
     // a circle is an ellipse with relative factor 1.0  ... 
-    createEllipse(oCyclicMovement, freq, amplitude, 1.0, angle, brotation);
+    return createEllipse(freq, amplitude, 1.0, angle, brotation);
 }
 
-void CircularGenerator::createEllipse(CyclicMovement& oCyclicMovement, float freq, float amplitude, float relFactor, float angle, bool brotation)
+CyclicMovement CircularGenerator::createEllipse(float freq, float amplitude, float relFactor, float angle, bool brotation)
 {
+    CyclicMovement oCyclicMovement;
     oCyclicMovement.setDual(true);
     tron::CyclicComponent& oCyclicComponent1 =  oCyclicMovement.getPrimaryComponent();
     tron::CyclicComponent& oCyclicComponent2 =  oCyclicMovement.getSecondaryComponent();
@@ -46,6 +47,8 @@ void CircularGenerator::createEllipse(CyclicMovement& oCyclicMovement, float fre
     computePhases(brotation, angle, xphase, yphase);
     oCyclicComponent1.setPhase(xphase);
     oCyclicComponent2.setPhase(yphase);
+    
+    return oCyclicMovement;
 }
 
 void CircularGenerator::computePhases(bool brotation, float orientation, float& xphase, float& yphase)

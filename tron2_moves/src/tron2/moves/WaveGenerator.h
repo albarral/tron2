@@ -18,9 +18,9 @@ public:
     //~WaveGenerator();
     
     // create linear movement
-    static void createLine(CyclicMovement& oCyclicMovement, float freq, float amplitude, float angle); 
+    static CyclicMovement createLine(float freq, float amplitude, float angle); 
     // create wave movement
-    static void createWave(CyclicMovement& oCyclicMovement, float freq, float amplitude, float relFactor, float relFreq, float angle); 
+    static CyclicMovement createWave(float freq, float amplitude, float relFactor, float relFreq, float angle); 
 };
 }
 #endif

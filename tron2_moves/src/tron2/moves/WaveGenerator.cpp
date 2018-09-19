@@ -16,8 +16,9 @@ namespace tron2
 //{
 //}
 
-void WaveGenerator::createLine(CyclicMovement& oCyclicMovement, float freq, float amplitude, float angle)
+CyclicMovement WaveGenerator::createLine(float freq, float amplitude, float angle)
 {
+    CyclicMovement oCyclicMovement;
     oCyclicMovement.setDual(false);
     tron::CyclicComponent& oCyclicComponent1 =  oCyclicMovement.getPrimaryComponent();
     
@@ -26,10 +27,13 @@ void WaveGenerator::createLine(CyclicMovement& oCyclicMovement, float freq, floa
     // keep angle inside limits [0, 360)    
     angle = tron::Angle::inLimits(angle);
     oCyclicComponent1.setAngle(angle);
+
+    return oCyclicMovement;
 }
 
-void WaveGenerator::createWave(CyclicMovement& oCyclicMovement, float freq, float amplitude, float relFactor, float relFreq, float angle)
-{
+CyclicMovement WaveGenerator::createWave(float freq, float amplitude, float relFactor, float relFreq, float angle)
+{    
+    CyclicMovement oCyclicMovement;
     oCyclicMovement.setDual(true);
     tron::CyclicComponent& oCyclicComponent1 =  oCyclicMovement.getPrimaryComponent();
     tron::CyclicComponent& oCyclicComponent2 =  oCyclicMovement.getSecondaryComponent();
@@ -46,9 +50,10 @@ void WaveGenerator::createWave(CyclicMovement& oCyclicMovement, float freq, floa
     oCyclicComponent2.setAmp(amplitude * relFactor);
     // orthogonal orientation
     float angle2 = tron::Angle::inLimits(angle + 90.0);
-    oCyclicComponent2.setAngle(angle2);
-    
+    oCyclicComponent2.setAngle(angle2);    
     // no phase difference
+    
+    return oCyclicMovement;    
 }
 
 }

@@ -23,16 +23,16 @@ bool MoveFactory::generateMovement(CyclicMovement& oCyclicMovement, int figure)
     switch (figure)
     {
         case eMOVEMENT_LINE:
-            WaveGenerator::createLine(oCyclicMovement, freq, size, angle);
+            oCyclicMovement = WaveGenerator::createLine(freq, size, angle);
             break;            
         case eMOVEMENT_WAVE:
-            WaveGenerator::createWave(oCyclicMovement, freq, size, relFactor, relFreq, angle);
+            oCyclicMovement = WaveGenerator::createWave(freq, size, relFactor, relFreq, angle);
             break;            
         case eMOVEMENT_CIRCLE:
-            CircularGenerator::createCircle(oCyclicMovement, freq, size, angle, brotation);
+            oCyclicMovement = CircularGenerator::createCircle(freq, size, angle, brotation);
             break;
         case eMOVEMENT_ELLIPSE:
-            CircularGenerator::createEllipse(oCyclicMovement, freq, size, relFactor, angle, brotation);
+            oCyclicMovement = CircularGenerator::createEllipse(freq, size, relFactor, angle, brotation);
             break;            
         default: 
             bok = false;
