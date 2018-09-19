@@ -18,6 +18,14 @@
         <logicalFolder name="features" displayName="features" projectFiles="true">
           <itemPath>src/tron2/language/features/DirectionsTheme.cpp</itemPath>
           <itemPath>src/tron2/language/features/DirectionsTheme.h</itemPath>
+          <itemPath>src/tron2/language/features/LengthTheme.cpp</itemPath>
+          <itemPath>src/tron2/language/features/LengthTheme.h</itemPath>
+          <itemPath>src/tron2/language/features/QuantityTheme.cpp</itemPath>
+          <itemPath>src/tron2/language/features/QuantityTheme.h</itemPath>
+          <itemPath>src/tron2/language/features/SizeTheme.cpp</itemPath>
+          <itemPath>src/tron2/language/features/SizeTheme.h</itemPath>
+          <itemPath>src/tron2/language/features/SpeedTheme.cpp</itemPath>
+          <itemPath>src/tron2/language/features/SpeedTheme.h</itemPath>
         </logicalFolder>
         <logicalFolder name="objects" displayName="objects" projectFiles="true">
           <itemPath>src/tron2/language/objects/FiguresTheme.cpp</itemPath>
@@ -96,6 +104,46 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="src/tron2/language/features/LengthTheme.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/features/LengthTheme.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/features/QuantityTheme.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/features/QuantityTheme.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/features/SizeTheme.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/features/SizeTheme.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/features/SpeedTheme.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/features/SpeedTheme.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="src/tron2/language/objects/FiguresTheme.cpp"
             ex="false"
             tool="1"
@@ -142,6 +190,46 @@
             flavor2="0">
       </item>
       <item path="src/tron2/language/features/DirectionsTheme.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/features/LengthTheme.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/features/LengthTheme.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/features/QuantityTheme.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/features/QuantityTheme.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/features/SizeTheme.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/features/SizeTheme.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/features/SpeedTheme.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/features/SpeedTheme.h"
             ex="false"
             tool="3"
             flavor2="0">

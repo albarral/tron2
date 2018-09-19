@@ -37,6 +37,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/src/tron2/language/Theme.o \
 	${OBJECTDIR}/src/tron2/language/features/DirectionsTheme.o \
+	${OBJECTDIR}/src/tron2/language/features/LengthTheme.o \
+	${OBJECTDIR}/src/tron2/language/features/QuantityTheme.o \
+	${OBJECTDIR}/src/tron2/language/features/SizeTheme.o \
+	${OBJECTDIR}/src/tron2/language/features/SpeedTheme.o \
 	${OBJECTDIR}/src/tron2/language/objects/FiguresTheme.o
 
 
@@ -75,6 +79,26 @@ ${OBJECTDIR}/src/tron2/language/features/DirectionsTheme.o: src/tron2/language/f
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/language/features
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/language/features/DirectionsTheme.o src/tron2/language/features/DirectionsTheme.cpp
+
+${OBJECTDIR}/src/tron2/language/features/LengthTheme.o: src/tron2/language/features/LengthTheme.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/language/features
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/language/features/LengthTheme.o src/tron2/language/features/LengthTheme.cpp
+
+${OBJECTDIR}/src/tron2/language/features/QuantityTheme.o: src/tron2/language/features/QuantityTheme.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/language/features
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/language/features/QuantityTheme.o src/tron2/language/features/QuantityTheme.cpp
+
+${OBJECTDIR}/src/tron2/language/features/SizeTheme.o: src/tron2/language/features/SizeTheme.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/language/features
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/language/features/SizeTheme.o src/tron2/language/features/SizeTheme.cpp
+
+${OBJECTDIR}/src/tron2/language/features/SpeedTheme.o: src/tron2/language/features/SpeedTheme.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/language/features
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/language/features/SpeedTheme.o src/tron2/language/features/SpeedTheme.cpp
 
 ${OBJECTDIR}/src/tron2/language/objects/FiguresTheme.o: src/tron2/language/objects/FiguresTheme.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/language/objects
