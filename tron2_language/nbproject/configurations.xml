@@ -15,6 +15,12 @@
       <logicalFolder name="language" displayName="language" projectFiles="true">
         <logicalFolder name="actions" displayName="actions" projectFiles="true">
         </logicalFolder>
+        <logicalFolder name="f1" displayName="categories" projectFiles="true">
+          <itemPath>src/tron2/language/categories/FeaturesCategory.cpp</itemPath>
+          <itemPath>src/tron2/language/categories/FeaturesCategory.h</itemPath>
+          <itemPath>src/tron2/language/categories/ObjectsCategory.cpp</itemPath>
+          <itemPath>src/tron2/language/categories/ObjectsCategory.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="features" displayName="features" projectFiles="true">
           <itemPath>src/tron2/language/features/DirectionsTheme.cpp</itemPath>
           <itemPath>src/tron2/language/features/DirectionsTheme.h</itemPath>
@@ -31,9 +37,10 @@
           <itemPath>src/tron2/language/objects/FiguresTheme.cpp</itemPath>
           <itemPath>src/tron2/language/objects/FiguresTheme.h</itemPath>
         </logicalFolder>
+        <itemPath>src/tron2/language/Language.cpp</itemPath>
+        <itemPath>src/tron2/language/Language.h</itemPath>
         <itemPath>src/tron2/language/Theme.cpp</itemPath>
         <itemPath>src/tron2/language/Theme.h</itemPath>
-        <itemPath>src/tron2/language/TronCategories.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -85,11 +92,30 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="src/tron2/language/Language.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/language/Language.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/tron2/language/Theme.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tron2/language/Theme.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/tron2/language/TronCategories.h"
+      <item path="src/tron2/language/categories/FeaturesCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/categories/FeaturesCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/categories/ObjectsCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/categories/ObjectsCategory.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -175,11 +201,30 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="src/tron2/language/Language.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/language/Language.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/tron2/language/Theme.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tron2/language/Theme.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/tron2/language/TronCategories.h"
+      <item path="src/tron2/language/categories/FeaturesCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/categories/FeaturesCategory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/categories/ObjectsCategory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/categories/ObjectsCategory.h"
             ex="false"
             tool="3"
             flavor2="0">

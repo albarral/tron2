@@ -4,12 +4,13 @@
  ***************************************************************************/
 
 #include "tron2/language/features/SpeedTheme.h"
-#include "tron2/language/TronCategories.h"
+#include "tron2/language/Language.h"
+#include "tron2/language/categories/FeaturesCategory.h"
 
 namespace tron2
 {
 
-SpeedTheme::SpeedTheme() : Theme(TronCategories::eCAT_FEATURES, "speed")
+SpeedTheme::SpeedTheme() : Theme(Language::eLANGUAGE_FEATURE, FeaturesCategory::eFEATURE_SPEED)
 {
     // build theme
     build();    

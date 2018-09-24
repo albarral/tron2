@@ -19,23 +19,23 @@ class Theme : public tron::CodeMap
 {
 protected:
     int category;                     /*! theme's category */    
-    //int id;                               /*! theme's id */    
-    std::string name;              /*! theme's name */ 
+    int id;                               /*! theme's id */    
+    //std::string name;              /*! theme's name */ 
     
 public:
     Theme();              	
-    Theme(int category, std::string name);              	
+    Theme(int category, int id);              	
     //~Theme();
 
     int getCategory() {return category;};    
-    //int getID() {return id;};     
-    std::string getName() {return name;}
+    int getID() {return id;};     
+    //std::string getName() {return name;}
     
     // build theme
     virtual void build() = 0;
 
     // get description of all theme codes
-    virtual std::string toString();
+    std::string toString();
 };
 }
 #endif

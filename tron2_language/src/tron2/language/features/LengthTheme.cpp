@@ -4,12 +4,13 @@
  ***************************************************************************/
 
 #include "tron2/language/features/LengthTheme.h"
-#include "tron2/language/TronCategories.h"
+#include "tron2/language/Language.h"
+#include "tron2/language/categories/FeaturesCategory.h"
 
 namespace tron2
 {
 
-LengthTheme::LengthTheme() : Theme(TronCategories::eCAT_FEATURES, "length")
+LengthTheme::LengthTheme() : Theme(Language::eLANGUAGE_FEATURE, FeaturesCategory::eFEATURE_LENGTH)
 {
     // build theme
     build();    

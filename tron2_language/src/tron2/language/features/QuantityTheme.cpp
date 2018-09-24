@@ -4,12 +4,13 @@
  ***************************************************************************/
 
 #include "tron2/language/features/QuantityTheme.h"
-#include "tron2/language/TronCategories.h"
+#include "tron2/language/Language.h"
+#include "tron2/language/categories/FeaturesCategory.h"
 
 namespace tron2
 {
 
-QuantityTheme::QuantityTheme() : Theme(TronCategories::eCAT_FEATURES, "quantity")
+QuantityTheme::QuantityTheme() : Theme(Language::eLANGUAGE_FEATURE, FeaturesCategory::eFEATURE_QUANTITY)
 {
     // build theme
     build();    

@@ -4,12 +4,13 @@
  ***************************************************************************/
 
 #include "tron2/language/features/SizeTheme.h"
-#include "tron2/language/TronCategories.h"
+#include "tron2/language/Language.h"
+#include "tron2/language/categories/FeaturesCategory.h"
 
 namespace tron2
 {
 
-SizeTheme::SizeTheme() : Theme(TronCategories::eCAT_FEATURES, "size")
+SizeTheme::SizeTheme() : Theme(Language::eLANGUAGE_FEATURE, FeaturesCategory::eFEATURE_SIZE)
 {
     // build theme
     build();    

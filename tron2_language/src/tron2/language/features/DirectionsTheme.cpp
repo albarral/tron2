@@ -4,12 +4,13 @@
  ***************************************************************************/
 
 #include "tron2/language/features/DirectionsTheme.h"
-#include "tron2/language/TronCategories.h"
+#include "tron2/language/Language.h"
+#include "tron2/language/categories/FeaturesCategory.h"
 
 namespace tron2
 {
 
-DirectionsTheme::DirectionsTheme() : Theme(TronCategories::eCAT_FEATURES, "directions")
+DirectionsTheme::DirectionsTheme() : Theme(Language::eLANGUAGE_FEATURE, FeaturesCategory::eFEATURE_DIRECTION)
 {
     // build theme
     build();    

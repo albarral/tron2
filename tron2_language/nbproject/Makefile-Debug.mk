@@ -35,7 +35,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/tron2/language/Language.o \
 	${OBJECTDIR}/src/tron2/language/Theme.o \
+	${OBJECTDIR}/src/tron2/language/categories/FeaturesCategory.o \
+	${OBJECTDIR}/src/tron2/language/categories/ObjectsCategory.o \
 	${OBJECTDIR}/src/tron2/language/features/DirectionsTheme.o \
 	${OBJECTDIR}/src/tron2/language/features/LengthTheme.o \
 	${OBJECTDIR}/src/tron2/language/features/QuantityTheme.o \
@@ -70,10 +73,25 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_language.${CND_DLIB_EXT}: ${
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_language.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -shared -fPIC
 
+${OBJECTDIR}/src/tron2/language/Language.o: src/tron2/language/Language.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/language
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/language/Language.o src/tron2/language/Language.cpp
+
 ${OBJECTDIR}/src/tron2/language/Theme.o: src/tron2/language/Theme.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/language
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/language/Theme.o src/tron2/language/Theme.cpp
+
+${OBJECTDIR}/src/tron2/language/categories/FeaturesCategory.o: src/tron2/language/categories/FeaturesCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/language/categories
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/language/categories/FeaturesCategory.o src/tron2/language/categories/FeaturesCategory.cpp
+
+${OBJECTDIR}/src/tron2/language/categories/ObjectsCategory.o: src/tron2/language/categories/ObjectsCategory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/language/categories
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/language/categories/ObjectsCategory.o src/tron2/language/categories/ObjectsCategory.cpp
 
 ${OBJECTDIR}/src/tron2/language/features/DirectionsTheme.o: src/tron2/language/features/DirectionsTheme.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/language/features

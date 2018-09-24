@@ -10,15 +10,14 @@ namespace tron2
 Theme::Theme()
 {
     category = -1;
-//    id = -1;
-    name = "?";
+    id = -1;
+    //name = "?";
 }
 
-Theme::Theme(int category, std::string name)
+Theme::Theme(int category, int id)
 {
     this->category = category;
-//    this->id = id;
-    this->name = name;
+    this->id = id;
 }
 
 //Theme::~Theme()
@@ -28,7 +27,7 @@ Theme::Theme(int category, std::string name)
 
 std::string Theme::toString()
 {
-    return "Theme [name = " + name + ", category= " + std::to_string(category) + "] codes: \n" + tron::CodeMap::toString();
+    return "Theme [category= " + std::to_string(category) + ", id= " + std::to_string(id) + "] codes: \n" + tron::CodeMap::toString();
 }
 
 }

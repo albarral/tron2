@@ -4,12 +4,13 @@
  ***************************************************************************/
 
 #include "tron2/language/objects/FiguresTheme.h"
-#include "tron2/language/TronCategories.h"
+#include "tron2/language/Language.h"
+#include "tron2/language/categories/ObjectsCategory.h"
 
 namespace tron2
 {
 
-FiguresTheme::FiguresTheme() : Theme(TronCategories::eCAT_OBJECTS, "figures")
+FiguresTheme::FiguresTheme() : Theme(Language::eLANGUAGE_OBJECT, ObjectsCategory::eOBJECT_FIGURE)
 {
     // build theme
     build();    
