@@ -18,6 +18,11 @@ protected:
     bool bdual;                                 // both components informed
     tron::CyclicComponent oCyclicComponent1;     // primary cyclic component
     tron::CyclicComponent oCyclicComponent2;     // secondary cyclic component
+    // change indicators
+    bool bfreqChanged;                    // indicator of frequency changed 
+    bool bampChanged;                  // indicator of amplitude changed 
+    bool bangleChanged;                  // indicator of angle changed 
+    bool bphaseChanged;                  // indicator of phase changed 
     
 public:  
     CyclicMovement();
@@ -34,6 +39,17 @@ public:
     void updateRelFactor(float factor);     
     
     void clear();
+    
+    // change indicators
+    bool isFreqChanged() {return bfreqChanged;};
+    bool isAmpChanged() {return bampChanged;};
+    bool isAngleChanged() {return bangleChanged;};
+    bool isPhaseChanged() {return bphaseChanged;};    
+    // set all change indicators
+    void setFlags();
+    // reset all change indicators
+    void clearFlags();
+    
 };
 }
 #endif

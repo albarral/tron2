@@ -10,7 +10,9 @@ namespace tron2
 {
 CyclicMovement::CyclicMovement()
 {
-    bdual = false;
+    bdual = false;     
+    // set all change flags
+    setFlags();
 }
 
 //CyclicMovement::~CyclicMovement()
@@ -33,6 +35,8 @@ void CyclicMovement::updateFreq(float freq)
     }
     else          
         oCyclicComponent1.setFreq(freq);
+    
+    bfreqChanged = true;    
 }
 
 void CyclicMovement::updateAmplitude(float amplitude)
@@ -50,6 +54,8 @@ void CyclicMovement::updateAmplitude(float amplitude)
     }
     else
         oCyclicComponent1.setAmp(amplitude);
+
+    bampChanged = true;    
 }
 
 void CyclicMovement::updateAngle(float angle)
@@ -66,13 +72,18 @@ void CyclicMovement::updateAngle(float angle)
     }
     else        
         oCyclicComponent1.setAngle(angle);
+    
+    bangleChanged = true;        
 }
 
 void CyclicMovement::updateRelFactor(float factor)
 {
     // if two components
     if (bdual)
+    {
         oCyclicComponent2.setAmp(oCyclicComponent1.getAmp() * factor);
+        bampChanged = true;           
+    }
 }
 
 void CyclicMovement::clear()
@@ -86,5 +97,18 @@ void CyclicMovement::clear()
     oCyclicComponent2.setAmp(0.0);
     oCyclicComponent2.setAngle(0.0);
     oCyclicComponent2.setPhase(0.0);    
+
+    // set all change flags
+    setFlags();    
+}
+
+void CyclicMovement::setFlags()
+{
+    bfreqChanged = bampChanged = bangleChanged = bphaseChanged = true;
+}
+
+void CyclicMovement::clearFlags()
+{
+    bfreqChanged = bampChanged = bangleChanged = bphaseChanged = false;
 }
 }
