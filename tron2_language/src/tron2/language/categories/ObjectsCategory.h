@@ -18,11 +18,13 @@ namespace tron2
     enum eCodes
     {
          eOBJECT_FIGURE,                       
+         eOBJECT_FEELING,                       
          eOBJECT_DIM
     };
 
     /*! code names */
     const std::string OBJECT_FIGURE = "figure";     
+    const std::string OBJECT_FEELING = "feeling";     
 
  public:    
     ObjectsCategory(); 

@@ -18,5 +18,6 @@ ObjectsCategory::ObjectsCategory() : Theme(Language::eLANGUAGE_CATEGORY, Languag
 void ObjectsCategory::build()
 {
     addCode(eOBJECT_FIGURE, OBJECT_FIGURE);
+    addCode(eOBJECT_FEELING, OBJECT_FEELING);
 }
 }

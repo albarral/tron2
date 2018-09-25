@@ -34,6 +34,8 @@
           <itemPath>src/tron2/language/features/SpeedTheme.h</itemPath>
         </logicalFolder>
         <logicalFolder name="objects" displayName="objects" projectFiles="true">
+          <itemPath>src/tron2/language/objects/FeelingsTheme.cpp</itemPath>
+          <itemPath>src/tron2/language/objects/FeelingsTheme.h</itemPath>
           <itemPath>src/tron2/language/objects/FiguresTheme.cpp</itemPath>
           <itemPath>src/tron2/language/objects/FiguresTheme.h</itemPath>
         </logicalFolder>
@@ -170,6 +172,16 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="src/tron2/language/objects/FeelingsTheme.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/objects/FeelingsTheme.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="src/tron2/language/objects/FiguresTheme.cpp"
             ex="false"
             tool="1"
@@ -275,6 +287,16 @@
             flavor2="0">
       </item>
       <item path="src/tron2/language/features/SpeedTheme.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/objects/FeelingsTheme.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/language/objects/FeelingsTheme.h"
             ex="false"
             tool="3"
             flavor2="0">

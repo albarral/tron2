@@ -44,6 +44,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/tron2/language/features/QuantityTheme.o \
 	${OBJECTDIR}/src/tron2/language/features/SizeTheme.o \
 	${OBJECTDIR}/src/tron2/language/features/SpeedTheme.o \
+	${OBJECTDIR}/src/tron2/language/objects/FeelingsTheme.o \
 	${OBJECTDIR}/src/tron2/language/objects/FiguresTheme.o
 
 
@@ -117,6 +118,11 @@ ${OBJECTDIR}/src/tron2/language/features/SpeedTheme.o: src/tron2/language/featur
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/language/features
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/language/features/SpeedTheme.o src/tron2/language/features/SpeedTheme.cpp
+
+${OBJECTDIR}/src/tron2/language/objects/FeelingsTheme.o: src/tron2/language/objects/FeelingsTheme.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/language/objects
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Isrc -I../../tron/tron_util/src -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/language/objects/FeelingsTheme.o src/tron2/language/objects/FeelingsTheme.cpp
 
 ${OBJECTDIR}/src/tron2/language/objects/FiguresTheme.o: src/tron2/language/objects/FiguresTheme.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/language/objects
