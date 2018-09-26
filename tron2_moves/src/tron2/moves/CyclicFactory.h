@@ -1,5 +1,5 @@
-#ifndef __TRON2_MOVES_MOVEFACTORY_H
-#define __TRON2_MOVES_MOVEFACTORY_H
+#ifndef __TRON2_MOVES_CYCLIC_FACTORY_H
+#define __TRON2_MOVES_CYCLIC_FACTORY_H
 
 /***************************************************************************
  *   Copyright (C) 2018 by Migtron Robotics   *
@@ -11,7 +11,7 @@
 namespace tron2
 {
 // Class used to compute complex cyclic movements.
-class MoveFactory
+class CyclicFactory
 {
 public:
     /*! movement codes  */
@@ -28,7 +28,6 @@ public:
     };
 
 private:    
-    int figure;       // figure id (codes defined in tron::FiguresTheme class)
     float freq;         // frequency of cyclic movement
     float size;         // size of cyclic movement 
     float angle;        // orientation of cyclic movement (degrees)
@@ -37,8 +36,8 @@ private:
     bool brotation;     // rotation sign of circular movements (positive is anticlockwise)
 
 public:
-    MoveFactory();
-    ~MoveFactory();
+    CyclicFactory();
+    ~CyclicFactory();
 
     void setFreq(float value) {freq = value;}
     void setSize(float value) {size = value;}
@@ -46,6 +45,7 @@ public:
     void setRelativeFactor(float value) {relFactor = value;}
     void setRelativeFreq(float value) {relFreq = value;}
     void setRotation(bool value) {brotation = value;}
+    
     float getFreq() {return freq;}; 
     float getSize() {return size;}; 
     float getAngle() {return angle;}; 

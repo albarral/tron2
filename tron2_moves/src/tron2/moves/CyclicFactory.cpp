@@ -3,21 +3,21 @@
  *   albarral@migtron.com   *
  ***************************************************************************/
 
-#include "tron2/moves/MoveFactory.h"
+#include "tron2/moves/CyclicFactory.h"
 #include "tron2/moves/CircularGenerator.h"
 #include "tron2/moves/WaveGenerator.h"
 
 namespace tron2
 {
-MoveFactory::MoveFactory()
+CyclicFactory::CyclicFactory()
 {
 }
 
-MoveFactory::~MoveFactory()
+CyclicFactory::~CyclicFactory()
 {
 }
 
-bool MoveFactory::generateMovement(CyclicMovement& oCyclicMovement, int figure)
+bool CyclicFactory::generateMovement(CyclicMovement& oCyclicMovement, int figure)
 {
     bool bok = true;
     switch (figure)

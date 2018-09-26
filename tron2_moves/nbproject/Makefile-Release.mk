@@ -35,9 +35,14 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/tron2/moves/BasicMovement.o \
 	${OBJECTDIR}/src/tron2/moves/CircularGenerator.o \
+	${OBJECTDIR}/src/tron2/moves/CyclicFactory.o \
 	${OBJECTDIR}/src/tron2/moves/CyclicMovement.o \
-	${OBJECTDIR}/src/tron2/moves/MoveFactory.o \
+	${OBJECTDIR}/src/tron2/moves/Move.o \
+	${OBJECTDIR}/src/tron2/moves/Posture.o \
+	${OBJECTDIR}/src/tron2/moves/SequentialFactory.o \
+	${OBJECTDIR}/src/tron2/moves/SequentialMovement.o \
 	${OBJECTDIR}/src/tron2/moves/WaveGenerator.o
 
 
@@ -65,20 +70,45 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_moves.${CND_DLIB_EXT}: ${OBJ
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_moves.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -shared -fPIC
 
+${OBJECTDIR}/src/tron2/moves/BasicMovement.o: src/tron2/moves/BasicMovement.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/moves
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/BasicMovement.o src/tron2/moves/BasicMovement.cpp
+
 ${OBJECTDIR}/src/tron2/moves/CircularGenerator.o: src/tron2/moves/CircularGenerator.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/moves
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/CircularGenerator.o src/tron2/moves/CircularGenerator.cpp
+
+${OBJECTDIR}/src/tron2/moves/CyclicFactory.o: src/tron2/moves/CyclicFactory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/moves
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/CyclicFactory.o src/tron2/moves/CyclicFactory.cpp
 
 ${OBJECTDIR}/src/tron2/moves/CyclicMovement.o: src/tron2/moves/CyclicMovement.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/moves
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/CyclicMovement.o src/tron2/moves/CyclicMovement.cpp
 
-${OBJECTDIR}/src/tron2/moves/MoveFactory.o: src/tron2/moves/MoveFactory.cpp 
+${OBJECTDIR}/src/tron2/moves/Move.o: src/tron2/moves/Move.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/moves
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/MoveFactory.o src/tron2/moves/MoveFactory.cpp
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/Move.o src/tron2/moves/Move.cpp
+
+${OBJECTDIR}/src/tron2/moves/Posture.o: src/tron2/moves/Posture.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/moves
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/Posture.o src/tron2/moves/Posture.cpp
+
+${OBJECTDIR}/src/tron2/moves/SequentialFactory.o: src/tron2/moves/SequentialFactory.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/moves
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/SequentialFactory.o src/tron2/moves/SequentialFactory.cpp
+
+${OBJECTDIR}/src/tron2/moves/SequentialMovement.o: src/tron2/moves/SequentialMovement.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/tron2/moves
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tron2/moves/SequentialMovement.o src/tron2/moves/SequentialMovement.cpp
 
 ${OBJECTDIR}/src/tron2/moves/WaveGenerator.o: src/tron2/moves/WaveGenerator.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/tron2/moves

@@ -13,12 +13,22 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="moves" displayName="moves" projectFiles="true">
+        <itemPath>src/tron2/moves/BasicMovement.cpp</itemPath>
+        <itemPath>src/tron2/moves/BasicMovement.h</itemPath>
         <itemPath>src/tron2/moves/CircularGenerator.cpp</itemPath>
         <itemPath>src/tron2/moves/CircularGenerator.h</itemPath>
+        <itemPath>src/tron2/moves/CyclicFactory.cpp</itemPath>
+        <itemPath>src/tron2/moves/CyclicFactory.h</itemPath>
         <itemPath>src/tron2/moves/CyclicMovement.cpp</itemPath>
         <itemPath>src/tron2/moves/CyclicMovement.h</itemPath>
-        <itemPath>src/tron2/moves/MoveFactory.cpp</itemPath>
-        <itemPath>src/tron2/moves/MoveFactory.h</itemPath>
+        <itemPath>src/tron2/moves/Move.cpp</itemPath>
+        <itemPath>src/tron2/moves/Move.h</itemPath>
+        <itemPath>src/tron2/moves/Posture.cpp</itemPath>
+        <itemPath>src/tron2/moves/Posture.h</itemPath>
+        <itemPath>src/tron2/moves/SequentialFactory.cpp</itemPath>
+        <itemPath>src/tron2/moves/SequentialFactory.h</itemPath>
+        <itemPath>src/tron2/moves/SequentialMovement.cpp</itemPath>
+        <itemPath>src/tron2/moves/SequentialMovement.h</itemPath>
         <itemPath>src/tron2/moves/WaveGenerator.cpp</itemPath>
         <itemPath>src/tron2/moves/WaveGenerator.h</itemPath>
       </logicalFolder>
@@ -72,6 +82,10 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="src/tron2/moves/BasicMovement.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/BasicMovement.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/tron2/moves/CircularGenerator.cpp"
             ex="false"
             tool="1"
@@ -82,13 +96,41 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="src/tron2/moves/CyclicFactory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/CyclicFactory.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/tron2/moves/CyclicMovement.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tron2/moves/CyclicMovement.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/tron2/moves/MoveFactory.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/tron2/moves/Move.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/tron2/moves/MoveFactory.h" ex="false" tool="3" flavor2="0">
+      <item path="src/tron2/moves/Move.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/Posture.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/Posture.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/SequentialFactory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/moves/SequentialFactory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/moves/SequentialMovement.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/moves/SequentialMovement.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="src/tron2/moves/WaveGenerator.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -115,6 +157,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="src/tron2/moves/BasicMovement.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/BasicMovement.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/tron2/moves/CircularGenerator.cpp"
             ex="false"
             tool="1"
@@ -125,13 +171,41 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="src/tron2/moves/CyclicFactory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/CyclicFactory.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/tron2/moves/CyclicMovement.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tron2/moves/CyclicMovement.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/tron2/moves/MoveFactory.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/tron2/moves/Move.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/tron2/moves/MoveFactory.h" ex="false" tool="3" flavor2="0">
+      <item path="src/tron2/moves/Move.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/Posture.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/Posture.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/tron2/moves/SequentialFactory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/moves/SequentialFactory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/moves/SequentialMovement.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/tron2/moves/SequentialMovement.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="src/tron2/moves/WaveGenerator.cpp" ex="false" tool="1" flavor2="0">
       </item>
