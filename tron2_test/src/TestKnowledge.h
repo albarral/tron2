@@ -1,5 +1,5 @@
-#ifndef __TRON2_TEST_ROBOT2_H
-#define __TRON2_TEST_ROBOT2_H
+#ifndef __TRON2_TEST_KNOWLEDGE_H
+#define __TRON2_TEST_KNOWLEDGE_H
 
 /***************************************************************************
  *   Copyright (C) 2018 by Migtron Robotics   *
@@ -8,20 +8,18 @@
 
 #include <log4cxx/logger.h>
 
-// Class used to test tron2_robot lib.
-class TestRobot
+
+class TestKnowledge
 {
 private:
     static log4cxx::LoggerPtr logger;
 
 public:
-    TestRobot();
-    //~TestRobot2();
+    TestKnowledge();
+    //~TestKnowledge();
 
-    void makeTest();      
+    void makeTest();          
     
-private:
-    void testTopics();      
 };
 
 #endif

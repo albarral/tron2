@@ -8,19 +8,17 @@
 #include <log4cxx/logger.h>
 #include <log4cxx/xml/domconfigurator.h>
 
-#include "TestComs.h"
-#include "TestRobot.h"
+#include "TestKnowledge.h"
 #include "TestTivy.h"
 
 // obtains user's home path
 std::string getHomePath();
 
-log4cxx::LoggerPtr logger(log4cxx::Logger::getLogger("tron"));
+log4cxx::LoggerPtr logger(log4cxx::Logger::getLogger("tron2"));
 
 enum eTest
 {
-    eTEST_COMS, 
-    eTEST_ROBOT,
+    eTEST_KNOWLEDGE, 
     eTEST_TIVY
 };
 
@@ -31,24 +29,17 @@ int main(int argc, char** argv)
     std::string configFile = home + "/.tron/log4cxx_config_tron2test.xml";
     log4cxx::xml::DOMConfigurator::configure(configFile);    
         
-    LOG4CXX_INFO(logger, "\n\nSTART tron test\n");
+    LOG4CXX_INFO(logger, "\n\nSTART tron2 test\n");
     
-    int test = eTEST_COMS;
+    int test = eTEST_KNOWLEDGE;
 
     switch (test)
     {
-        case eTEST_COMS:
+        case eTEST_KNOWLEDGE:
         {
-            // test coms lib
-            TestComs oTestComs;
-            oTestComs.makeTest();
-            break;
-        }
-        case eTEST_ROBOT:
-        {
-            // test robot2 lib
-            TestRobot oTestRobot;
-            oTestRobot.makeTest();
+            // test knowledge lib
+            TestKnowledge oTestKnowledge;
+            oTestKnowledge.makeTest();
             break;
         }
         case eTEST_TIVY:

@@ -35,10 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/TestComs.o \
-	${OBJECTDIR}/src/TestRobot.o \
+	${OBJECTDIR}/src/TestKnowledge.o \
 	${OBJECTDIR}/src/TestTivy.o \
-	${OBJECTDIR}/src/aux/JointChannelServer.o \
 	${OBJECTDIR}/src/aux/TestPlot.o \
 	${OBJECTDIR}/src/main.o
 
@@ -57,75 +55,53 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-llog4cxx -lopencv_core -lopencv_highgui -Wl,-rpath,../tron2_coms/dist/Debug/GNU-Linux -L../tron2_coms/dist/Debug/GNU-Linux -ltron2_coms -Wl,-rpath,../tron2_robot/dist/Debug/GNU-Linux -L../tron2_robot/dist/Debug/GNU-Linux -ltron2_robot -Wl,-rpath,../tron2_tivy/dist/Debug/GNU-Linux -L../tron2_tivy/dist/Debug/GNU-Linux -ltron2_tivy -Wl,-rpath,../../tron/tron_tools/dist/Debug/GNU-Linux -L../../tron/tron_tools/dist/Debug/GNU-Linux -ltron_tools -Wl,-rpath,../../tron/tron_util/dist/Debug/GNU-Linux -L../../tron/tron_util/dist/Debug/GNU-Linux -ltron_util -Wl,-rpath,../../tron/tron_wire/dist/Debug/GNU-Linux -L../../tron/tron_wire/dist/Debug/GNU-Linux -ltron_wire -Wl,-rpath,../../tron/tron_wire2/dist/Debug/GNU-Linux -L../../tron/tron_wire2/dist/Debug/GNU-Linux -ltron_wire2 -Wl,-rpath,../../amy/amy_interface/dist/Debug/GNU-Linux -L../../amy/amy_interface/dist/Debug/GNU-Linux -lamy_interface -Wl,-rpath,../../roly/roly_interface/dist/Debug/GNU-Linux -L../../roly/roly_interface/dist/Debug/GNU-Linux -lroly_interface
+LDLIBSOPTIONS=-llog4cxx -lopencv_core -lopencv_highgui -Wl,-rpath,../tron2_language/dist/Debug/GNU-Linux -L../tron2_language/dist/Debug/GNU-Linux -ltron2_language -Wl,-rpath,../tron2_knowledge/dist/Debug/GNU-Linux -L../tron2_knowledge/dist/Debug/GNU-Linux -ltron2_knowledge -Wl,-rpath,../tron2_moves/dist/Debug/GNU-Linux -L../tron2_moves/dist/Debug/GNU-Linux -ltron2_moves -Wl,-rpath,../tron2_tivy/dist/Debug/GNU-Linux -L../tron2_tivy/dist/Debug/GNU-Linux -ltron2_tivy -Wl,-rpath,../../tron/tron_util/dist/Debug/GNU-Linux -L../../tron/tron_util/dist/Debug/GNU-Linux -ltron_util
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test: ../tron2_coms/dist/Debug/GNU-Linux/libtron2_coms.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test: ../tron2_language/dist/Debug/GNU-Linux/libtron2_language.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test: ../tron2_robot/dist/Debug/GNU-Linux/libtron2_robot.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test: ../tron2_knowledge/dist/Debug/GNU-Linux/libtron2_knowledge.so
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test: ../tron2_moves/dist/Debug/GNU-Linux/libtron2_moves.so
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test: ../tron2_tivy/dist/Debug/GNU-Linux/libtron2_tivy.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test: ../../tron/tron_tools/dist/Debug/GNU-Linux/libtron_tools.so
-
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test: ../../tron/tron_util/dist/Debug/GNU-Linux/libtron_util.so
-
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test: ../../tron/tron_wire/dist/Debug/GNU-Linux/libtron_wire.so
-
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test: ../../tron/tron_wire2/dist/Debug/GNU-Linux/libtron_wire2.so
-
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test: ../../amy/amy_interface/dist/Debug/GNU-Linux/libamy_interface.so
-
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test: ../../roly/roly_interface/dist/Debug/GNU-Linux/libroly_interface.so
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tron_test ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/src/TestComs.o: src/TestComs.cpp 
+${OBJECTDIR}/src/TestKnowledge.o: src/TestKnowledge.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../tron2_coms/src -I../tron2_robot/src -I../tron2_tivy/src -I../../tron/tron_tools/src -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../amy/amy_interface/src -I../../roly/roly_interface/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestComs.o src/TestComs.cpp
-
-${OBJECTDIR}/src/TestRobot.o: src/TestRobot.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../tron2_coms/src -I../tron2_robot/src -I../tron2_tivy/src -I../../tron/tron_tools/src -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../amy/amy_interface/src -I../../roly/roly_interface/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestRobot.o src/TestRobot.cpp
+	$(COMPILE.cc) -g -Isrc -I../tron2_language/src -I../tron2_knowledge/src -I../tron2_tivy/src -I../../tron/tron_util/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestKnowledge.o src/TestKnowledge.cpp
 
 ${OBJECTDIR}/src/TestTivy.o: src/TestTivy.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../tron2_coms/src -I../tron2_robot/src -I../tron2_tivy/src -I../../tron/tron_tools/src -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../amy/amy_interface/src -I../../roly/roly_interface/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestTivy.o src/TestTivy.cpp
-
-${OBJECTDIR}/src/aux/JointChannelServer.o: src/aux/JointChannelServer.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/aux
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../tron2_coms/src -I../tron2_robot/src -I../tron2_tivy/src -I../../tron/tron_tools/src -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../amy/amy_interface/src -I../../roly/roly_interface/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/aux/JointChannelServer.o src/aux/JointChannelServer.cpp
+	$(COMPILE.cc) -g -Isrc -I../tron2_language/src -I../tron2_knowledge/src -I../tron2_tivy/src -I../../tron/tron_util/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TestTivy.o src/TestTivy.cpp
 
 ${OBJECTDIR}/src/aux/TestPlot.o: src/aux/TestPlot.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/aux
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../tron2_coms/src -I../tron2_robot/src -I../tron2_tivy/src -I../../tron/tron_tools/src -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../amy/amy_interface/src -I../../roly/roly_interface/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/aux/TestPlot.o src/aux/TestPlot.cpp
+	$(COMPILE.cc) -g -Isrc -I../tron2_language/src -I../tron2_knowledge/src -I../tron2_tivy/src -I../../tron/tron_util/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/aux/TestPlot.o src/aux/TestPlot.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Isrc -I../tron2_coms/src -I../tron2_robot/src -I../tron2_tivy/src -I../../tron/tron_tools/src -I../../tron/tron_util/src -I../../tron/tron_wire/src -I../../tron/tron_wire2/src -I../../amy/amy_interface/src -I../../roly/roly_interface/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
+	$(COMPILE.cc) -g -Isrc -I../tron2_language/src -I../tron2_knowledge/src -I../tron2_tivy/src -I../../tron/tron_util/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
 
 # Subprojects
 .build-subprojects:
-	cd ../tron2_coms && ${MAKE}  -f Makefile CONF=Debug
-	cd ../tron2_robot && ${MAKE}  -f Makefile CONF=Debug
+	cd ../tron2_language && ${MAKE}  -f Makefile CONF=Debug
+	cd ../tron2_knowledge && ${MAKE}  -f Makefile CONF=Debug
+	cd ../tron2_moves && ${MAKE}  -f Makefile CONF=Debug
 	cd ../tron2_tivy && ${MAKE}  -f Makefile CONF=Debug
-	cd ../../tron/tron_tools && ${MAKE}  -f Makefile CONF=Debug
 	cd ../../tron/tron_util && ${MAKE}  -f Makefile CONF=Debug
-	cd ../../tron/tron_wire && ${MAKE}  -f Makefile CONF=Debug
-	cd ../../tron/tron_wire2 && ${MAKE}  -f Makefile CONF=Debug
-	cd ../../amy/amy_interface && ${MAKE}  -f Makefile CONF=Debug
-	cd ../../roly/roly_interface && ${MAKE}  -f Makefile CONF=Debug
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
@@ -134,15 +110,11 @@ ${OBJECTDIR}/src/main.o: src/main.cpp
 
 # Subprojects
 .clean-subprojects:
-	cd ../tron2_coms && ${MAKE}  -f Makefile CONF=Debug clean
-	cd ../tron2_robot && ${MAKE}  -f Makefile CONF=Debug clean
+	cd ../tron2_language && ${MAKE}  -f Makefile CONF=Debug clean
+	cd ../tron2_knowledge && ${MAKE}  -f Makefile CONF=Debug clean
+	cd ../tron2_moves && ${MAKE}  -f Makefile CONF=Debug clean
 	cd ../tron2_tivy && ${MAKE}  -f Makefile CONF=Debug clean
-	cd ../../tron/tron_tools && ${MAKE}  -f Makefile CONF=Debug clean
 	cd ../../tron/tron_util && ${MAKE}  -f Makefile CONF=Debug clean
-	cd ../../tron/tron_wire && ${MAKE}  -f Makefile CONF=Debug clean
-	cd ../../tron/tron_wire2 && ${MAKE}  -f Makefile CONF=Debug clean
-	cd ../../amy/amy_interface && ${MAKE}  -f Makefile CONF=Debug clean
-	cd ../../roly/roly_interface && ${MAKE}  -f Makefile CONF=Debug clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl

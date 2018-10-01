@@ -13,16 +13,10 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="src" displayName="src" projectFiles="true">
-        <logicalFolder name="aux" displayName="aux" projectFiles="true">
-          <itemPath>src/aux/JointChannelServer.cpp</itemPath>
-          <itemPath>src/aux/JointChannelServer.h</itemPath>
-          <itemPath>src/aux/TestPlot.cpp</itemPath>
-          <itemPath>src/aux/TestPlot.h</itemPath>
-        </logicalFolder>
-        <itemPath>src/TestComs.cpp</itemPath>
-        <itemPath>src/TestComs.h</itemPath>
-        <itemPath>src/TestRobot.cpp</itemPath>
-        <itemPath>src/TestRobot.h</itemPath>
+        <itemPath>src/TestKnowledge.cpp</itemPath>
+        <itemPath>src/TestKnowledge.h</itemPath>
+        <itemPath>src/aux/TestPlot.cpp</itemPath>
+        <itemPath>src/aux/TestPlot.h</itemPath>
         <itemPath>src/TestTivy.cpp</itemPath>
         <itemPath>src/TestTivy.h</itemPath>
         <itemPath>src/main.cpp</itemPath>
@@ -56,15 +50,10 @@
           <standard>8</standard>
           <incDir>
             <pElem>src</pElem>
-            <pElem>../tron2_coms/src</pElem>
-            <pElem>../tron2_robot/src</pElem>
+            <pElem>../tron2_language/src</pElem>
+            <pElem>../tron2_knowledge/src</pElem>
             <pElem>../tron2_tivy/src</pElem>
-            <pElem>../../tron/tron_tools/src</pElem>
             <pElem>../../tron/tron_util/src</pElem>
-            <pElem>../../tron/tron_wire/src</pElem>
-            <pElem>../../tron/tron_wire2/src</pElem>
-            <pElem>../../amy/amy_interface/src</pElem>
-            <pElem>../../roly/roly_interface/src</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
@@ -74,27 +63,39 @@
             <linkerLibLibItem>opencv_core</linkerLibLibItem>
             <linkerLibLibItem>opencv_highgui</linkerLibLibItem>
             <linkerLibProjectItem>
-              <makeArtifact PL="../tron2_coms"
+              <makeArtifact PL="../tron2_language"
                             CT="2"
                             CN="Debug"
                             AC="true"
                             BL="true"
-                            WD="../tron2_coms"
+                            WD="../tron2_language"
                             BC="${MAKE}  -f Makefile CONF=Debug"
                             CC="${MAKE}  -f Makefile CONF=Debug clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_coms.${CND_DLIB_EXT}">
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_language.${CND_DLIB_EXT}">
               </makeArtifact>
             </linkerLibProjectItem>
             <linkerLibProjectItem>
-              <makeArtifact PL="../tron2_robot"
+              <makeArtifact PL="../tron2_knowledge"
                             CT="2"
                             CN="Debug"
                             AC="true"
                             BL="true"
-                            WD="../tron2_robot"
+                            WD="../tron2_knowledge"
                             BC="${MAKE}  -f Makefile CONF=Debug"
                             CC="${MAKE}  -f Makefile CONF=Debug clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_robot.${CND_DLIB_EXT}">
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_knowledge.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../tron2_moves"
+                            CT="2"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../tron2_moves"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron2_moves.${CND_DLIB_EXT}">
               </makeArtifact>
             </linkerLibProjectItem>
             <linkerLibProjectItem>
@@ -110,18 +111,6 @@
               </makeArtifact>
             </linkerLibProjectItem>
             <linkerLibProjectItem>
-              <makeArtifact PL="../../tron/tron_tools"
-                            CT="2"
-                            CN="Debug"
-                            AC="true"
-                            BL="true"
-                            WD="../../tron/tron_tools"
-                            BC="${MAKE}  -f Makefile CONF=Debug"
-                            CC="${MAKE}  -f Makefile CONF=Debug clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron_tools.${CND_DLIB_EXT}">
-              </makeArtifact>
-            </linkerLibProjectItem>
-            <linkerLibProjectItem>
               <makeArtifact PL="../../tron/tron_util"
                             CT="2"
                             CN="Debug"
@@ -133,72 +122,16 @@
                             OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron_util.${CND_DLIB_EXT}">
               </makeArtifact>
             </linkerLibProjectItem>
-            <linkerLibProjectItem>
-              <makeArtifact PL="../../tron/tron_wire"
-                            CT="2"
-                            CN="Debug"
-                            AC="true"
-                            BL="true"
-                            WD="../../tron/tron_wire"
-                            BC="${MAKE}  -f Makefile CONF=Debug"
-                            CC="${MAKE}  -f Makefile CONF=Debug clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron_wire.${CND_DLIB_EXT}">
-              </makeArtifact>
-            </linkerLibProjectItem>
-            <linkerLibProjectItem>
-              <makeArtifact PL="../../tron/tron_wire2"
-                            CT="2"
-                            CN="Debug"
-                            AC="true"
-                            BL="true"
-                            WD="../../tron/tron_wire2"
-                            BC="${MAKE}  -f Makefile CONF=Debug"
-                            CC="${MAKE}  -f Makefile CONF=Debug clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libtron_wire2.${CND_DLIB_EXT}">
-              </makeArtifact>
-            </linkerLibProjectItem>
-            <linkerLibProjectItem>
-              <makeArtifact PL="../../amy/amy_interface"
-                            CT="2"
-                            CN="Debug"
-                            AC="true"
-                            BL="true"
-                            WD="../../amy/amy_interface"
-                            BC="${MAKE}  -f Makefile CONF=Debug"
-                            CC="${MAKE}  -f Makefile CONF=Debug clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libamy_interface.${CND_DLIB_EXT}">
-              </makeArtifact>
-            </linkerLibProjectItem>
-            <linkerLibProjectItem>
-              <makeArtifact PL="../../roly/roly_interface"
-                            CT="2"
-                            CN="Debug"
-                            AC="true"
-                            BL="true"
-                            WD="../../roly/roly_interface"
-                            BC="${MAKE}  -f Makefile CONF=Debug"
-                            CC="${MAKE}  -f Makefile CONF=Debug clean"
-                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libroly_interface.${CND_DLIB_EXT}">
-              </makeArtifact>
-            </linkerLibProjectItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="src/TestComs.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/TestKnowledge.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/TestComs.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/TestRobot.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/TestRobot.h" ex="false" tool="3" flavor2="0">
+      <item path="src/TestKnowledge.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TestTivy.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/TestTivy.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/aux/JointChannelServer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/aux/JointChannelServer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/aux/TestPlot.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -227,21 +160,13 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="src/TestComs.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/TestKnowledge.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/TestComs.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/TestRobot.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/TestRobot.h" ex="false" tool="3" flavor2="0">
+      <item path="src/TestKnowledge.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/TestTivy.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/TestTivy.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/aux/JointChannelServer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/aux/JointChannelServer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/aux/TestPlot.cpp" ex="false" tool="1" flavor2="0">
       </item>
